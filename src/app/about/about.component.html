@@ -1,0 +1,87 @@
+<div class="main-div">
+  <div class="container">
+    <div class="header">
+      <h2>Hello and welcome to my portfolio!</h2>
+      <p>To learn more about me navigate using the tabs at the top of this page.</p>
+    </div>
+    <mat-card style="margin-bottom: 10px;">
+      <div class="expander">
+        <span style="margin-top: auto; margin-bottom: auto; padding-left: 24px; font-weight: 500;">Experience</span>
+        <button mat-raised-button color="secondary" type="button" (click)="accordion.openAll()" class="btn-default" style="margin-left: auto;">Expand All </button>
+        <div class="divider"></div>
+        <button mat-raised-button color="secondary" type="button"  (click)="accordion.closeAll()" class="btn-default">Collapse All </button>
+      </div>
+      <mat-accordion #accordion="matAccordion" [multi]="true">
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header>
+            Who am I?
+          </mat-expansion-panel-header>
+          <div class="accordionContent">
+            <p>My name is Danny Teel and I am a full stack engineer. I graduated in 2020 and have working as a full stack web developer ever since building large scale enterprise applications for a variety of clients.</p>
+            <p>I can code using the following languages: C#, Java, Python, JavaScript, and SQL.</p>
+            <p>I have experience building front-end applications using the following frameworks: Angular, Aurelia, and KnockoutJS.</p>
+          </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              Education
+            </mat-expansion-panel-header>
+            <div class="accordionContent">
+              <p>Oakland University</p>
+              <p>Attended: Fall 2015 - Spring 2020</p>
+              <p>Bachelor of Science in Computer Science</p>
+            </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                Experience
+            </mat-expansion-panel-header>
+            <div class="accordionContent">
+              <p>StarTex Software</p>
+              <p>Software Engineer, March 2024 - Present</p>
+              <ul>
+                <li>Design and develop software applications in accordance with project requirements</li>
+                <li>Proficient in JavaScript, C#, and SQL</li>
+                <li>Perform coding, debugging, testing, and troubleshooting throughout the SDLC</li>
+                <li>Collaborate with cross-functional teams to deliver robust and scalable software solutions</li>
+              </ul>
+              <br>
+              <p>Relativity</p>
+              <p>Advanced Software Engineer, April 2022 - March 2024</p>
+              <ul>
+                <li>Build core product offering, Relativity</li>
+                <li>Proficient in the TypeScript, C#, and SQL programming languages</li>
+                <li>Object-oriented analysis, object-oriented design, and object-oriented programming</li>
+                <li>Applying SOLID principles and design patterns</li>
+                <li>Actively participate in SCRUM process</li>
+              </ul>
+              <br>
+              <p>Kunz, Leigh & Associates</p>
+              <p>Senior Software Engineer, March 2022 - April 2022</p>
+              <p>Software Engineer, April 2020 - March 2022</p>
+              <p>Full Stack Developer Intern, August 2019 - April 2020</p>
+              <ul>
+                <li>Build web applications using the Angular framework and .NET</li>
+                <li>Proficient in the TypeScript, C#, and SQL programming languages</li>
+                <li>Assist, mentor, and collaborate with team members</li>
+                <li>Efficiently operate in an Agile practicing environment</li>
+                <li>Deliver quality software that meets all acceptance criteria</li>
+              </ul>
+              <br>
+              <p>Ipsos in North America</p>
+              <p>Quality Measurement Research (Programmer) Intern, June 2019 - August 2019</p>
+              <ul>
+                <li>Operate and maintain existing applications in a fast-paced, deadline-driven environment</li>
+                <li>Create SQL queries to display accurate and meaningful data and load new data into the database</li>
+                <li>Test and fix bugs in existing programs</li>
+                <li>Assist with migration of research projects and programs to new server environment</li>
+                <li>Work with developers to add features to a dynamic survey web page</li>
+                <li>Update old Visual Basic programs to .NET</li>
+
+              </ul>
+            </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-card>
+  </div>
+</div>
