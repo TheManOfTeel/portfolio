@@ -2,3 +2,77 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.main-div {
+  min-height: 90vh;
+  display: flex;
+  flex: inherit;
+  justify-content: center;
+  font-size: medium;
+  width: 100%;
+}
+
+.toolbar {
+  height: 100%;
+  width: 100%;
+}
+
+.container{
+  text-align: center;
+  height: 80%;
+  width: 80%;
+}
+
+.header{
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.center{
+  margin: auto;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.card {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  opacity: 95%;
+  flex: auto;
+  text-align: left;
+  width: 80%;
+  height: fit-content;
+}
+
+.expander {
+  margin-top: 1%;
+  margin-bottom: 1%;
+  display: flex ;
+  flex-direction: row;
+  align-items: flex-start;
+  width: auto;
+  height: auto;
+}
+
+.divider {
+  width:5px;
+  height:auto;
+  display:inline-block;
+}
+
+.accordionContent {
+  font-size: medium;
+  text-align: left;
+}
+
+.buttons{
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  bottom: 0;
+}
+
+.row {
+  text-align: center;
+}
