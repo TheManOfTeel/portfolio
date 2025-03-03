@@ -1,6 +1,11 @@
-footer {
-  position:fixed;
-  bottom:0px;
-  background-color:pink;
-  width:100%;
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--mat-toolbar-container-background-color, var(--mat-sys-surface));
+}
+
+.footer {
+  margin-top: auto;
 }
