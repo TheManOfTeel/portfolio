@@ -1,3 +1,4 @@
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,13 +8,14 @@ import { Component } from '@angular/core';
   styleUrl: './about.component.css'
 })
 export class AboutComponent {
-  downloadResume() {
-    let link = document.createElement('a');
-    link.setAttribute('type', 'hidden');
-    link.href = 'assets/cv/Resume.pdf';
-    link.download = 'Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
+  constructor(private responsive: BreakpointObserver) {}
+
+  isMobilePortrait = false;
+  ngOnInit() {
+    this.responsive.observe([
+      Breakpoints.HandsetPortrait
+    ]).subscribe(result => {
+        this.isMobilePortrait = result.matches;
+    });
   }
 }

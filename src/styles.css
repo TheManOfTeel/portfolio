@@ -1,10 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+html, body { height: 100%; background-color: white; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .main-div {
-  min-height: 90vh;
   display: flex;
   flex: inherit;
   justify-content: center;
@@ -15,6 +14,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .toolbar {
   height: 100%;
   width: 100%;
+  margin-bottom: 0%;
 }
 
 .container{

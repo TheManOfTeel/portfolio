@@ -1,5 +1,8 @@
-<!-- tabs for the app to simplify navigation -->
 <div class="toolbar">
+  <mat-toolbar>
+    <h1>Daniel Teel's Portfolio</h1>
+    <button mat-flat-button color="primary" type="button" style="margin-left: auto;" class="btn-default" (click)="downloadResume()">Download my resume</button>
+  </mat-toolbar>
   <mat-tab-group>
       <mat-tab>
           <ng-template mat-tab-label>
@@ -16,14 +19,6 @@
               Projects
           </ng-template>
           <app-projects></app-projects>
-      </mat-tab>
-      <mat-tab>
-          <ng-template mat-tab-label>
-              <mat-icon>phone</mat-icon>
-              <div class="divider"></div>
-              Contact
-          </ng-template>
-          <app-contact></app-contact>
       </mat-tab>
   </mat-tab-group>
 </div>

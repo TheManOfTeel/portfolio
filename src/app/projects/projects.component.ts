@@ -1,3 +1,4 @@
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrl: './projects.component.css'
 })
 export class ProjectsComponent {
+    constructor(private responsive: BreakpointObserver) {}
 
+    isMobilePortrait = false;
+    ngOnInit() {
+      this.responsive.observe([
+        Breakpoints.HandsetPortrait
+      ]).subscribe(result => {
+          this.isMobilePortrait = result.matches;
+      });
+    }
 }

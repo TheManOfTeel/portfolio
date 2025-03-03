@@ -4,51 +4,56 @@
       <h2>Projects</h2>
     </div>
     <mat-card style="margin-bottom: 10px;">
-      <div class="expander">
-        <span style="margin-top: auto; margin-bottom: auto; padding-left: 24px; font-weight: 500;">Projects</span>
-        <button mat-raised-button color="secondary" type="button" (click)="accordion.openAll()" class="btn-default" style="margin-left: auto;">Expand All </button>
-        <div class="divider"></div>
-        <button mat-raised-button color="secondary" type="button"  (click)="accordion.closeAll()" class="btn-default">Collapse All </button>
+      <div class="mat-expansion-panel-header">
+        <h3>Projects</h3>
+        <button *ngIf="!isMobilePortrait" mat-raised-button color="secondary" type="button" (click)="accordion.openAll()" class="btn-default" style="margin-left: auto;">Expand All </button>
+        <div *ngIf="!isMobilePortrait" class="divider"></div>
+        <button *ngIf="!isMobilePortrait" mat-raised-button color="secondary" type="button"  (click)="accordion.closeAll()" class="btn-default">Collapse All </button>
       </div>
       <mat-accordion #accordion="matAccordion" [multi]="true">
         <mat-expansion-panel [expanded]="true">
           <mat-expansion-panel-header>
-            EHS Insight (Enterprise Application)
+            EHS Insight
           </mat-expansion-panel-header>
           <div class="accordionContent">
             <p>EHS Insight is an enterprise application for improving environmental, health, and safety performance by managing risk and increasing efficiency. The application allows agencies to create their own workflows and policies to inspect and track their compliance with environmental law. The system has a backend programmed in C#, a front end programmed in JavaScript, and a SQL database.</p>
+            <p>Enterprise application.</p>
           </div>
         </mat-expansion-panel>
         <mat-expansion-panel>
             <mat-expansion-panel-header>
-              Relativity Review Center (Enterprise Application)
+              Relativity Review Center
             </mat-expansion-panel-header>
             <div class="accordionContent">
               <p>Relativity Review Center is an enterprise application developed for the larger Relativity eDiscovery platform. Review Center uses a classifier to create queues of documents that have relevance to reviewers in the Relativity application and presents them in an informational and helpful way. The system has a backend programmed in C#, a front end programmed in TypeScript, and a SQL database.</p>
+              <p>Enterprise application.</p>
             </div>
         </mat-expansion-panel>
         <mat-expansion-panel>
             <mat-expansion-panel-header>
-                MDARD LPS (Enterprise Application)
+                MDARD LPS
             </mat-expansion-panel-header>
             <div class="accordionContent">
               <p>Enterprise application. Worked with a team to develop a licensing portal system for the State of Michigan. This web application was developed for MDARD to allow easier tracking of organizations and their licenses as well as the purchasing new licenses according to state guidelines. The application also features an API for other State applications to access with valid API keys. The Angular framework is being utilized for the front-end and the C# language with a Microsoft SQL Server is being used for the back-end.</p>
+              <p>Enterprise application.</p>
             </div>
         </mat-expansion-panel>
         <mat-expansion-panel>
           <mat-expansion-panel-header>
-              MSP CAP (Enterprise Application)
+              MSP CAP
           </mat-expansion-panel-header>
           <div class="accordionContent">
             <p>Enterprise application. The Michigan State Police CVED Authority Portal is an enterprise application developed for the State of Michigan. The portal is a customized implementation of MDARD LPS to specifically handle vehicle licenses. The system has a backend programmed in C#, a front end programmed in TypeScript that used the Angular framework, and a SQL database.</p>
+            <p>Enterprise application.</p>
           </div>
         </mat-expansion-panel>
         <mat-expansion-panel>
           <mat-expansion-panel-header>
-              MDARD INTELS (Enterprise Application)
+              MDARD INTELS
           </mat-expansion-panel-header>
           <div class="accordionContent">
             <p>Enterprise application. Worked with a team to develop an inspection, notification, tasks, enforcement, and licensing system for the State of Michigan. This web application was developed for MDARD and to meet the needs of the Pesticide, Agricultural Products, and Nursery sections to ensure compliance to state guidelines. The Angular framework was utilized for the front-end and the C# language with a Microsoft SQL Server was used for the back-end.</p>
+            <p>Enterprise application.</p>
           </div>
         </mat-expansion-panel>
         <mat-expansion-panel>

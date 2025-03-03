@@ -28,15 +28,13 @@ import { AppComponent } from './app.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { AboutComponent } from './about/about.component';
 import { ProjectsComponent } from './projects/projects.component';
-import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
     AboutComponent,
-    ProjectsComponent,
-    ContactComponent
+    ProjectsComponent
   ],
   imports: [
     BrowserModule,
