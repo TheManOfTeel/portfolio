@@ -12,6 +12,7 @@ export class ToolbarComponent {
     link.setAttribute('type', 'hidden');
     link.href = 'assets/cv/Resume.pdf';
     link.download = 'Resume.pdf';
+    link.target = '_blank';
     document.body.appendChild(link);
     link.click();
     link.remove();
