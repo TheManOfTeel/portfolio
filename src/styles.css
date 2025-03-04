@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; background-color: white; }
+html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .main-div {
@@ -15,6 +15,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   height: 100%;
   width: 100%;
   margin-bottom: 0%;
+  background-color: var(--mat-toolbar-container-background-color, var(--mat-sys-surface));
 }
 
 .container{
@@ -36,13 +37,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .card {
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin-bottom: 3px;
   opacity: 95%;
   flex: auto;
   text-align: left;
-  width: 80%;
+  width: 100%;
   height: fit-content;
+  color: var(--mat-toolbar-container-background-color, var(--mat-sys-on-surface));
 }
 
 .expander {
