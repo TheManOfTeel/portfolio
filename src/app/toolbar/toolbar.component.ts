@@ -1,3 +1,4 @@
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,14 +8,18 @@ import { Component } from '@angular/core';
   styleUrl: './toolbar.component.css'
 })
 export class ToolbarComponent {
+  constructor(private responsive: BreakpointObserver) {}
+
+  isMobilePortrait = false;
+  ngOnInit() {
+    this.responsive.observe([
+      Breakpoints.HandsetPortrait
+    ]).subscribe(result => {
+        this.isMobilePortrait = result.matches;
+    });
+  }
+
   downloadResume() {
-    let link = document.createElement('a');
-    link.setAttribute('type', 'hidden');
-    link.href = 'assets/cv/Resume.pdf';
-    link.download = 'Resume.pdf';
-    link.target = '_blank';
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
+    window.open('assets/cv/Resume.pdf', '_blank');
   }
 }

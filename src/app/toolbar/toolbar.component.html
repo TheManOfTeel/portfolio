@@ -1,7 +1,17 @@
 <div class="toolbar">
   <mat-toolbar>
     <h1>Danny Teel's Portfolio</h1>
-    <button mat-flat-button color="primary" type="button" style="margin-left: auto;" class="btn-default" (click)="downloadResume()">Download Resume</button>
+    <div *ngIf="!isMobilePortrait; else mobile" style="margin-left: auto;">
+      <button mat-stroked-button color="primary" type="button" class="btn-default" (click)="downloadResume()">
+        <mat-icon>download</mat-icon>
+        Resume
+      </button>
+    </div>
+    <ng-template #mobile>
+      <button mat-icon-button color="primary" type="button" class="btn-default" style="margin-left: auto;" (click)="downloadResume()">
+        <mat-icon>download</mat-icon>
+      </button>
+    </ng-template>
   </mat-toolbar>
   <mat-tab-group>
       <mat-tab>

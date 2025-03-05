@@ -11,6 +11,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   width: 100%;
 }
 
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
 .toolbar {
   height: 100%;
   width: 100%;
@@ -37,7 +42,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .card {
-  margin-bottom: 3px;
+  margin-bottom: 5px;
   opacity: 95%;
   flex: auto;
   text-align: left;

@@ -18,4 +18,9 @@ export class ProjectsComponent {
           this.isMobilePortrait = result.matches;
       });
     }
+
+    openRepository(repo: string) {
+      const url = `https://github.com/TheManOfTeel/${repo}`;
+      window.open(url, '_blank');
+    }
 }
