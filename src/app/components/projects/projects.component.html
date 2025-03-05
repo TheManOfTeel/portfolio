@@ -8,11 +8,20 @@
     <mat-card class="card">
       <div class="mat-expansion-panel-header">
         <h3>Projects</h3>
-        <div *ngIf="!stateService.isMobilePortrait" style="margin-left: auto;">
+        <div *ngIf="!stateService.isMobilePortrait; else mobile" style="margin-left: auto;">
           <button mat-raised-button color="secondary" type="button" (click)="accordion.openAll()" class="btn-default">Expand All </button>
           <div class="divider"></div>
           <button mat-raised-button color="secondary" type="button"  (click)="accordion.closeAll()" class="btn-default">Collapse All </button>
         </div>
+        <ng-template #mobile>
+          <button mat-icon-button color="secondary" type="button" class="btn-default" style="margin-left: auto;" (click)="accordion.openAll()">
+            <mat-icon>expand_more</mat-icon>
+          </button>
+          <div class="divider"></div>
+          <button mat-icon-button color="secondary" type="button" class="btn-default" (click)="accordion.closeAll()">
+            <mat-icon>expand_less</mat-icon>
+          </button>
+        </ng-template>
       </div>
       <mat-accordion #accordion="matAccordion" [multi]="true">
         <mat-expansion-panel [expanded]="true">
