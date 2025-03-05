@@ -1,7 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+  background-color: var(--mat-toolbar-container-background-color, var(--mat-sys-surface));
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+body { margin: 0; }
 
 .main-div {
   display: flex;
@@ -20,7 +24,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   height: 100%;
   width: 100%;
   margin-bottom: 0%;
-  background-color: var(--mat-toolbar-container-background-color, var(--mat-sys-surface));
 }
 
 .container{
@@ -48,7 +51,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   text-align: left;
   width: 100%;
   height: fit-content;
-  color: var(--mat-toolbar-container-background-color, var(--mat-sys-on-surface));
 }
 
 .expander {
