@@ -1,7 +1,7 @@
 <div class="toolbar">
   <mat-toolbar>
-    <h1>Danny Teel's Portfolio</h1>
-    <div *ngIf="!isMobilePortrait; else mobile" style="margin-left: auto;">
+    <h1><strong>Danny Teel's Portfolio</strong></h1>
+    <div *ngIf="!stateService.isMobilePortrait; else mobile" style="margin-left: auto;">
       <button mat-stroked-button color="primary" type="button" class="btn-default" (click)="downloadResume()">
         <mat-icon>download</mat-icon>
         Resume

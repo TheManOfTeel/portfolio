@@ -25,9 +25,10 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ToolbarComponent } from './toolbar/toolbar.component';
-import { AboutComponent } from './about/about.component';
-import { ProjectsComponent } from './projects/projects.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { AboutComponent } from './components/about/about.component';
+import { ProjectsComponent } from './components/projects/projects.component';
+import { StateService } from './services/state.service';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,7 @@ import { ProjectsComponent } from './projects/projects.component';
     MatProgressBarModule,
     MatProgressSpinnerModule,
   ],
-  providers: [],
+  providers: [StateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

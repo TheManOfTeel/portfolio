@@ -1,5 +1,5 @@
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component } from '@angular/core';
+import { StateService } from '../../services/state.service';
 
 @Component({
   selector: 'app-projects',
@@ -8,16 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './projects.component.css'
 })
 export class ProjectsComponent {
-    constructor(private responsive: BreakpointObserver) {}
-
-    isMobilePortrait = false;
-    ngOnInit() {
-      this.responsive.observe([
-        Breakpoints.HandsetPortrait
-      ]).subscribe(result => {
-          this.isMobilePortrait = result.matches;
-      });
-    }
+    constructor(public stateService: StateService) {}
 
     openRepository(repo: string) {
       const url = `https://github.com/TheManOfTeel/${repo}`;

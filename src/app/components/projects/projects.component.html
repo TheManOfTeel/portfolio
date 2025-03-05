@@ -2,14 +2,17 @@
   <div class="container">
     <div class="header">
       <h2>Notable Projects</h2>
+      <br>
       <p>Below are notable projects that I have worked on. Enterprise applications are labeled as such and were worked on professionally as an employee of the relevant company.</p>
     </div>
     <mat-card class="card">
       <div class="mat-expansion-panel-header">
         <h3>Projects</h3>
-        <button *ngIf="!isMobilePortrait" mat-raised-button color="secondary" type="button" (click)="accordion.openAll()" class="btn-default" style="margin-left: auto;">Expand All </button>
-        <div *ngIf="!isMobilePortrait" class="divider"></div>
-        <button *ngIf="!isMobilePortrait" mat-raised-button color="secondary" type="button"  (click)="accordion.closeAll()" class="btn-default">Collapse All </button>
+        <div *ngIf="!stateService.isMobilePortrait" style="margin-left: auto;">
+          <button mat-raised-button color="secondary" type="button" (click)="accordion.openAll()" class="btn-default">Expand All </button>
+          <div class="divider"></div>
+          <button mat-raised-button color="secondary" type="button"  (click)="accordion.closeAll()" class="btn-default">Collapse All </button>
+        </div>
       </div>
       <mat-accordion #accordion="matAccordion" [multi]="true">
         <mat-expansion-panel [expanded]="true">
