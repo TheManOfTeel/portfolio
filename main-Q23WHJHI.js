@@ -13,7 +13,7 @@ ${e.map((i,r)=>`${r+1}) ${i.toString()}`).join(`
             <li>Proficient in JavaScript, C#, and SQL</li>
             <li>Perform coding, debugging, testing, and troubleshooting throughout the SDLC</li>
             <li>Collaborate with cross-functional teams to deliver robust and scalable software solutions</li>
-          </ul>`)]),new pr("Relativity",[new ei("Advanced Software Engineer","March 2022 - March 2024",`<ul>
+          </ul>`)]),new pr("Relativity",[new ei("Advanced Software Engineer","April 2022 - March 2024",`<ul>
             <li>Build core product offering, Relativity</li>
             <li>Proficient in the TypeScript, C#, and SQL programming languages</li>
             <li>Object-oriented analysis, object-oriented design, and object-oriented programming</li>
