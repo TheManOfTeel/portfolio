@@ -32,7 +32,7 @@ export class AboutComponent {
       [
         new Position(
           'Advanced Software Engineer',
-          'March 2022 - March 2024',
+          'April 2022 - March 2024',
           `<ul>
             <li>Build core product offering, Relativity</li>
             <li>Proficient in the TypeScript, C#, and SQL programming languages</li>
