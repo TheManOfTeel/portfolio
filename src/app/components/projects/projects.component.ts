@@ -13,7 +13,7 @@ export class ProjectsComponent {
 
     projects: Project[] = [
       new Project(
-        'EH Insight',
+        'EHS Insight',
         'EHS Insight is an application for improving environmental, health, and safety performance by managing risk and increasing efficiency. The application allows agencies to create their own workflows and policies to inspect and track their compliance with environmental law. The system has a backend programmed in C# using the .NET framework, a front end programmed in JavaScript using the KnockoutJS framework, and a SQL database. There are Android and iOS applications created using Apache Cordova.',
         'Enterprise application developed while at StarTex Software.',
         'assets/images/ehs-insight.png',
