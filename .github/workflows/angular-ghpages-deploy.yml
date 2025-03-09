@@ -19,7 +19,7 @@ jobs:
     - name: Build
       run: npm run build
     - name: Deploy
-      run: npm run ng deploy --base-href=/portfolio/
+      run: npm run ng build --prod --base-href=/portfolio/ && npm run ngh --dir=dist/portfolio
       env:
         CLI: true
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
