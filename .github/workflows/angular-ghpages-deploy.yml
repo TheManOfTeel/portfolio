@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  build-and-push:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -19,7 +19,36 @@ jobs:
     - name: Build
       run: npm run build
     - name: Deploy
-      run: npx angular-cli-ghpages --no-silent --dir=dist/portfolio
       env:
         CLI: true
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      run: |
+        npx angular-cli-ghpages --no-silent --dir=dist/portfolio \
+          --name="github-actions[bot]" \
+          --email="github-actions[bot]@users.noreply.github.com" \
+          --branch="gh-pages" \
+          --message="Deploy: $(git log -1 --pretty=%B)" \
+
+deploy-pages:
+  needs: build-and-push
+  runs-on: ubuntu-latest
+  environment:
+    name: github-pages
+    url: ${{ steps.deployment.outputs.page_url }}
+  steps:
+    - name: Checkout gh-pages
+      uses: actions/checkout@v4
+      with:
+        ref: gh-pages
+
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: '.'
+
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
