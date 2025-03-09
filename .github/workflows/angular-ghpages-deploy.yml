@@ -19,10 +19,7 @@ jobs:
     - name: Build
       run: npm run build
     - name: Deploy
-      run: npx angular-cli-ghpages --no-silent --dir=dist/portfolio \
-        --name="github-actions[bot]" \
-        --email="github-actions[bot]@users.noreply.github.com" \
-        --branch="gh-pages" \
+      run: npx angular-cli-ghpages --no-silent --dir=dist/portfolio
       env:
         CLI: true
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
