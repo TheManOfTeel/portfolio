@@ -15,11 +15,14 @@ jobs:
       with:
         node-version: 20
     - name: Install
-      run: npm install
+      run: npm ci
     - name: Build
       run: npm run build
     - name: Deploy
-      run: npm run ng deploy -base-href=/portfolio/
+      run: npx angular-cli-ghpages --no-silent --dir=dist/portfolio \
+        --name="github-actions[bot]" \
+        --email="github-actions[bot]@users.noreply.github.com" \
+        --branch="gh-pages" \
       env:
         CLI: true
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
