@@ -25,5 +25,4 @@ jobs:
       run: |
         npm run deploy \
           --name="github-actions[bot]" \
-          --email="github-actions[bot]@users.noreply.github.com" \
-          --branch="gh-pages" \
+          --email="github-actions[bot]@users.noreply.github.com"
