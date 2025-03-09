@@ -53,7 +53,7 @@ export class ProjectsComponent {
         undefined
       ),
       new Project(
-        'Foobar with Google',
+        'foobar with Google',
         "Completed all 5 levels of Google's foobar challenge. The challenge tested my knowledge to implement various algorithms in either Java or Python to solve them in a timeframe. The first few challenges were completed using Java but all subsequent challenges were completed using Python because its ease of use manipulating data.",
         undefined,
         undefined,
@@ -70,7 +70,7 @@ export class ProjectsComponent {
       ),
       new Project(
         'Server Inventory Audit',
-        'Checks the directories of a system and redirects the logs into a .txt file. The files can be compared and the missing file names are displayed and stored in yet another .txt file for easier viewing and logging purposes. The files can also be opened directly through the program instead of searching your machine for it. There is a terminal version and a version with a GUI. Both accomplish the same thing. Programmed using Python 3.',
+        'Checks the directories of a system and outputs the logs into a .txt file. The files can then be compared and the missing file names are displayed and outputted into another .txt file for easier viewing and logging purposes. Outputted files can be opened directly through the program for ease of use. There is a terminal version and a version with a GUI. Programmed using Python 3.',
         undefined,
         undefined,
         undefined,
