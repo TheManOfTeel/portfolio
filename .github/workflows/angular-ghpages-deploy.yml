@@ -19,12 +19,7 @@ jobs:
     - name: Build
       run: npm run build
     - name: Deploy
+      run: npm run ng deploy --base-href=/portfolio/
       env:
         CLI: true
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
-      run: |
-        npx angular-cli-ghpages --no-silent --dir=dist/portfolio \
-          --name="github-actions[bot]" \
-          --email="github-actions[bot]@users.noreply.github.com" \
-          --branch="gh-pages" \
-          --message="Deploy: $(git log -1 --pretty=%B)" \
