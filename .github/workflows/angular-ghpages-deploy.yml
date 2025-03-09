@@ -23,4 +23,4 @@ jobs:
         CLI: true
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
-        ng deploy --base-href=/portfolio/
+        npm run deploy
