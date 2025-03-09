@@ -23,7 +23,7 @@ jobs:
         CLI: true
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
-        npx angular-cli-ghpages --no-silent --dir=dist/portfolio --base-href=/portfolio/ \
+        npx angular-cli-ghpages --no-silent --dir=dist/portfolio \
           --name="github-actions[bot]" \
           --email="github-actions[bot]@users.noreply.github.com" \
           --branch="gh-pages"
