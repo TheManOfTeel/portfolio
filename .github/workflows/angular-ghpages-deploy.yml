@@ -23,8 +23,7 @@ jobs:
         CLI: true
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
-        npm run ng deploy --base-href=/portfolio/ \
+        npx angular-cli-ghpages --no-silent --dir=dist/portfolio --base-href=/portfolio/ \
           --name="github-actions[bot]" \
           --email="github-actions[bot]@users.noreply.github.com" \
-          --branch="gh-pages" \
-          --message="Deploy: $(git log -1 --pretty=%B)" \
+          --branch="gh-pages"
