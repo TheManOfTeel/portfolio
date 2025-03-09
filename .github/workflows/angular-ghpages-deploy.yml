@@ -23,7 +23,7 @@ jobs:
         CLI: true
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
         contents: write
+        name: github-actions[bot]
+        email: github-actions[bot]@users.noreply.github.com
       run: |
-        npm run deploy \
-          --name="github-actions[bot]" \
-          --email="github-actions[bot]@users.noreply.github.com"
+        npm run deploy
