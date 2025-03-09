@@ -19,7 +19,8 @@ jobs:
     - name: Build
       run: npm run build
     - name: Deploy
-      run: ng deploy --base-href=/portfolio/
+      run: |
+        npx angular-cli-ghpages --dir=dist/portfolio
       env:
         CLI: true
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
