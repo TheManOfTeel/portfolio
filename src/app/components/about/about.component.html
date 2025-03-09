@@ -50,7 +50,7 @@
                 Experience
             </mat-expansion-panel-header>
             <div *ngFor="let experience of experiences; last as isLast" class="accordionContent">
-              <p>{{ experience.companyName }}</p>
+              <p><strong>{{ experience.companyName }}</strong></p>
               <div *ngFor="let position of experience.positions">
                 <p>{{ position.title }}, {{ position.date }}</p>
                 <div [innerHTML]="position.description"></div>
