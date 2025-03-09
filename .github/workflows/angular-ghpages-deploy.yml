@@ -22,6 +22,7 @@ jobs:
       env:
         CLI: true
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        contents: write
       run: |
         npm run deploy \
           --name="github-actions[bot]" \
