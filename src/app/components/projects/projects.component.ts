@@ -38,7 +38,7 @@ export class ProjectsComponent {
       ),
       new Project(
         'Michigan State Police CAP',
-        'The Michigan State Police CVED Authority Portal is an application developed for the State of Michigan. The portal is a customized implementation of MDARD LPS to specifically handle vehicle licenses. This project is a customized off-shoot of the MDARD LPS application. The system has a backend programmed in C# using the .NET framework, a front end programmed in TypeScript using the Angular framework, and a SQL database.',
+        'The Michigan State Police CVED Authority Portal is an application developed for the State of Michigan. The portal is a customized implementation of MDARD LPS to specifically handle commercial vehicle licenses. The system has a backend programmed in C# using the .NET framework, a front end programmed in TypeScript using the Angular framework, and a SQL database.',
         'Enterprise application developed while at Kunz, Leigh & Associates.',
         'assets/images/msp.png',
         { 'width':'25%', 'height':'25%' },
