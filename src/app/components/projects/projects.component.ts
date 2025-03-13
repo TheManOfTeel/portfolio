@@ -22,7 +22,7 @@ export class ProjectsComponent {
       ),
       new Project(
         'Relativity Review Center',
-        'Relativity Review Center is an application developed for the larger Relativity eDiscovery platform. Review Center uses a classifier to create queues of documents that have relevance to reviewers in the Relativity application and presents them in an informational and helpful way. The system has a backend programmed in C# using the .NET framework, a front end programmed in TypeScript using the Aurelia framework, and a SQL database.',
+        'Relativity Review Center is an enterprise application developed for the larger Relativity eDiscovery platform. Review Center uses a classifier to create queues of documents that have relevance to reviewers in the Relativity application and presents them in an informational and helpful way with many useful metrics and insights. The system has a backend programmed in C# using the .NET framework, a front end programmed in TypeScript using the Aurelia framework, and a SQL database.',
         'Enterprise application developed while at Relativity.',
         'assets/images/review-center.png',
         { 'width':'80%', 'height':'80%' },
@@ -30,7 +30,7 @@ export class ProjectsComponent {
       ),
       new Project(
         'MDARD LPS',
-        'Worked with a team to develop a licensing portal system for the State of Michigan. This web application was developed for MDARD to allow easier tracking of organizations and their licenses as well as the purchasing new licenses according to state guidelines. The application also features an API for other State applications to access its data with valid API keys. The system has a backend programmed in C# using the .NET framework, a front end programmed in TypeScript using the Angular framework, and a SQL database.',
+        'The Michigan Department of Agriculture and Rural Development Licensing Portal System is an enterprise application developed for the State of Michigan that allows users to create Organizations and create Applications for licenses. The portal allows internal users and external users to utilize this functionality based on user group permissions. There are many different license types that are possible for users to choose from, and fees are also created and enforced in this system. The application also features an API for other applications to utilize to access the data generated and stored in the system with valid credentials and API keys. The system has a backend programmed in C# using the .NET framework, a front end programmed in TypeScript using the Angular framework, and a SQL database.',
         'Enterprise application developed while at Kunz, Leigh & Associates.',
         'assets/images/mdard.png',
         { 'width':'20%', 'height':'20%' },
@@ -38,7 +38,7 @@ export class ProjectsComponent {
       ),
       new Project(
         'Michigan State Police CAP',
-        'The Michigan State Police CVED Authority Portal is an application developed for the State of Michigan. The portal is a customized implementation of MDARD LPS to specifically handle vehicle licenses. The system has a backend programmed in C# using the .NET framework, a front end programmed in TypeScript using the Angular framework, and a SQL database.',
+        'The Michigan State Police CVED Authority Portal is an application developed for the State of Michigan. The portal is a customized implementation of MDARD LPS to specifically handle vehicle licenses. This project is a customized off-shoot of the MDARD LPS application. The system has a backend programmed in C# using the .NET framework, a front end programmed in TypeScript using the Angular framework, and a SQL database.',
         'Enterprise application developed while at Kunz, Leigh & Associates.',
         'assets/images/msp.png',
         { 'width':'25%', 'height':'25%' },
@@ -46,7 +46,7 @@ export class ProjectsComponent {
       ),
       new Project(
         'MDARD INTELS',
-        'Worked with a team to develop an inspection, notification, tasks, enforcement, and licensing system for the State of Michigan. This web application was developed for MDARD and to meet the needs of the Pesticide, Agricultural Products, and Nursery sections to ensure compliance to state guidelines. The system has a backend programmed in C# using the .NET framework, a front end programmed in TypeScript using the Angular framework, and a SQL database.',
+        'The Michigan Department of Agriculture and Rural Development Inspection, Notification, Tracking, Enforcement, and Licensing System is an enterprise application developed for the State of Michigan that enables inspectors to create cases, inspections, and enforcements to make sure that all agriculture investigations are created and logged in the same manner. The system allows for a plethora of different case types with different conditions and sub tasks for each. The system can sync and go offline for inspectors to complete and create cases and inspections without internet access. The system also allows for the generation of reports that are populated with data to keep the State’s records complete and allow physical documents to be delivered to desired recipients. The system has a backend programmed in C# using the .NET framework, a front end programmed in TypeScript using the Angular framework, and a SQL database.',
         'Enterprise application developed while at Kunz, Leigh & Associates.',
         'assets/images/mdard.png',
         { 'width':'20%', 'height':'20%' },
