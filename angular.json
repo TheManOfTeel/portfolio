@@ -106,7 +106,9 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "base-href": "/portfolio/"
+            "baseHref": "https://themanofteel.github.io/portfolio/",
+            "name": "github-actions[bot]",
+            "email": "github-actions[bot]@users.noreply.github.com"
           }
         }
       }
