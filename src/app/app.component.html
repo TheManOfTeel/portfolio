@@ -1,13 +1,13 @@
-<main class="container">
+<main>
 	<router-outlet></router-outlet>
   <div class="footer">
     <mat-toolbar>
       <a href="https://www.linkedin.com/in/daniel-teel-a6465017b" target="_blank" style="margin-left: auto;">
-        <img src="assets/images/linkedin.svg">
+        <img src="{{ stateService.isDarkMode ? 'assets/images/linkedin-light.svg' : 'assets/images/linkedin.svg' }}">
       </a>
       <div class="divider"></div>
       <a href="https://github.com/TheManOfTeel" target="_blank">
-        <img src="assets/images/github.svg">
+        <img src="{{ stateService.isDarkMode ? 'assets/images/github-light.svg' : 'assets/images/github.svg' }}">
       </a>
     </mat-toolbar>
   </div>

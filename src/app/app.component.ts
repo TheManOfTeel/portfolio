@@ -10,9 +10,13 @@ import { StateService } from './services/state.service';
 export class AppComponent {
   title = 'portfolio';
 
-  constructor(private stateService: StateService) {}
+  constructor(public stateService: StateService) {}
 
   ngOnInit() {
     this.stateService.isMobile();
+
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+    this.stateService.isDarkMode = prefersDark.matches;
+    document.body.classList.toggle('dark-theme', prefersDark.matches);
   }
 }

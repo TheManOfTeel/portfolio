@@ -2,13 +2,22 @@
   <mat-toolbar>
     <h1><strong>Danny Teel's Portfolio</strong></h1>
     <div *ngIf="!stateService.isMobilePortrait; else mobile" style="margin-left: auto;">
+      <button mat-stroked-button color="primary" type="button" class="btn-default" (click)="stateService.toggleDarkTheme()">
+        <mat-icon>{{ stateService.isDarkMode ? 'wb_sunny' : 'nights_stay' }}</mat-icon>
+        {{stateService.isDarkMode ? 'Light' : 'Dark'}} Mode
+      </button>
+      <div class="divider"></div>
       <button mat-stroked-button color="primary" type="button" class="btn-default" (click)="downloadResume()">
         <mat-icon>download</mat-icon>
-        Resume
+        Download Resume
       </button>
     </div>
     <ng-template #mobile>
-      <button mat-icon-button color="primary" type="button" class="btn-default" style="margin-left: auto;" (click)="downloadResume()">
+      <button mat-icon-button color="primary" type="button" class="btn-default" style="margin-left: auto;" (click)="stateService.toggleDarkTheme()">
+        <mat-icon>{{ stateService.isDarkMode ? 'wb_sunny' : 'nights_stay' }}</mat-icon>
+      </button>
+      <div class="divider"></div>
+      <button mat-icon-button color="primary" type="button" class="btn-default" (click)="downloadResume()">
         <mat-icon>download</mat-icon>
       </button>
     </ng-template>

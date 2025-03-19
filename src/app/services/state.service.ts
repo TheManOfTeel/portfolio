@@ -9,6 +9,7 @@ export class StateService {
   constructor(private responsive: BreakpointObserver) {}
 
   public isMobilePortrait = false;
+  public isDarkMode = false;
 
   isMobile() {
     this.responsive.observe([
@@ -16,5 +17,10 @@ export class StateService {
     ]).subscribe(result => {
       this.isMobilePortrait = result.matches;
     });
+  }
+
+  toggleDarkTheme(): void {
+    this.isDarkMode = !this.isDarkMode;
+    document.body.classList.toggle('dark-theme');
   }
 }
