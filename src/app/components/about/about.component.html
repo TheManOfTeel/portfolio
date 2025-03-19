@@ -9,16 +9,16 @@
       <div class="mat-expansion-panel-header">
         <h3>Overview</h3>
         <div *ngIf="!stateService.isMobilePortrait; else mobile" style="margin-left: auto;">
-          <button mat-raised-button color="secondary" type="button" (click)="accordion.openAll()" class="btn-default">Expand All </button>
+          <button mat-raised-button color="primary" type="button" (click)="accordion.openAll()" >Expand All </button>
           <div class="divider"></div>
-          <button mat-raised-button color="secondary" type="button"  (click)="accordion.closeAll()" class="btn-default">Collapse All </button>
+          <button mat-raised-button color="primary" type="button"  (click)="accordion.closeAll()" >Collapse All </button>
         </div>
         <ng-template #mobile>
-          <button mat-icon-button color="secondary" type="button" class="btn-default" style="margin-left: auto;" (click)="accordion.openAll()">
+          <button mat-icon-button color="primary" type="button"  style="margin-left: auto;" (click)="accordion.openAll()">
             <mat-icon>expand_more</mat-icon>
           </button>
           <div class="divider"></div>
-          <button mat-icon-button color="secondary" type="button" class="btn-default" (click)="accordion.closeAll()">
+          <button mat-icon-button color="primary" type="button"  (click)="accordion.closeAll()">
             <mat-icon>expand_less</mat-icon>
           </button>
         </ng-template>
@@ -28,7 +28,7 @@
           <mat-expansion-panel-header>
             Who am I?
           </mat-expansion-panel-header>
-          <div class="accordionContent">
+          <div class="accordion-content">
             <p>I am currently working as a full stack software engineer. I graduated college in the spring of 2020 with a Bachelors Degree in Computer Science and have been working as a web developer ever since. I have built large scale enterprise applications for a variety of clients to suit their business needs. I have an inclination towards backend work and love working on solutions to complex problems accomplished in new and efficient ways. I love to learn and always welcome new technologies and tech stacks.</p>
             <p>I can write code in the following languages: C++, C#, Java, JavaScript, Python, SQL, and TypeScript.</p>
             <p>I have experience building front-end applications using the following frameworks: Angular, Aurelia, and KnockoutJS.</p>
@@ -39,7 +39,7 @@
             <mat-expansion-panel-header>
               Education
             </mat-expansion-panel-header>
-            <div class="accordionContent">
+            <div class="accordion-content">
               <p>Oakland University</p>
               <p>Attended: Fall 2015 - Spring 2020</p>
               <p>Degree: Bachelor of Science in Computer Science</p>
@@ -49,7 +49,7 @@
             <mat-expansion-panel-header>
                 Experience
             </mat-expansion-panel-header>
-            <div *ngFor="let experience of experiences; last as isLast" class="accordionContent">
+            <div *ngFor="let experience of experiences; last as isLast" class="accordion-content">
               <p><strong>{{ experience.companyName }}</strong></p>
               <div *ngFor="let position of experience.positions">
                 <p>{{ position.title }}, {{ position.date }}</p>
