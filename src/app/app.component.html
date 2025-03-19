@@ -3,11 +3,11 @@
   <div class="footer">
     <mat-toolbar>
       <a href="https://www.linkedin.com/in/daniel-teel-a6465017b" target="_blank" style="margin-left: auto;">
-        <img src="{{ stateService.isDarkMode ? 'assets/images/linkedin-light.svg' : 'assets/images/linkedin.svg' }}">
+        <img src="assets/images/linkedin.svg" [ngClass]="stateService.isDarkMode ? 'dark-svg' : ''">
       </a>
       <div class="divider"></div>
       <a href="https://github.com/TheManOfTeel" target="_blank">
-        <img src="{{ stateService.isDarkMode ? 'assets/images/github-light.svg' : 'assets/images/github.svg' }}">
+        <img src="assets/images/github.svg" [ngClass]="stateService.isDarkMode ? 'dark-svg' : ''">
       </a>
     </mat-toolbar>
   </div>
