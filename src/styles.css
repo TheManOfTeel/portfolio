@@ -1,8 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body {
+  overflow: auto;
   height: 100%;
-  background-color: var(--mat-toolbar-container-background-color, var(--mat-sys-surface));
+  background-color: var(--mat-sys-surface);
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
@@ -16,6 +17,7 @@ body.dark-theme {
   --mat-sys-on-tertiary: #000000;
   --mat-sys-on-error: #000000;
   --mat-sys-error: #cf6679;
+  --mat-sys-background: #000000;
   --mat-sys-surface: #000000;
   --mat-sys-on-surface: #ffffff;
   --mat-sys-primary: #bb86fc;
@@ -36,7 +38,6 @@ main {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: var(--mat-toolbar-container-background-color, var(--mat-sys-surface));
 }
 
 .main-div {
@@ -72,7 +73,6 @@ main {
 
 .footer {
   margin-top: auto;
-  background-color: var(--mat-toolbar-container-background-color, var(--mat-sys-surface));
 }
 
 .center{
