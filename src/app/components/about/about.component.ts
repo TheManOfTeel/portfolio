@@ -18,12 +18,13 @@ export class AboutComponent {
         new Position(
           'Software Engineer',
           'March 2024 - Present',
-          `<ul>
-            <li>Design and develop software applications in accordance with project requirements</li>
-            <li>Proficient in JavaScript, C#, and SQL</li>
-            <li>Perform coding, debugging, testing, and troubleshooting throughout the SDLC</li>
-            <li>Collaborate with cross-functional teams to deliver robust and scalable software solutions</li>
-          </ul>`
+          [
+            'Applied my knowledge of the JavaScript, C#, and SQL programming languages to contribute to the enhancement of the EHS Insight application',
+            'Assisted in the maintenance and enhancement of Web, iOS, and Android applications for EHS Insight',
+            'Created RESTful API endpoints to carry out web requests from the front end',
+            'Documented the external API by creating a Postman collection and a code snippet sample project for third party integrations and provided input on reworking these endpoints to align with modern web conventions',
+            'Revamped user settings and introduced new patterns for bulk save operations to reduce server load'
+          ]
         ),
       ]
     ),
@@ -33,13 +34,14 @@ export class AboutComponent {
         new Position(
           'Advanced Software Engineer',
           'April 2022 - March 2024',
-          `<ul>
-            <li>Build core product offering, Relativity</li>
-            <li>Proficient in the TypeScript, C#, and SQL programming languages</li>
-            <li>Object-oriented analysis, object-oriented design, and object-oriented programming</li>
-            <li>Applying SOLID principles and design patterns</li>
-            <li>Actively participate in SCRUM process</li>
-          </ul>`
+          [
+            'Applied my knowledge of the JavaScript, C#, and SQL programming languages to contribute to the creation of the Review Center module that provided insights on document relevancy in the eDiscovery process to speed up the discovery process for reviewers preparing for legal cases',
+            'Created RESTful API endpoints to carry out web requests from the front end',
+            'Created and documented APIs for third party integrations',
+            'Built the ingestion engine for sending and receiving information from a classifier',
+            'Applied SOLID principles and design patterns to create efficient features that were maintainable and scalable',
+            'Actively participated in SCRUM process to design and plan new features as well as review other engineers pull requests'
+          ]
         )
       ]
     ),
@@ -49,35 +51,31 @@ export class AboutComponent {
         new Position(
           'Senior Software Engineer',
           'March 2022 - April 2022',
-          `<ul>
-            <li>Build web applications using the Angular framework and .NET</li>
-            <li>Proficient in the TypeScript, C#, and SQL programming languages</li>
-            <li>Assist, mentor, and collaborate with team members</li>
-            <li>Efficiently operate in an Agile practicing environment</li>
-            <li>Deliver quality software that meets all acceptance criteria</li>
-          </ul>`
+          [
+            'Applied my knowledge of the TypeScript, C#, and SQL programming languages to build web applications utilizing the Angular framework and .NET',
+            'Assisted, mentored, and collaborated with team members to meet client deadlines',
+            'Rotated between multiple projects as a shared resource to build full stack features',
+            'Efficiently operated in an Agile practicing environment'
+          ]
         ),
         new Position(
           'Software Engineer',
           'April 2020 - March 2022',
-          `<ul>
-            <li>Build web applications using the Angular framework and .NET</li>
-            <li>Proficient in the TypeScript, C#, and SQL programming languages</li>
-            <li>Assist and collaborate with team members</li>
-            <li>Efficiently operate in an Agile practicing environment</li>
-            <li>Deliver quality software that meets all acceptance criteria</li>
-          </ul>`
+          [
+            'Applied my knowledge of the TypeScript, C#, and SQL programming languages to build web applications utilizing the Angular framework and .NET',
+            'Collaborated with team members to meet client deadlines',
+            'Rotated between multiple projects as a shared resource to build full stack features',
+            'Efficiently operated in an Agile practicing environment'
+          ]
         ),
         new Position(
           'Full Stack Developer Intern',
           'August 2019 - April 2020',
-          `<ul>
-            <li>Build web applications using the Angular framework and .NET</li>
-            <li>Add new features and maintain legacy applications</li>
-            <li>Query databases to produce detailed reports for clients</li>
-            <li>Effectively operate in an Agile practicing environment</li>
-            <li>Efficiently fix bugs uncovered by QA testing</li>
-          </ul>`
+          [
+            'Applied my knowledge of the TypeScript, C#, and SQL programming languages to build web applications utilizing the Angular framework and .NET',
+            'Enhanced legacy AngularJS applications to meet enhancement request criteria',
+            'Created SSRS reports for State of Michigan employees to export for record keeping proposes'
+          ]
         )
       ]
     ),
@@ -87,14 +85,13 @@ export class AboutComponent {
         new Position(
           'Quality Measurement Research (Programmer) Intern',
           'June 2019 - August 2019',
-          `<ul>
-            <li>Operate and maintain existing applications in a fast-paced, deadline-driven environment</li>
-            <li>Create SQL queries to display accurate and meaningful data and load new data into the database</li>
-            <li>Test and fix bugs in existing programs</li>
-            <li>Assist with migration of research projects and programs to new server environment</li>
-            <li>Work with developers to add features to a dynamic survey web page</li>
-            <li>Update old Visual Basic programs to .NET</li>
-          </ul>`
+          [
+            'Created SQL queries to display accurate and meaningful data and load new data into the database',
+            'Tested and fix bugs in existing programs',
+            'Assisted with the migration of research projects and programs to a new server environment',
+            'Worked with developers to add features to a dynamic survey web page',
+            'Updated old Visual Basic programs to .NET'
+          ]
         )
       ]
     )

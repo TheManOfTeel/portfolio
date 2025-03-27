@@ -26,24 +26,11 @@
       <mat-accordion #accordion="matAccordion" [multi]="true">
         <mat-expansion-panel [expanded]="true">
           <mat-expansion-panel-header>
-            Who am I?
+            Summary
           </mat-expansion-panel-header>
           <div class="accordion-content">
-            <p>I am currently working as a full stack software engineer. I graduated college in the spring of 2020 with a Bachelors Degree in Computer Science and have been working as a web developer ever since. I have built large scale enterprise applications for a variety of clients to suit their business needs. I have an inclination towards backend work and love working on solutions to complex problems accomplished in new and efficient ways. I love to learn and always welcome new technologies and tech stacks.</p>
-            <p>I can write code in the following languages: C++, C#, Java, JavaScript, Python, SQL, and TypeScript.</p>
-            <p>I have experience building front-end applications using the following frameworks: Angular, Aurelia, and KnockoutJS.</p>
-            <p>I have experience building backend applications using the following frameworks: .NET and Spring.</p>
+            <p>Armed with a Bachelor's degree in Computer Science from Oakland University my venture into the tech industry has been marked by a robust portfolio of software solutions at StarTex Software, Relativity, and Kunz, Leigh & Associates. Specializing in full stack web development my tenure has been defined by successful collaboration with cross-functional teams to design, code, and debug applications that meet rigorous project requirements. I have an inclination toward backend development and look forward to pushing the boundaries of established patterns and frameworks to solve new and complex problems.</p>
           </div>
-        </mat-expansion-panel>
-        <mat-expansion-panel>
-            <mat-expansion-panel-header>
-              Education
-            </mat-expansion-panel-header>
-            <div class="accordion-content">
-              <p>Oakland University</p>
-              <p>Attended: Fall 2015 - Spring 2020</p>
-              <p>Degree: Bachelor of Science in Computer Science</p>
-            </div>
         </mat-expansion-panel>
         <mat-expansion-panel>
             <mat-expansion-panel-header>
@@ -53,10 +40,33 @@
               <p><strong>{{ experience.companyName }}</strong></p>
               <div *ngFor="let position of experience.positions">
                 <p>{{ position.title }}, {{ position.date }}</p>
-                <div [innerHTML]="position.description"></div>
+                <ul>
+                  <li *ngFor="let task of position.tasks">
+                    {{ task }}
+                  </li>
+                </ul>
               </div>
               <br *ngIf="!isLast">
             </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            Education
+          </mat-expansion-panel-header>
+          <div class="accordion-content">
+            <p>Oakland University</p>
+            <p>Attended: Fall 2015 - Spring 2020</p>
+            <p>Degree: Bachelor of Science in Computer Science</p>
+          </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            Technical Skills
+          </mat-expansion-panel-header>
+          <div class="accordion-content">
+            <p>Programming languages: C#, Java, JavaScript, Python, SQL, TypeScript</p>
+            <p>Technologies: .NET, Angular, Aurelia, KnockoutJS, MSQL Server, Git, Bash, Microsoft Azure, AWS, Docker</p>
+          </div>
         </mat-expansion-panel>
       </mat-accordion>
     </mat-card>
