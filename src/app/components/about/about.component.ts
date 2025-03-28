@@ -35,7 +35,7 @@ export class AboutComponent {
           'Advanced Software Engineer',
           'April 2022 - March 2024',
           [
-            'Applied my knowledge of the JavaScript, C#, and SQL programming languages to contribute to the creation of the Review Center module that provided insights on document relevancy in the eDiscovery process to speed up processes and automate workflows for reviewers preparing for legal cases',
+            'Applied my knowledge of the JavaScript, C#, and SQL programming languages to contribute to the creation of the Review Center module that provided insights on document relevancy in the eDiscovery process to speed up review and automate workflows for document reviewers working on legal cases',
             'Created RESTful API endpoints to carry out web requests from the front end',
             'Created and documented APIs for third party integrations',
             'Built the ingestion engine for sending and receiving information from a classifier',
