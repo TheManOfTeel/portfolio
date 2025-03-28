@@ -15,6 +15,7 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { AboutComponent } from './components/about/about.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { StateService } from './services/state.service';
+import { ContactService } from './services/contact.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { StateService } from './services/state.service';
     MatRippleModule,
     MatExpansionModule,
   ],
-  providers: [StateService],
+  providers: [StateService, ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
