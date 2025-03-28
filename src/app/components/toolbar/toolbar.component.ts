@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { StateService } from '../../services/state.service';
+import { StateService } from '../../services/state/state.service';
 
 @Component({
   selector: 'app-toolbar',

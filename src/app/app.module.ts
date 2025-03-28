@@ -14,8 +14,8 @@ import { AppComponent } from './app.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { AboutComponent } from './components/about/about.component';
 import { ProjectsComponent } from './components/projects/projects.component';
-import { StateService } from './services/state.service';
-import { ContactService } from './services/contact.service';
+import { StateService } from './services/state/state.service';
+import { ContactService } from './services/contact/contact.service';
 
 @NgModule({
   declarations: [
