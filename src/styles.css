@@ -8,7 +8,6 @@
 html, body {
   overflow: auto;
   height: 100%;
-  min-height: -webkit-fill-available;
   background-color: var(--mat-sys-surface);
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
@@ -42,6 +41,7 @@ main {
   align-content: center;
   width: 100%;
   min-height: 100vh;
+  min-height: -webkit-fill-available;
   display: flex;
   flex-direction: column;
 }
