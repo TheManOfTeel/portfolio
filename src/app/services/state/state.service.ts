@@ -22,4 +22,8 @@ export class StateService {
     this.isDarkMode = !this.isDarkMode;
     document.body.classList.toggle('dark-theme');
   }
+
+  scrollToTop() {
+    document.body.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }
