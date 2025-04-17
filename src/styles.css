@@ -9,6 +9,9 @@ html, body {
   overflow: auto;
   height: 100%;
   background-color: var(--mat-sys-surface);
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 body { margin: 0; }
 body.dark-theme {
