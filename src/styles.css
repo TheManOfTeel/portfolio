@@ -15,7 +15,12 @@ html, body {
   -moz-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
-body { margin: 0; }
+body {
+  margin: 0;
+  --text-color: #000000;
+  --mat-expansion-header-indicator-color: #000000;
+  --mat-icon-color: #000000;
+}
 body.dark-theme {
   --mat-toolbar-container-background-color: var(--mat-sys-surface);
   --text-color: #eee;
