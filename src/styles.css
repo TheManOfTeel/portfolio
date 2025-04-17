@@ -7,12 +7,12 @@
 
 html, body {
   overflow: auto;
+  overflow-y: scroll;
   height: 100%;
   background-color: var(--mat-sys-surface);
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
-  -webkit-overflow-scrolling: touch;
 }
 body { margin: 0; }
 body.dark-theme {
