@@ -3,15 +3,15 @@
   <div class="footer">
     <mat-toolbar>
       <a href="https://www.linkedin.com/in/daniel-teel-a6465017b" target="_blank" style="margin-left: auto;">
-        <img src="assets/images/linkedin.svg" [ngClass]="stateService.isDarkMode ? 'dark-svg' : ''">
+        <img src="assets/images/linkedin.svg" [ngClass]="stateService.isDarkMode ? 'dark-img' : ''">
       </a>
       <div class="divider"></div>
       <a href="https://github.com/TheManOfTeel" target="_blank">
-        <img src="assets/images/github.svg" [ngClass]="stateService.isDarkMode ? 'dark-svg' : ''">
+        <img src="assets/images/github.svg" [ngClass]="stateService.isDarkMode ? 'dark-img' : ''">
       </a>
       <div class="divider"></div>
       <a (click)="contactService.mailTo()" href="#">
-        <img src="assets/images/email.svg" [ngClass]="stateService.isDarkMode ? 'dark-svg' : ''" style="pointer-events: none;">
+        <img src="assets/images/email.svg" [ngClass]="stateService.isDarkMode ? 'dark-img' : ''" style="pointer-events: none;">
       </a>
     </mat-toolbar>
   </div>
