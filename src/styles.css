@@ -45,6 +45,12 @@ main {
   flex-direction: column;
 }
 
+@supports (max-height: 100dvh) {
+  main {
+    max-height:100dvh;
+  }
+}
+
 .main-div {
   display: flex;
   flex: inherit;
