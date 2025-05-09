@@ -6,8 +6,8 @@
 }
 
 html, body {
+  overflow: auto;
   overflow-y: scroll;
-  margin: 0;
   height: 100%;
   scroll-behavior: smooth;
   background-color: var(--mat-sys-surface);
@@ -16,6 +16,7 @@ html, body {
   -ms-text-size-adjust: 100%;
 }
 body {
+  margin: 0;
   --text-color: #000000;
   --mat-expansion-header-indicator-color: #000000;
   --mat-icon-color: #000000;
@@ -46,9 +47,8 @@ h1, h2, h3, h4, h5, h6, p {
 main {
   align-content: center;
   width: 100%;
-  min-height: 100%;
+  min-height: 100vh;
   min-height: -webkit-fill-available;
-  min-height: -moz-available;
   display: flex;
   flex-direction: column;
 }
