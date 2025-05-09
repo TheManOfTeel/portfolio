@@ -6,6 +6,7 @@
 }
 
 html, body {
+  -webkit-overflow-scrolling: touch;
   overflow-y: scroll;
   margin: 0;
   height: 100%;
@@ -16,7 +17,6 @@ html, body {
   -ms-text-size-adjust: 100%;
 }
 body {
-  -webkit-overflow-scrolling: touch;
   --text-color: #000000;
   --mat-expansion-header-indicator-color: #000000;
   --mat-icon-color: #000000;
