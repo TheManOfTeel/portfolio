@@ -6,7 +6,6 @@
 }
 
 html, body {
-  -webkit-overflow-scrolling: touch;
   overflow-y: scroll;
   margin: 0;
   height: 100%;
