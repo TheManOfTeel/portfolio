@@ -16,6 +16,7 @@ html, body {
   -ms-text-size-adjust: 100%;
 }
 body {
+  -webkit-overflow-scrolling: touch;
   --text-color: #000000;
   --mat-expansion-header-indicator-color: #000000;
   --mat-icon-color: #000000;
