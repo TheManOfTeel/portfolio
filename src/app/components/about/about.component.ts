@@ -39,7 +39,7 @@ export class AboutComponent {
       'Backend',
       [
         '.NET Core',
-        'Node.js',
+        'Spring',
         'RESTful APIs'
       ]
     ),
@@ -90,7 +90,7 @@ export class AboutComponent {
           'March 2024 - Present',
           [
             'Developed scalable .NET Core APIs to power a safety compliance platform used by 10,000+ users across industries.',
-            'Refactored frontend settings logic in Angular, reducing data latency by 40%.',
+            'Refactored frontend settings logic and introduced bulk save/update patterns.',
             'Authored Postman API collection and integration guide, enabling faster onboarding for third-party partners.',
             'Worked on cross-platform enhancements (Web, Android, iOS) to unify feature parity.'
           ]
@@ -141,8 +141,6 @@ export class AboutComponent {
           'Quality Measurement Research (Programmer) Intern',
           'June 2019 - August 2019',
           [
-            'Designed and executed SQL queries to extract, transform, and load (ETL) accurate and actionable data for reporting and analysis.',
-            'Identified, tested, and resolved bugs in legacy applications to improve system stability and performance.',
             'Supported server migration efforts by transitioning research applications and data to a modernized hosting environment.',
             'Collaborated with developers to enhance a dynamic survey web application with new interactive features.',
             'Modernized legacy Visual Basic applications by rewriting and upgrading them to the .NET framework, improving maintainability and compatibility.'
