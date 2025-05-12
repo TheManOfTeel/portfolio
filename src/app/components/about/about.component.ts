@@ -47,7 +47,7 @@ export class AboutComponent {
       'Databases',
       [
         'Google Cloud Firestore',
-        'SQL Server',
+        'Microsoft SQL Server',
         'MySQL'
       ]
     ),
