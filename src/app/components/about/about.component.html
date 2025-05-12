@@ -33,6 +33,14 @@
           </div>
         </mat-expansion-panel>
         <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            Technical Skills
+          </mat-expansion-panel-header>
+          <div class="accordion-content" *ngFor="let skill of skills">
+            <p>{{ skill.type ?? 'Unknown' }}: {{ skill.skills?.join(', ') }}</p>
+          </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
             <mat-expansion-panel-header>
                 Experience
             </mat-expansion-panel-header>
@@ -57,14 +65,6 @@
             <p>Oakland University</p>
             <p>Attended: Fall 2015 - Spring 2020</p>
             <p>Degree: Bachelor of Science in Computer Science</p>
-          </div>
-        </mat-expansion-panel>
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            Technical Skills
-          </mat-expansion-panel-header>
-          <div class="accordion-content" *ngFor="let skill of skills">
-            <p>{{ skill.type ?? 'Unknown' }}: {{ skill.skills?.join(', ') }}</p>
           </div>
         </mat-expansion-panel>
       </mat-accordion>
