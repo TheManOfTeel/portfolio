@@ -75,6 +75,7 @@ export class AboutComponent {
         'Agile/Scrum',
         'CI/CD',
         'Bash',
+        'Integration Testing',
         'Unit Testing'
       ]
     ),
