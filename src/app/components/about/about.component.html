@@ -29,7 +29,7 @@
             Summary
           </mat-expansion-panel-header>
           <div class="accordion-content">
-            <p>Armed with a Bachelor's degree in Computer Science from Oakland University my venture into the tech industry has been marked by a robust portfolio of software solutions at StarTex Software, Relativity, and Kunz, Leigh & Associates. Specializing in full stack web development my tenure has been defined by successful collaboration with cross-functional teams to design, code, and debug applications that meet rigorous project requirements. I have an inclination toward backend development and look forward to pushing the boundaries of established patterns and frameworks to solve new and complex problems.</p>
+            <p>{{ summary }}</p>
           </div>
         </mat-expansion-panel>
         <mat-expansion-panel>
@@ -63,9 +63,8 @@
           <mat-expansion-panel-header>
             Technical Skills
           </mat-expansion-panel-header>
-          <div class="accordion-content">
-            <p>Programming languages: C#, Java, JavaScript, Python, SQL, TypeScript</p>
-            <p>Technologies: .NET, Angular, Aurelia, KnockoutJS, MSQL Server, Git, Bash, Microsoft Azure, AWS, Docker</p>
+          <div class="accordion-content" *ngFor="let skill of skills">
+            <p>{{ skill.type ?? 'Unknown' }}: {{ skill.skills?.join(', ') }}</p>
           </div>
         </mat-expansion-panel>
       </mat-accordion>

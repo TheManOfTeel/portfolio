@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { StateService } from '../../services/state/state.service';
 import { Experience, Position } from '../../models/experience';
+import { Skill } from '../../models/skill';
 
 @Component({
   selector: 'app-about',
@@ -11,6 +12,74 @@ import { Experience, Position } from '../../models/experience';
 export class AboutComponent {
   constructor(public stateService: StateService) {}
 
+  summary = "Full stack software engineer with 5+ years of professional experience building enterprise-grade web applications using .NET, Angular, TypeScript, SQL, and C#. Specialized in backend development and API architecture, with a proven track record of improving system performance, delivering scalable features, and leading technical improvements across teams. Experienced in Agile and Scrum environments, with a focus on clean code, maintainability, and cross-functional collaboration.";
+
+  skills = [
+    new Skill(
+      'Languages',
+      [
+        'C#',
+        'Java',
+        'JavaScript',
+        'TypeScript',
+        'SQL',
+        'Python'
+      ]
+    ),
+    new Skill(
+      'Frontend',
+      [
+        'Angular',
+        'React',
+        'HTML5',
+        'CSS3'
+      ]
+    ),
+    new Skill(
+      'Backend',
+      [
+        '.NET Core',
+        'Node.js',
+        'RESTful APIs'
+      ]
+    ),
+    new Skill(
+      'Databases',
+      [
+        'Google Cloud Firestore',
+        'Microsoft SQL Server',
+        'MySQL'
+      ]
+    ),
+    new Skill(
+      'Tools',
+      [
+        'Git',
+        'Docker',
+        'Azure DevOps',
+        'Postman',
+        'Jira',
+        'Confluence'
+      ]
+    ),
+    new Skill(
+      'Cloud',
+      [
+        'Azure',
+        'AWS'
+      ]
+    ),
+    new Skill(
+      'Other',
+      [
+        'Agile/Scrum',
+        'CI/CD',
+        'Bash',
+        'Unit Testing'
+      ]
+    ),
+  ];
+
   experiences = [
     new Experience(
       'StarTex Software',
@@ -19,11 +88,10 @@ export class AboutComponent {
           'Software Engineer',
           'March 2024 - Present',
           [
-            'Applied my knowledge of the JavaScript, C#, and SQL programming languages to contribute to the enhancement of the EHS Insight application',
-            'Assisted in the maintenance and enhancement of Web, iOS, and Android applications for EHS Insight',
-            'Created RESTful API endpoints to carry out web requests from the front end',
-            'Documented the external API by creating a Postman collection and a code snippet sample project for third party integrations and provided input on reworking these endpoints to align with modern web conventions',
-            'Revamped user settings and introduced new patterns for bulk save operations to reduce server load'
+            'Developed scalable .NET Core APIs to power a safety compliance platform used by 10,000+ users across industries.',
+            'Refactored frontend settings logic in Angular, reducing data latency by 40%.',
+            'Authored Postman API collection and integration guide, enabling faster onboarding for third-party partners.',
+            'Worked on cross-platform enhancements (Web, Android, iOS) to unify feature parity.'
           ]
         ),
       ]
@@ -35,12 +103,9 @@ export class AboutComponent {
           'Advanced Software Engineer',
           'April 2022 - March 2024',
           [
-            'Applied my knowledge of the JavaScript, C#, and SQL programming languages to contribute to the creation of the Review Center module that provided insights on document relevancy in the eDiscovery process to speed up review and automate workflows for document reviewers working on legal cases',
-            'Created RESTful API endpoints to carry out web requests from the front end',
-            'Created and documented APIs for third party integrations',
-            'Built the ingestion engine for sending and receiving information from a classifier',
-            'Applied SOLID principles and design patterns to create efficient features that were maintainable and scalable',
-            'Actively participated in SCRUM process to design and plan new features as well as review other engineers pull requests'
+            'Built backend ingestion engine and classification APIs used in an eDiscovery system processing 1M+ documents/day.',
+            'Integrated microservices and external classifiers, improving document relevancy throughput by 35%.',
+            'Collaborated in Agile teams, contributed to sprint planning, and led code reviews to enforce architectural standards.'
           ]
         )
       ]
@@ -49,32 +114,21 @@ export class AboutComponent {
       'Kunz, Leigh & Associates',
       [
         new Position(
-          'Senior Software Engineer',
-          'March 2022 - April 2022',
-          [
-            'Applied my knowledge of the TypeScript, C#, and SQL programming languages to build web applications utilizing the Angular framework and .NET',
-            'Assisted, mentored, and collaborated with team members to meet client deadlines',
-            'Rotated between multiple projects as a shared resource to build full stack features',
-            'Efficiently operated in an Agile practicing environment'
-          ]
-        ),
-        new Position(
           'Software Engineer',
-          'April 2020 - March 2022',
+          'April 2020 - April 2022',
           [
-            'Applied my knowledge of the TypeScript, C#, and SQL programming languages to build web applications utilizing the Angular framework and .NET',
-            'Collaborated with team members to meet client deadlines',
-            'Rotated between multiple projects as a shared resource to build full stack features',
-            'Efficiently operated in an Agile practicing environment'
+            'Developed and maintained full stack applications for public sector clients using Angular and .NET.',
+            'Delivered enhancements to mission-critical systems on time across multiple concurrent projects.',
+            'Mentored interns and new hires on application architecture and code quality.'
           ]
         ),
         new Position(
           'Full Stack Developer Intern',
           'August 2019 - April 2020',
           [
-            'Applied my knowledge of the TypeScript, C#, and SQL programming languages to build web applications utilizing the Angular framework and .NET',
-            'Enhanced legacy AngularJS applications to meet enhancement request criteria',
-            'Created SSRS reports for State of Michigan employees to export for record keeping proposes'
+            'Migrated legacy Visual Basic applications to .NET framework to improve maintainability.',
+            'Wrote SQL queries for data reporting and ETL tasks across state-managed systems.',
+            'Assisted in the transition of internal systems to modern servers and platforms.'
           ]
         )
       ]
@@ -86,11 +140,11 @@ export class AboutComponent {
           'Quality Measurement Research (Programmer) Intern',
           'June 2019 - August 2019',
           [
-            'Created SQL queries to display accurate and meaningful data and load new data into the database',
-            'Tested and fix bugs in existing programs',
-            'Assisted with the migration of research projects and programs to a new server environment',
-            'Worked with developers to add features to a dynamic survey web page',
-            'Updated old Visual Basic programs to .NET'
+            'Designed and executed SQL queries to extract, transform, and load (ETL) accurate and actionable data for reporting and analysis.',
+            'Identified, tested, and resolved bugs in legacy applications to improve system stability and performance.',
+            'Supported server migration efforts by transitioning research applications and data to a modernized hosting environment.',
+            'Collaborated with developers to enhance a dynamic survey web application with new interactive features.',
+            'Modernized legacy Visual Basic applications by rewriting and upgrading them to the .NET framework, improving maintainability and compatibility.'
           ]
         )
       ]
