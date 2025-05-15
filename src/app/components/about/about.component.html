@@ -47,7 +47,7 @@
             <div *ngFor="let experience of experiences; last as isLast" class="accordion-content">
               <p><strong>{{ experience.companyName }}</strong></p>
               <div *ngFor="let position of experience.positions">
-                <p>{{ position.title }}, {{ position.date }}</p>
+                <p>{{ position.title }} &mdash; {{ position.date }}</p>
                 <ul>
                   <li *ngFor="let task of position.tasks">
                     {{ task }}
@@ -62,9 +62,8 @@
             Education
           </mat-expansion-panel-header>
           <div class="accordion-content">
-            <p>Oakland University</p>
-            <p>Attended: Fall 2015 - Spring 2020</p>
-            <p>Degree: Bachelor of Science in Computer Science</p>
+            <p>Bachelor of Science in Computer Science</p>
+            <i>Oakland University - Rochester, MI</i>
           </div>
         </mat-expansion-panel>
       </mat-accordion>

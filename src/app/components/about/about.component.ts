@@ -12,7 +12,7 @@ import { Skill } from '../../models/skill';
 export class AboutComponent {
   constructor(public stateService: StateService) {}
 
-  summary = "Full stack software engineer with 5+ years of professional experience building enterprise-grade web applications using .NET, Angular, TypeScript, SQL, and C#. Specialized in backend development and API architecture, with a proven track record of improving system performance, delivering scalable features, and leading technical improvements across teams. Experienced in Agile and Scrum environments, with a focus on clean code, maintainability, and cross-functional collaboration.";
+  summary = "Full Stack Software Engineer with over 5 years of experience delivering performant, scalable web applications and APIs across .NET, Angular, and cloud platforms. Proven ability to own features end-to-end, collaborate across disciplines, and optimize systems for reliability and throughput. Strengths include backend architecture, RESTful service design, cloud deployments (Azure, AWS), and Agile delivery.";
 
   skills = [
     new Skill(
@@ -46,9 +46,9 @@ export class AboutComponent {
     new Skill(
       'Databases',
       [
-        'Google Cloud Firestore',
-        'Microsoft SQL Server',
-        'MySQL'
+        'SQL Server',
+        'MySQL',
+        'Firestore'
       ]
     ),
     new Skill(
@@ -57,7 +57,9 @@ export class AboutComponent {
         'Git',
         'Docker',
         'Azure DevOps',
+        'Jenkins',
         'Postman',
+        'SSRS',
         'Jira',
         'Confluence'
       ]
@@ -66,19 +68,29 @@ export class AboutComponent {
       'Cloud',
       [
         'Azure',
-        'AWS'
+        'AWS',
+        'Google Cloud Platform'
       ]
     ),
     new Skill(
-      'Other',
+      'Architectural Patterns',
+      [
+        'Microservices',
+        'MVC',
+        'Client-Server Architecture',
+        'Event-Driven Architecture',
+        'SOLID Principles'
+      ]
+    ),
+    new Skill(
+      'Practices',
       [
         'Agile/Scrum',
         'CI/CD',
-        'Bash',
-        'Integration Testing',
-        'Unit Testing'
+        'Integration and Unit Testing',
+        'Bash Scripting'
       ]
-    ),
+    )
   ];
 
   experiences = [
@@ -89,10 +101,10 @@ export class AboutComponent {
           'Software Engineer',
           'March 2024 - Present',
           [
-            'Developed scalable .NET Core APIs to power a safety compliance platform used by 10,000+ users across industries.',
-            'Refactored frontend settings logic and introduced bulk save/update patterns.',
-            'Authored Postman API collection and integration guide, enabling faster onboarding for third-party partners.',
-            'Worked on cross-platform enhancements (Web, Android, iOS) to unify feature parity.'
+            'Developed scalable .NET Core APIs to power a safety compliance platform used by 10K+ users across industries.',
+            'Refactored frontend settings logic and introduced bulk save/update patterns and reusable modal and form components.',
+            'Created comprehensive Postman API collection and onboarding documentation, reducing integration ramp-up time by 40%.',
+            'Contributed to feature parity across web and mobile platforms (Android/iOS), ensuring consistency and reliability.'
           ]
         ),
       ]
@@ -104,9 +116,9 @@ export class AboutComponent {
           'Advanced Software Engineer',
           'April 2022 - March 2024',
           [
-            'Built backend ingestion engine and classification APIs used in an eDiscovery system processing 1M+ documents/day.',
-            'Integrated microservices and external classifiers, improving document relevancy throughput by 35%.',
-            'Collaborated in Agile teams, contributed to sprint planning, and led code reviews to enforce architectural standards.'
+            'Engineered ingestion pipelines and classification APIs for an eDiscovery platform handling over 1M documents/day.',
+            'Enhanced throughput by 35% via microservice integration and classifier optimization.',
+            'Led sprint planning, code reviews, and architecture discussions within Agile teams to maintain engineering quality.'
           ]
         )
       ]
@@ -118,18 +130,18 @@ export class AboutComponent {
           'Software Engineer',
           'April 2020 - April 2022',
           [
-            'Developed and maintained full stack applications for public sector clients using Angular and .NET.',
-            'Delivered enhancements to mission-critical systems on time across multiple concurrent projects.',
-            'Mentored interns and new hires on application architecture and code quality.'
+            'Delivered full-stack solutions for public sector clients using Angular and .NET Core.',
+            'Managed concurrent projects with high reliability, contributing to mission-critical government services.',
+            'Acted as mentor to junior engineers and interns, elevating team-wide technical practices.'
           ]
         ),
         new Position(
           'Full Stack Developer Intern',
           'August 2019 - April 2020',
           [
-            'Migrated legacy Visual Basic applications to .NET framework to improve maintainability.',
-            'Wrote SQL queries for data reporting and ETL tasks across state-managed systems.',
-            'Assisted in the transition of internal systems to modern servers and platforms.'
+            'Modernized legacy Visual Basic systems to .NET, enhancing code maintainability.',
+            'Authored SQL scripts for data migration and reporting pipelines.',
+            'Supported infrastructure upgrades and internal platform transitions.'
           ]
         )
       ]
@@ -141,9 +153,9 @@ export class AboutComponent {
           'Quality Measurement Research (Programmer) Intern',
           'June 2019 - August 2019',
           [
-            'Supported server migration efforts by transitioning research applications and data to a modernized hosting environment.',
-            'Collaborated with developers to enhance a dynamic survey web application with new interactive features.',
-            'Modernized legacy Visual Basic applications by rewriting and upgrading them to the .NET framework, improving maintainability and compatibility.'
+            'Migrated academic research applications to modern hosting environments.',
+            'Collaborated on a dynamic survey application, integrating new frontend features.',
+            'Upgraded legacy tools to .NET framework, improving maintainability and compatibility.'
           ]
         )
       ]
