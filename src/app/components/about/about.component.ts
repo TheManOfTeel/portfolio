@@ -12,9 +12,9 @@ import { Skill } from '../../models/skill';
 export class AboutComponent {
   constructor(public stateService: StateService) {}
 
-  summary = "Full Stack Software Engineer with over 5 years of experience delivering performant, scalable web applications and APIs across .NET, Angular, and cloud platforms. Proven ability to own features end-to-end, collaborate across disciplines, and optimize systems for reliability and throughput. Strengths include backend architecture, RESTful service design, cloud deployments (Azure, AWS), and Agile delivery.";
+  public summary = "Full Stack Software Engineer with over 5 years of experience delivering performant, scalable web applications and APIs across .NET, Angular, and cloud platforms. Proven ability to own features end-to-end, collaborate across disciplines, and optimize systems for reliability and throughput. Strengths include backend architecture, RESTful service design, cloud deployments (Azure, AWS), and Agile delivery.";
 
-  skills = [
+  public skills = [
     new Skill(
       'Languages',
       [
@@ -39,8 +39,9 @@ export class AboutComponent {
       'Backend',
       [
         '.NET Core',
-        'Spring',
-        'RESTful APIs'
+        'RESTful APIs',
+        'Entity Framework Core',
+        'Spring Boot'
       ]
     ),
     new Skill(
@@ -49,6 +50,14 @@ export class AboutComponent {
         'SQL Server',
         'MySQL',
         'Firestore'
+      ]
+    ),
+    new Skill(
+      'Cloud',
+      [
+        'Azure(App Service, Functions, DevOps)',
+        'AWS(EC2, S3)',
+        'GCP(Compute Engine, Cloud Storage)'
       ]
     ),
     new Skill(
@@ -61,15 +70,10 @@ export class AboutComponent {
         'Postman',
         'SSRS',
         'Jira',
-        'Confluence'
-      ]
-    ),
-    new Skill(
-      'Cloud',
-      [
-        'Azure',
-        'AWS',
-        'Google Cloud Platform'
+        'Confluence',
+        'CI/CD',
+        'Unit Testing(NUnit, Jest, Cypress)',
+        'Integration Testing'
       ]
     ),
     new Skill(
@@ -81,19 +85,10 @@ export class AboutComponent {
         'Event-Driven Architecture',
         'SOLID Principles'
       ]
-    ),
-    new Skill(
-      'Practices',
-      [
-        'Agile/Scrum',
-        'CI/CD',
-        'Integration and Unit Testing',
-        'Bash Scripting'
-      ]
     )
   ];
 
-  experiences = [
+  public experiences = [
     new Experience(
       'StarTex Software',
       [
@@ -101,9 +96,9 @@ export class AboutComponent {
           'Software Engineer',
           'March 2024 - Present',
           [
-            'Developed scalable .NET Core APIs to power a safety compliance platform used by 10K+ users across industries.',
-            'Refactored frontend settings logic and introduced bulk save/update patterns and reusable modal and form components.',
-            'Created comprehensive Postman API collection and onboarding documentation, reducing integration ramp-up time by 40%.',
+            'Developed scalable .NET Core APIs to power a safety compliance platform used by 500K+ users across industries.',
+            'Introduced bulk save/update patterns and reusable modal and form components reducing data processing time by 25% and improving UI consistency across the application.',
+            'Created comprehensive Postman API collection and onboarding documentation, reducing integration ramp-up time by 40% and facilitating seamless knowledge transfer to new team members and external partners.',
             'Contributed to feature parity across web and mobile platforms (Android/iOS), ensuring consistency and reliability.'
           ]
         ),
@@ -116,9 +111,9 @@ export class AboutComponent {
           'Advanced Software Engineer',
           'April 2022 - March 2024',
           [
-            'Engineered ingestion pipelines and classification APIs for an eDiscovery platform handling over 1M documents/day.',
+            'Engineered scalable ingestion pipelines and classification APIs using .NET Core and microservices for an eDiscovery platform, processing over 1M documents/day with 95% accuracy in document classification.',
             'Enhanced throughput by 35% via microservice integration and classifier optimization.',
-            'Led sprint planning, code reviews, and architecture discussions within Agile teams to maintain engineering quality.'
+            'Led sprint planning, code reviews, and architecture discussions within Agile teams to maintain engineering quality, fostering a collaborative environment and providing technical guidance.'
           ]
         )
       ]
