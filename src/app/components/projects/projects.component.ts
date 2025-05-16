@@ -14,7 +14,11 @@ export class ProjectsComponent {
   public projects: Project[] = [
     new Project(
       'EHS Insight',
-      'EHS Insight is an application for improving environmental, health, and safety performance by managing risk and increasing efficiency. The application allows agencies to create their own workflows and policies to inspect and track their compliance with environmental law. The system has a backend programmed in C# using the .NET framework, a front end programmed in JavaScript using the KnockoutJS framework, and a SQL database. There are Android and iOS applications created using Apache Cordova.',
+      `EHS Insight is an EHS management application that streamlines compliance workflows and enhances safety performance.
+      The system utilizes a C#/.NET Framework backend with ASP.NET MVC for API services and Entity Framework Core for data
+      access, a JavaScript/KnockoutJS frontend employing the MVVM pattern, a SQL Server database for data persistence, and
+      Apache Cordova-based mobile applications for Android and iOS. The application supports the creation of custom workflows
+      for environmental law compliance, including features for incident tracking, audits, and reporting.`,
       'Enterprise application developed while at StarTex Software.',
       'assets/images/ehs-insight.png',
       { 'width':'70%', 'height':'70%' },
@@ -22,7 +26,11 @@ export class ProjectsComponent {
     ),
     new Project(
       'Relativity Review Center',
-      'Relativity Review Center is an enterprise application developed for the larger Relativity eDiscovery platform. Review Center uses a classifier to create queues of documents that have relevance to reviewers in the Relativity application and presents them in an informational and helpful way with many useful metrics and insights. The system has a backend programmed in C# using the .NET framework, a front end programmed in TypeScript using the Aurelia framework, and a SQL database.',
+      `Relativity Review Center is an enterprise-grade application integrated into the Relativity eDiscovery platform,
+      designed to optimize document review workflows. It employs a classification engine to dynamically generate
+      prioritized queues of documents for reviewers, presented with comprehensive metrics and insights to facilitate i
+      nformed decisions. The system features a robust backend built with C# on the .NET Framework, a responsive frontend
+      developed in JavaScript using the Aurelia framework, and a SQL Server database for persistent data management.`,
       'Enterprise application developed while at Relativity.',
       'assets/images/review-center.png',
       { 'width':'80%', 'height':'80%' },
@@ -30,7 +38,14 @@ export class ProjectsComponent {
     ),
     new Project(
       'MDARD LPS',
-      'The Michigan Department of Agriculture and Rural Development Licensing Portal System is an enterprise application developed for the State of Michigan that allows users to create Organizations and create Applications for licenses. The portal allows internal users and external users to utilize this functionality based on user group permissions. There are many different license types that are possible for users to choose from, and fees are also created and enforced in this system. The application also features an API for other applications to utilize to access the data generated and stored in the system with valid credentials and API keys. The system has a backend programmed in C# using the .NET framework, a front end programmed in TypeScript using the Angular framework, and a SQL database.',
+      `The Michigan Department of Agriculture and Rural Development Licensing Portal System is a critical enterprise-level
+      application developed for the State of Michigan to streamline the licensing process. This platform enables both internal
+      and external users to efficiently manage Organizations and submit Applications for a diverse range of licenses, with
+      role-based permissions ensuring appropriate access. The system incorporates robust fee management and enforcement
+      mechanisms. Architecturally, the application features a C# backend built on the .NET Framework, a responsive and modern
+      frontend developed in TypeScript using the Angular framework, and a SQL Server database for persistent data management.
+      Furthermore, the system exposes a well-documented API secured with authentication and API keys, allowing authorized
+      external applications to access and integrate with the generated licensing data.`,
       'Enterprise application developed while at Kunz, Leigh & Associates.',
       'assets/images/mdard.png',
       { 'width':'20%', 'height':'20%' },
@@ -38,7 +53,10 @@ export class ProjectsComponent {
     ),
     new Project(
       'Michigan State Police CAP',
-      'The Michigan State Police CVED Authority Portal is an application developed for the State of Michigan. The portal is a customized implementation of MDARD LPS to specifically handle commercial vehicle licenses. The system has a backend programmed in C# using the .NET framework, a front end programmed in TypeScript using the Angular framework, and a SQL database.',
+      `The Michigan State Police CVED Authority Portal is an application developed for the State of Michigan. The portal is
+      a customized implementation of MDARD LPS to specifically handle commercial vehicle licenses. The system has a backend
+      programmed in C# using the .NET framework, a front end programmed in TypeScript using the Angular framework, and a SQL
+      database.`,
       'Enterprise application developed while at Kunz, Leigh & Associates.',
       'assets/images/msp.png',
       { 'width':'25%', 'height':'25%' },
@@ -46,7 +64,16 @@ export class ProjectsComponent {
     ),
     new Project(
       'MDARD INTELS',
-      'The Michigan Department of Agriculture and Rural Development Inspection, Notification, Tracking, Enforcement, and Licensing System is an enterprise application developed for the State of Michigan that enables inspectors to create cases, inspections, and enforcements to make sure that all agriculture investigations are created and logged in the same manner. The system allows for a plethora of different case types with different conditions and sub tasks for each. The system can sync and go offline for inspectors to complete and create cases and inspections without internet access. The system also allows for the generation of reports that are populated with data to keep the State’s records complete and allow physical documents to be delivered to desired recipients. The system has a backend programmed in C# using the .NET framework, a front end programmed in TypeScript using the Angular framework, and a SQL database.',
+      `The Michigan Department of Agriculture and Rural Development (MDARD) Inspection, Notification, Tracking, Enforcement,
+      and Licensing System (INTELS) is a critical enterprise application developed for the State of Michigan to standardize and
+      streamline agricultural investigations and compliance. This platform enables inspectors to efficiently create and manage
+      cases, inspections, and enforcements, ensuring consistent data logging and process adherence across diverse case types
+      with varying conditions and sub-tasks. A key feature includes robust offline data synchronization capabilities, allowing
+      inspectors to create and complete cases and inspections without continuous internet connectivity. The system also
+      supports comprehensive report generation for maintaining accurate state records and facilitating the delivery of
+      physical documents. Architecturally, the application utilizes a C# backend built on the .NET Framework, a responsive
+      frontend developed in TypeScript using the Angular framework, and a SQL Server database for persistent and reliable
+      data storage.`,
       'Enterprise application developed while at Kunz, Leigh & Associates.',
       'assets/images/mdard.png',
       { 'width':'20%', 'height':'20%' },
@@ -54,7 +81,9 @@ export class ProjectsComponent {
     ),
     new Project(
       'foobar with Google',
-      "Completed all 5 levels of Google's foobar challenge. The challenge tested my knowledge to implement various algorithms in either Java or Python to solve them in a timeframe. The first few challenges were completed using Java but all subsequent challenges were completed using Python because its ease of use manipulating data.",
+      `Navigated and solved all 5 levels of Google's foobar challenge, showcasing strong algorithmic thinking and the ability
+      to adapt programming language based on problem requirements. Initially employed Java before leveraging Python's strengths
+      for data manipulation in the later, more intricate stages of the challenge.`,
       undefined,
       undefined,
       undefined,
@@ -62,7 +91,13 @@ export class ProjectsComponent {
     ),
     new Project(
       'Golf Player Time Management',
-      'Golf Player Time Management featured a web application and an Android Application. The web application was created for golf course administrators to manage data on a dynamic list of holes and geofence their course using Google Maps. The web application also displayed tables with player’s requests and locations. Google’s Firebase was utilized for data storage and user authentication. An Android App was also developed for players to have access to the hole data at a glance (such as par numbers, wait times, and aerial views), track their game’s performance, and play in groups with other players. The web application was created using the Angular framework and TypeScript language. The Android application was created using Java.',
+      `The Golf Player Time Management system comprises a web application for golf course administrators and an Android
+      application for players. The administrator web application, developed using the Angular framework and TypeScript,
+      enables dynamic management of hole data and course geofencing via integration with the Google Maps API. It also
+      provides administrative oversight of player requests and real-time location data presented in tabular formats. Google
+      Firebase is utilized for data persistence and user authentication across both platforms. The player-facing Android
+      application, developed in Java, offers players at-a-glance access to hole-specific information (e.g., par, wait times,
+      aerial views), game performance tracking capabilities, and group play functionality. `,
       undefined,
       undefined,
       undefined,
@@ -70,7 +105,11 @@ export class ProjectsComponent {
     ),
     new Project(
       'Server Check',
-      'Checks the directories of a system and outputs the logs into a .txt file. The files can then be compared and the missing file names are displayed and outputted into another .txt file for easier viewing and logging purposes. Outputted files can be opened directly through the program for ease of use. There is a terminal version and a version with a GUI. This application was used to verify that all files were transferred after a server migration. Programmed using Python 3.',
+      `Developed a file system analysis tool in Python to efficiently verify file integrity following server migrations.
+      The application recursively scans specified directories, logs file paths to a text file, compares logs to identify
+      discrepancies (missing files), and outputs a report of missing files to a separate text file. The tool offers both a
+      command-line interface (CLI) and a graphical user interface (GUI) for user accessibility. Key functionalities include
+      direct file opening from within the application for streamlined verification workflows.`,
       undefined,
       undefined,
       undefined,
