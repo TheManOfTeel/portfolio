@@ -12,7 +12,10 @@ import { Skill } from '../../models/skill';
 export class AboutComponent {
   constructor(public stateService: StateService) {}
 
-  public summary = "Full Stack Software Engineer with over 5 years of experience delivering performant, scalable web applications and APIs across .NET, Angular, and cloud platforms. Proven ability to own features end-to-end, collaborate across disciplines, and optimize systems for reliability and throughput. Strengths include backend architecture, RESTful service design, cloud deployments (Azure, AWS), and Agile delivery.";
+  public summary = `Full Stack Software Engineer with over 5 years of experience delivering performant, scalable web
+  applications and APIs across .NET, Angular, and cloud platforms. Proven ability to own features end-to-end, collaborate
+  across disciplines, and optimize systems for reliability and throughput. Strengths include backend architecture, RESTful
+  service design, cloud deployments (Azure, AWS), and Agile delivery.`;
 
   public skills = [
     new Skill(
@@ -55,9 +58,9 @@ export class AboutComponent {
     new Skill(
       'Cloud',
       [
-        'Azure(App Service, Functions, DevOps)',
-        'AWS(EC2, S3)',
-        'GCP(Compute Engine, Cloud Storage)'
+        'Azure (App Service, Functions, DevOps)',
+        'AWS (EC2, S3)',
+        'GCP (Compute Engine, Cloud Storage)'
       ]
     ),
     new Skill(
@@ -72,7 +75,7 @@ export class AboutComponent {
         'Jira',
         'Confluence',
         'CI/CD',
-        'Unit Testing(NUnit, Jest, Cypress)',
+        'Unit Testing (NUnit, Jest, Cypress)',
         'Integration Testing'
       ]
     ),

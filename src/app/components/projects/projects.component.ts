@@ -38,14 +38,14 @@ export class ProjectsComponent {
     ),
     new Project(
       'MDARD LPS',
-      `The Michigan Department of Agriculture and Rural Development Licensing Portal System is a critical enterprise-level
-      application developed for the State of Michigan to streamline the licensing process. This platform enables both internal
-      and external users to efficiently manage Organizations and submit Applications for a diverse range of licenses, with
-      role-based permissions ensuring appropriate access. The system incorporates robust fee management and enforcement
-      mechanisms. Architecturally, the application features a C# backend built on the .NET Framework, a responsive and modern
-      frontend developed in TypeScript using the Angular framework, and a SQL Server database for persistent data management.
-      Furthermore, the system exposes a well-documented API secured with authentication and API keys, allowing authorized
-      external applications to access and integrate with the generated licensing data.`,
+      `The Michigan Department of Agriculture and Rural Development (MDARD) Licensing Portal System (LPS) is a critical
+      enterprise-level application developed for the State of Michigan to streamline the licensing process. This platform
+      enables both internal and external users to efficiently manage Organizations and submit Applications for a diverse range
+      of licenses, with role-based permissions ensuring appropriate access. The system incorporates robust fee management and
+      enforcement mechanisms. Architecturally, the application features a C# backend built on the .NET Framework, a responsive
+      and modern frontend developed in TypeScript using the Angular framework, and a SQL Server database for persistent data
+      management. Furthermore, the system exposes a well-documented API secured with authentication and API keys, allowing
+      authorized external applications to access and integrate with the generated licensing data.`,
       'Enterprise application developed while at Kunz, Leigh & Associates.',
       'assets/images/mdard.png',
       { 'width':'20%', 'height':'20%' },
@@ -53,10 +53,10 @@ export class ProjectsComponent {
     ),
     new Project(
       'Michigan State Police CAP',
-      `The Michigan State Police CVED Authority Portal is an application developed for the State of Michigan. The portal is
-      a customized implementation of MDARD LPS to specifically handle commercial vehicle licenses. The system has a backend
-      programmed in C# using the .NET framework, a front end programmed in TypeScript using the Angular framework, and a SQL
-      database.`,
+      `The Michigan State Police (MSP) CVED (Commercial Vehicle Enforcement Division) Authority Portal (CAP) is an application
+      developed for the State of Michigan. The portal is a customized implementation of MDARD LPS to specifically handle
+      commercial vehicle licenses. The system has a backend programmed in C# using the .NET framework, a front end programmed
+      in TypeScript using the Angular framework, and a SQL database.`,
       'Enterprise application developed while at Kunz, Leigh & Associates.',
       'assets/images/msp.png',
       { 'width':'25%', 'height':'25%' },
