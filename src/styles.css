@@ -64,7 +64,7 @@ main {
 .container {
   text-align: center;
   height: 80%;
-  width: 80%;
+  max-width: 90%;
 }
 
 .image-container {
@@ -89,7 +89,9 @@ main {
 }
 
 .footer {
+  align-self: center;
   margin-top: auto;
+  width: 100%;
 }
 
 .card {
