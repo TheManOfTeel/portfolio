@@ -25,6 +25,16 @@ export class ProjectsComponent {
       undefined
     ),
     new Project(
+      'Review Generator',
+      `Designed and implemented a .NET and Angular application that transforms raw data into creative output. This system
+      ingested a large dataset of Amazon video game reviews, employing a Markov chain algorithm to learn linguistic patterns
+      and subsequently generate synthetic, yet realistic, review text.`,
+      undefined,
+      undefined,
+      undefined,
+      'ReviewGenerator'
+    ),
+    new Project(
       'Relativity Review Center',
       `Relativity Review Center is an enterprise-grade application integrated into the Relativity eDiscovery platform,
       designed to optimize document review workflows. It employs a classification engine to dynamically generate
@@ -35,6 +45,15 @@ export class ProjectsComponent {
       'assets/images/review-center.png',
       { 'width':'80%', 'height':'80%' },
       undefined
+    ),
+    new Project(
+      "Conway's Game of Life",
+      `Developed a simulation of Conway's Game of Life using C#. This included the implementation of the cellular automaton
+      rules, state management for the grid, and iteration logic to advance generations.`,
+      undefined,
+      undefined,
+      undefined,
+      'ConwaysGameOfLife'
     ),
     new Project(
       'MDARD LPS',
@@ -102,6 +121,16 @@ export class ProjectsComponent {
       undefined,
       undefined,
       'Golf-Player-Time-Management'
+    ),
+    new Project(
+      'Recipall',
+      `Engineered a responsive recipe database application integrating a Java Spring Framework (e.g., Spring Boot) backend
+      responsible for robust CRUD (Create, Read, Update, Delete) operations and data persistence, a dynamic Angular frontend
+      for seamless user experience and data presentation, and a MySQL database for persistent and reliable data storage.`,
+      undefined,
+      undefined,
+      undefined,
+      'Recipall'
     ),
     new Project(
       'Server Check',
