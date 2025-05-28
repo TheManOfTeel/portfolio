@@ -8,12 +8,13 @@
     <mat-card class="card">
       <div class="mat-expansion-panel-header">
         <h3>Overview</h3>
-        <div *ngIf="!stateService.isMobilePortrait; else mobile" style="margin-left: auto;">
-          <button mat-raised-button color="primary" type="button" (click)="accordion.openAll()" >Expand All </button>
-          <div class="divider"></div>
-          <button mat-raised-button color="primary" type="button"  (click)="accordion.closeAll()" >Collapse All </button>
-        </div>
-        <ng-template #mobile>
+        @if (!stateService.isMobilePortrait) {
+          <div style="margin-left: auto;">
+            <button mat-raised-button color="primary" type="button" (click)="accordion.openAll()" >Expand All </button>
+            <div class="divider"></div>
+            <button mat-raised-button color="primary" type="button"  (click)="accordion.closeAll()" >Collapse All </button>
+          </div>
+        } @else {
           <button mat-icon-button color="primary" type="button" style="margin-left: auto;" (click)="accordion.openAll()">
             <mat-icon>expand_more</mat-icon>
           </button>
@@ -21,7 +22,7 @@
           <button mat-icon-button color="primary" type="button" (click)="accordion.closeAll()">
             <mat-icon>expand_less</mat-icon>
           </button>
-        </ng-template>
+        }
       </div>
       <mat-accordion #accordion="matAccordion" [multi]="true">
         <mat-expansion-panel [expanded]="true">
@@ -36,37 +37,47 @@
           <mat-expansion-panel-header>
             Technical Skills
           </mat-expansion-panel-header>
-          <div class="accordion-content" *ngFor="let skill of skills">
-            <p>{{ skill.type ?? 'Unknown' }}: {{ skill.skills?.join(', ') }}</p>
-          </div>
-        </mat-expansion-panel>
-        <mat-expansion-panel>
-            <mat-expansion-panel-header>
-                Experience
-            </mat-expansion-panel-header>
-            <div *ngFor="let experience of experiences; last as isLast" class="accordion-content">
-              <p><strong>{{ experience.companyName }}</strong></p>
-              <div *ngFor="let position of experience.positions">
-                <p>{{ position.title }} &mdash; {{ position.date }}</p>
-                <ul>
-                  <li *ngFor="let task of position.tasks">
-                    {{ task }}
-                  </li>
-                </ul>
-              </div>
-              <br *ngIf="!isLast">
+          @for (skill of skills; track skill) {
+            <div class="accordion-content">
+              <p>{{ skill.type ?? 'Unknown' }}: {{ skill.skills?.join(', ') }}</p>
             </div>
+          }
         </mat-expansion-panel>
         <mat-expansion-panel>
           <mat-expansion-panel-header>
-            Education
+            Experience
           </mat-expansion-panel-header>
-          <div class="accordion-content">
-            <p>Bachelor of Science in Computer Science</p>
-            <i>Oakland University - Rochester, MI</i>
-          </div>
-        </mat-expansion-panel>
-      </mat-accordion>
-    </mat-card>
+          @for (experience of experiences; track experience; let isLast = $last) {
+            <div class="accordion-content">
+              <p><strong>{{ experience.companyName }}</strong></p>
+              @for (position of experience.positions; track position) {
+                <div>
+                  <p>{{ position.title }} &mdash; {{ position.date }}</p>
+                  <ul>
+                    @for (task of position.tasks; track task) {
+                      <li>
+                        {{ task }}
+                      </li>
+                    }
+                  </ul>
+                </div>
+              }
+              @if (!isLast) {
+                <br>
+                }
+              </div>
+            }
+          </mat-expansion-panel>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              Education
+            </mat-expansion-panel-header>
+            <div class="accordion-content">
+              <p>Bachelor of Science in Computer Science</p>
+              <i>Oakland University - Rochester, MI</i>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-card>
+    </div>
   </div>
-</div>

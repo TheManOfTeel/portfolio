@@ -36,6 +36,7 @@ body.dark-theme {
   --mat-sys-secondary: #aaaaaa;
   --mdc-elevated-card-container-color: #191919;
   --mat-expansion-container-background-color: #323232;
+  --mat-card-elevated-container-color: #191919;
   --mat-expansion-header-indicator-color: #eee;
   --mat-icon-color: #eee;
 }

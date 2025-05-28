@@ -2,18 +2,19 @@
   <mat-toolbar>
     <img src="assets/images/web-dev.png" [ngClass]="stateService.isDarkMode ? 'dark-img' : ''" style="max-width: 40%; max-height: 40%;">
     <h1><strong>&nbsp;Daniel Teel</strong></h1>
-    <div *ngIf="!stateService.isMobilePortrait; else mobile" style="margin-left: auto;">
-      <button mat-stroked-button color="primary" type="button" (click)="stateService.toggleDarkTheme()">
-        <mat-icon>{{ stateService.isDarkMode ? 'wb_sunny' : 'nights_stay' }}</mat-icon>
-        {{stateService.isDarkMode ? 'Light' : 'Dark'}} Mode
-      </button>
-      <div class="divider"></div>
-      <button mat-stroked-button color="primary" type="button" (click)="downloadResume()">
-        <mat-icon>download</mat-icon>
-        Download Resume
-      </button>
-    </div>
-    <ng-template #mobile>
+    @if (!stateService.isMobilePortrait) {
+      <div style="margin-left: auto;">
+        <button mat-stroked-button color="primary" type="button" (click)="stateService.toggleDarkTheme()">
+          <mat-icon>{{ stateService.isDarkMode ? 'wb_sunny' : 'nights_stay' }}</mat-icon>
+          {{stateService.isDarkMode ? 'Light' : 'Dark'}} Mode
+        </button>
+        <div class="divider"></div>
+        <button mat-stroked-button color="primary" type="button" (click)="downloadResume()">
+          <mat-icon>download</mat-icon>
+          Download Resume
+        </button>
+      </div>
+    } @else {
       <button mat-icon-button color="primary" type="button" style="margin-left: auto;" (click)="stateService.toggleDarkTheme()">
         <mat-icon>{{ stateService.isDarkMode ? 'wb_sunny' : 'nights_stay' }}</mat-icon>
       </button>
@@ -21,24 +22,24 @@
       <button mat-icon-button color="primary" type="button" (click)="downloadResume()">
         <mat-icon>download</mat-icon>
       </button>
-    </ng-template>
+    }
   </mat-toolbar>
   <mat-tab-group>
-      <mat-tab>
-          <ng-template mat-tab-label>
-              <mat-icon>person</mat-icon>
-              <div class="divider"></div>
-              About
-          </ng-template>
-          <app-about></app-about>
-      </mat-tab>
-      <mat-tab>
-          <ng-template mat-tab-label>
-              <mat-icon>computer</mat-icon>
-              <div class="divider"></div>
-              Projects
-          </ng-template>
-          <app-projects></app-projects>
-      </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon>person</mat-icon>
+        <div class="divider"></div>
+        About
+      </ng-template>
+      <app-about></app-about>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon>computer</mat-icon>
+        <div class="divider"></div>
+        Projects
+      </ng-template>
+      <app-projects></app-projects>
+    </mat-tab>
   </mat-tab-group>
 </div>

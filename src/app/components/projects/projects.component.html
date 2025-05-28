@@ -8,12 +8,13 @@
     <mat-card class="card">
       <div class="mat-expansion-panel-header">
         <h3>Projects</h3>
-        <div *ngIf="!stateService.isMobilePortrait; else mobile" style="margin-left: auto;">
-          <button mat-raised-button color="primary" type="button" (click)="accordion.openAll()">Expand All </button>
-          <div class="divider"></div>
-          <button mat-raised-button color="primary" type="button" (click)="accordion.closeAll()">Collapse All </button>
-        </div>
-        <ng-template #mobile>
+        @if (!stateService.isMobilePortrait) {
+          <div style="margin-left: auto;">
+            <button mat-raised-button color="primary" type="button" (click)="accordion.openAll()">Expand All </button>
+            <div class="divider"></div>
+            <button mat-raised-button color="primary" type="button" (click)="accordion.closeAll()">Collapse All </button>
+          </div>
+        } @else {
           <button mat-icon-button color="primary" type="button" style="margin-left: auto;" (click)="accordion.openAll()">
             <mat-icon>expand_more</mat-icon>
           </button>
@@ -21,7 +22,7 @@
           <button mat-icon-button color="primary" type="button" (click)="accordion.closeAll()">
             <mat-icon>expand_less</mat-icon>
           </button>
-        </ng-template>
+        }
       </div>
       <mat-accordion #accordion="matAccordion" [multi]="true">
         <mat-expansion-panel *ngFor="let project of projects first as isFirst" [expanded]="isFirst">
@@ -31,15 +32,19 @@
           <div class="accordion-content">
             <p>{{ project.description }}</p>
             <p>{{ project.subtext }}</p>
-            <div *ngIf="project.image != undefined" class="image-container">
-              <img [src]="project.image" [ngStyle]="project.imageStyle" alt="Project Image" />
-            </div>
-            <div *ngIf="project.repository != undefined">
-              <button mat-button color="primary" type="button" style="margin-left: auto;" (click)="openRepository(project.repository)">
-                <mat-icon>open_in_new</mat-icon>
-                Check it out!
-              </button>
-            </div>
+            @if (project.image != undefined) {
+              <div class="image-container">
+                <img [src]="project.image" [ngStyle]="project.imageStyle" alt="Project Image" />
+              </div>
+            }
+            @if (project.repository != undefined) {
+              <div>
+                <button mat-button color="primary" type="button" style="margin-left: auto;" (click)="openRepository(project.repository)">
+                  <mat-icon>open_in_new</mat-icon>
+                  Check it out!
+                </button>
+              </div>
+            }
           </div>
         </mat-expansion-panel>
       </mat-accordion>
