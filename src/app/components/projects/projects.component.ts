@@ -13,7 +13,20 @@ export class ProjectsComponent {
 
   public projects: Project[] = [
     new Project(
+      'Portfolio (This Website)',
+      'May 2025 - Present',
+      `Engineered a single-page application (SPA) portfolio website with Angular, focusing on a component-driven architecture
+      for modularity and maintainability. Implemented dynamic content loading and a responsive UI to ensure optimal viewing
+      across devices. The project is version-controlled and deployed via GitHub Pages, demonstrating a full CI/CD pipeline for
+      static content.`,
+      undefined,
+      undefined,
+      undefined,
+      'portfolio'
+    ),
+    new Project(
       'EHS Insight',
+      'March 2024 - Present',
       `EHS Insight is an EHS management application that streamlines compliance workflows and enhances safety performance.
       The system utilizes a C#/.NET Framework backend with ASP.NET MVC for API services and Entity Framework Core for data
       access, a JavaScript/KnockoutJS frontend employing the MVVM pattern, a SQL Server database for data persistence, and
@@ -26,6 +39,7 @@ export class ProjectsComponent {
     ),
     new Project(
       'Review Generator',
+      'January 2024',
       `Designed and implemented a .NET and Angular application that transforms raw data into creative output. This system
       ingested a large dataset of Amazon video game reviews, employing a Markov chain algorithm to learn linguistic patterns
       and subsequently generate synthetic, yet realistic, review text.`,
@@ -36,6 +50,7 @@ export class ProjectsComponent {
     ),
     new Project(
       'Relativity Review Center',
+      'May 2022 - March 2024',
       `Relativity Review Center is an enterprise-grade application integrated into the Relativity eDiscovery platform,
       designed to optimize document review workflows. It employs a classification engine to dynamically generate
       prioritized queues of documents for reviewers, presented with comprehensive metrics and insights to facilitate i
@@ -48,6 +63,7 @@ export class ProjectsComponent {
     ),
     new Project(
       "Conway's Game of Life",
+      'March 2022 - April 2022',
       `Developed a simulation of Conway's Game of Life using C#. This included the implementation of the cellular automaton
       rules, state management for the grid, and iteration logic to advance generations.`,
       undefined,
@@ -57,6 +73,7 @@ export class ProjectsComponent {
     ),
     new Project(
       'MDARD LPS',
+      'December 2021 - April 2022',
       `The Michigan Department of Agriculture and Rural Development (MDARD) Licensing Portal System (LPS) is a critical
       enterprise-level application developed for the State of Michigan to streamline the licensing process. This platform
       enables both internal and external users to efficiently manage Organizations and submit Applications for a diverse range
@@ -72,6 +89,7 @@ export class ProjectsComponent {
     ),
     new Project(
       'Michigan State Police CAP',
+      'January 2022 - April 2022',
       `The Michigan State Police (MSP) CVED (Commercial Vehicle Enforcement Division) Authority Portal (CAP) is an application
       developed for the State of Michigan. The portal is a customized implementation of MDARD LPS to specifically handle
       commercial vehicle licenses. The system has a backend programmed in C# using the .NET framework, a front end programmed
@@ -83,6 +101,7 @@ export class ProjectsComponent {
     ),
     new Project(
       'MDARD INTELS',
+      'September 2019 - November 2021',
       `The Michigan Department of Agriculture and Rural Development (MDARD) Inspection, Notification, Tracking, Enforcement,
       and Licensing System (INTELS) is a critical enterprise application developed for the State of Michigan to standardize and
       streamline agricultural investigations and compliance. This platform enables inspectors to efficiently create and manage
@@ -100,6 +119,7 @@ export class ProjectsComponent {
     ),
     new Project(
       'foobar with Google',
+      'March 2021 - June 2021',
       `Navigated and solved all 5 levels of Google's foobar challenge, showcasing strong algorithmic thinking and the ability
       to adapt programming language based on problem requirements. Initially employed Java before leveraging Python's strengths
       for data manipulation in the later, more intricate stages of the challenge.`,
@@ -110,6 +130,7 @@ export class ProjectsComponent {
     ),
     new Project(
       'Golf Player Time Management',
+      'January 2020 - April 2020',
       `The Golf Player Time Management system comprises a web application for golf course administrators and an Android
       application for players. The administrator web application, developed using the Angular framework and TypeScript,
       enables dynamic management of hole data and course geofencing via integration with the Google Maps API. It also
@@ -124,6 +145,7 @@ export class ProjectsComponent {
     ),
     new Project(
       'Recipall',
+      'November 2019 - December 2019',
       `Engineered a responsive recipe database application integrating a Java Spring Framework (e.g., Spring Boot) backend
       responsible for robust CRUD (Create, Read, Update, Delete) operations and data persistence, a dynamic Angular frontend
       for seamless user experience and data presentation, and a MySQL database for persistent and reliable data storage.`,
@@ -134,6 +156,7 @@ export class ProjectsComponent {
     ),
     new Project(
       'Server Check',
+      'July 2019',
       `Developed a file system analysis tool in Python to efficiently verify file integrity following server migrations.
       The application recursively scans specified directories, logs file paths to a text file, compares logs to identify
       discrepancies (missing files), and outputs a report of missing files to a separate text file. The tool offers both a

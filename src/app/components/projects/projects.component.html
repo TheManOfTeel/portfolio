@@ -30,6 +30,7 @@
             {{ project.title }}
           </mat-expansion-panel-header>
           <div class="accordion-content">
+            <p>Active: {{ project.timeline }}</p>
             <p>{{ project.description }}</p>
             <p>{{ project.subtext }}</p>
             @if (project.image != undefined) {
