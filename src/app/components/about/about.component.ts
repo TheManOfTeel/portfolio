@@ -12,7 +12,7 @@ import { Skill } from '../../models/skill';
 export class AboutComponent {
   constructor(public stateService: StateService) {}
 
-  public summary = `Full Stack Software Engineer with over 5 years of experience delivering performant, scalable web
+  public summary = `Full Stack Software Engineer with over ${this.getYearsOfExperience()} years of experience delivering performant, scalable web
   applications and APIs across .NET, Angular, and cloud platforms. Proven ability to own features end-to-end, collaborate
   across disciplines, and optimize systems for reliability and throughput. Strengths include backend architecture, RESTful
   service design, cloud deployments (Azure, AWS), and Agile delivery.`;
@@ -159,4 +159,9 @@ export class AboutComponent {
       ]
     )
   ];
+
+  getYearsOfExperience(): number {
+    const startDate = new Date(2020, 4, 29); // Starting date of professional experience
+    return Math.floor((new Date().getFullYear() - startDate.getFullYear()));
+  }
 }
