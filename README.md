@@ -1,4 +1,4 @@
-# Portfolio
+# Portfolio [![Build and Deploy](https://github.com/TheManOfTeel/portfolio/actions/workflows/angular-ghpages-deploy.yml/badge.svg)](https://github.com/TheManOfTeel/portfolio/actions/workflows/angular-ghpages-deploy.yml) [![pages-build-deployment](https://github.com/TheManOfTeel/portfolio/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/TheManOfTeel/portfolio/actions/workflows/pages/pages-build-deployment)
 
 ## GitHub Pages hosted site
 
@@ -56,7 +56,7 @@ For end-to-end (e2e) testing, run:
 ng e2e
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Angular CLI does not come with an end-to-end testing framework by default. This project uses Cypress for e2e.
 
 ## Additional Resources
 
