@@ -5,29 +5,29 @@
     @if (!stateService.isMobilePortrait) {
       <div style="margin-left: auto;">
         <button mat-stroked-button color="primary" type="button" (click)="stateService.toggleDarkTheme()">
-          <mat-icon>{{ stateService.isDarkMode ? 'wb_sunny' : 'nights_stay' }}</mat-icon>
+          <mat-icon class="material-symbols-rounded">{{ stateService.isDarkMode ? 'wb_sunny' : 'nights_stay' }}</mat-icon>
           {{stateService.isDarkMode ? 'Light' : 'Dark'}} Mode
         </button>
         <div class="divider"></div>
         <button mat-stroked-button color="primary" type="button" (click)="downloadResume()">
-          <mat-icon>download</mat-icon>
+          <mat-icon class="material-symbols-rounded">download</mat-icon>
           Download Resume
         </button>
       </div>
     } @else {
       <button mat-icon-button color="primary" type="button" style="margin-left: auto;" (click)="stateService.toggleDarkTheme()">
-        <mat-icon>{{ stateService.isDarkMode ? 'wb_sunny' : 'nights_stay' }}</mat-icon>
+        <mat-icon class="material-symbols-rounded">{{ stateService.isDarkMode ? 'wb_sunny' : 'nights_stay' }}</mat-icon>
       </button>
       <div class="divider"></div>
       <button mat-icon-button color="primary" type="button" (click)="downloadResume()">
-        <mat-icon>download</mat-icon>
+        <mat-icon class="material-symbols-rounded">download</mat-icon>
       </button>
     }
   </mat-toolbar>
   <mat-tab-group>
     <mat-tab>
       <ng-template mat-tab-label>
-        <mat-icon>person</mat-icon>
+        <mat-icon class="material-symbols-rounded">info</mat-icon>
         <div class="divider"></div>
         About
       </ng-template>
@@ -35,7 +35,7 @@
     </mat-tab>
     <mat-tab>
       <ng-template mat-tab-label>
-        <mat-icon>computer</mat-icon>
+        <mat-icon class="material-symbols-rounded">work</mat-icon>
         <div class="divider"></div>
         Projects
       </ng-template>
