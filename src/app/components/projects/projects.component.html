@@ -25,9 +25,9 @@
         }
       </div>
       <mat-accordion #accordion="matAccordion" [multi]="true">
-        <mat-expansion-panel *ngFor="let project of projects first as isFirst" [expanded]="isFirst">
+        <mat-expansion-panel *ngFor="let project of projects first as isFirst" [expanded]="isFirst || isCurrentlyActive(project)">
           <mat-expansion-panel-header>
-            {{ project.title }}
+            <span><mat-icon>{{ isCurrentlyActive(project)  ? 'construction' : 'check_circle' }}</mat-icon>  {{ project.title }}</span>
           </mat-expansion-panel-header>
           <div class="accordion-content">
             <p>Active: {{ project.timeline }}</p>

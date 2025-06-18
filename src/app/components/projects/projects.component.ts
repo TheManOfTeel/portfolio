@@ -173,4 +173,8 @@ export class ProjectsComponent {
     const url = `https://github.com/TheManOfTeel/${repo}`;
     window.open(url, '_blank');
   }
+
+  isCurrentlyActive(project: Project) {
+    return project.timeline?.endsWith('Present');
+  }
 }
