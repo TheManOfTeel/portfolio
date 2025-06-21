@@ -13,6 +13,16 @@ export class ProjectsComponent {
 
   public projects: Project[] = [
     new Project(
+      'Rhyme',
+      'July 2025 - Present',
+      `Rhyme: A prior authorization application supporting 83 large providers and processing 4 million authorizations
+      per year. The technology stack includes .NET, Vue.js, and React.`,
+      `Enterprise application developed while at Rhyme.`,
+      undefined,
+      undefined,
+      undefined
+    ),
+    new Project(
       'Portfolio (This Website)',
       'May 2025 - Present',
       `Engineered a single-page application (SPA) portfolio website with Angular, focusing on a component-driven architecture
@@ -26,7 +36,7 @@ export class ProjectsComponent {
     ),
     new Project(
       'EHS Insight',
-      'March 2024 - Present',
+      'March 2024 - July 2025',
       `EHS Insight is an EHS management application that streamlines compliance workflows and enhances safety performance.
       The system utilizes a C#/.NET Framework backend with ASP.NET MVC for API services and Entity Framework Core for data
       access, a JavaScript/KnockoutJS frontend employing the MVVM pattern, a SQL Server database for data persistence, and
@@ -53,8 +63,8 @@ export class ProjectsComponent {
       'May 2022 - March 2024',
       `Relativity Review Center is an enterprise-grade application integrated into the Relativity eDiscovery platform,
       designed to optimize document review workflows. It employs a classification engine to dynamically generate
-      prioritized queues of documents for reviewers, presented with comprehensive metrics and insights to facilitate i
-      nformed decisions. The system features a robust backend built with C# on the .NET Framework, a responsive frontend
+      prioritized queues of documents for reviewers, presented with comprehensive metrics and insights to facilitate
+      informed decisions. The system features a robust backend built with C# on the .NET Framework, a responsive frontend
       developed in JavaScript using the Aurelia framework, and a SQL Server database for persistent data management.`,
       'Enterprise application developed while at Relativity.',
       'assets/images/review-center.png',

@@ -93,11 +93,24 @@ export class AboutComponent {
 
   public experiences = [
     new Experience(
+      'Rhyme',
+      [
+        new Position(
+          'Software Engineer',
+          'July 2025 - Present',
+          [
+            'Developed and maintained a high-performance, scalable web application using React and .NET Core, serving over 4M prior authorizations yearly.',
+            'Implemented RESTful APIs and microservices architecture to enhance system modularity and maintainability.',
+          ]
+        )
+      ]
+    ),
+    new Experience(
       'StarTex Software',
       [
         new Position(
           'Software Engineer',
-          'March 2024 - Present',
+          'March 2024 - July 2025',
           [
             'Developed scalable .NET Core APIs to power a safety compliance platform used by 500K+ users across industries.',
             'Introduced bulk save/update patterns and reusable modal and form components reducing data processing time by 25% and improving UI consistency across the application.',
