@@ -15,11 +15,14 @@ export class ProjectsComponent {
     new Project(
       'Rhyme',
       'July 2025 - Present',
-      `Rhyme: A prior authorization application supporting 83 large providers and processing 4 million authorizations
-      per year. The technology stack includes .NET, Vue.js, and React.`,
+      `Rhyme is a prior authorization application supporting 83 large providers and processing 4 million authorizations
+      per year. The system integrates with various EHRs, health plans, and pharmacy benefit managers (PBMs) to streamline the prior
+      authorization process for medications and procedures. The system features a robust backend built with C# on the .NET Framework,
+      a responsive frontend developed in JavaScript using both the Vue.js and React frameworks, and a DynamoDB database for persistent
+      data management.`,
       `Enterprise application developed while at Rhyme.`,
-      undefined,
-      undefined,
+      'assets/images/rhyme.png',
+      { 'width':'60%', 'height':'60%' },
       undefined
     ),
     new Project(
@@ -44,7 +47,7 @@ export class ProjectsComponent {
       for environmental law compliance, including features for incident tracking, audits, and reporting.`,
       'Enterprise application developed while at StarTex Software.',
       'assets/images/ehs-insight.png',
-      { 'width':'70%', 'height':'70%' },
+      { 'width':'60%', 'height':'60%' },
       undefined
     ),
     new Project(
@@ -68,7 +71,7 @@ export class ProjectsComponent {
       developed in JavaScript using the Aurelia framework, and a SQL Server database for persistent data management.`,
       'Enterprise application developed while at Relativity.',
       'assets/images/review-center.png',
-      { 'width':'80%', 'height':'80%' },
+      { 'width':'65%', 'height':'65%' },
       undefined
     ),
     new Project(

@@ -34,6 +34,7 @@ export class AboutComponent {
       [
         'Angular',
         'React',
+        'Vue.js',
         'HTML5',
         'CSS3'
       ]
@@ -52,6 +53,7 @@ export class AboutComponent {
       [
         'SQL Server',
         'MySQL',
+        'DynamoDB',
         'Firestore'
       ]
     ),
@@ -59,7 +61,7 @@ export class AboutComponent {
       'Cloud',
       [
         'Azure (App Service, Functions, DevOps)',
-        'AWS (EC2, S3)',
+        'AWS (EC2, Lambda, S3)',
         'GCP (Compute Engine, Cloud Storage)'
       ]
     ),
