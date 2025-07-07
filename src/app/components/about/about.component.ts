@@ -102,7 +102,8 @@ export class AboutComponent {
           'July 2025 - Present',
           [
             'Developed and maintained a high-performance, scalable web application using React and .NET Core, serving over 4M prior authorizations yearly.',
-            'Implemented RESTful APIs and microservices architecture to enhance system modularity and maintainability.',
+            // 'Implemented RESTful APIs and microservices architecture to enhance system modularity and maintainability.',
+            'Proficiency in C#, TypeScript, AWS, and Azure DevOps.'
           ]
         )
       ]
