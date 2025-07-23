@@ -22,7 +22,7 @@ export class ProjectsComponent {
       data management.`,
       `Enterprise application developed while at Rhyme.`,
       'assets/images/rhyme.png',
-      { 'width':'60%', 'height':'60%' },
+      { 'width':'70%', 'height':'70%' },
       undefined
     ),
     new Project(

@@ -9,10 +9,6 @@
       <a href="https://github.com/TheManOfTeel" target="_blank">
         <img src="assets/images/github.svg" [ngClass]="stateService.isDarkMode ? 'dark-img' : ''">
       </a>
-      <div class="divider"></div>
-      <a (click)="contactService.mailTo()" href="#">
-        <img src="assets/images/email.svg" [ngClass]="stateService.isDarkMode ? 'dark-img' : ''" style="pointer-events: none;">
-      </a>
       <button mat-icon-button color="primary" type="button" (click)="stateService.scrollToTop()" style="margin-left: auto;">
         <mat-icon class="material-symbols-rounded">arrow_upward</mat-icon>
       </button>

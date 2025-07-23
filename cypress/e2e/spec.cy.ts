@@ -45,6 +45,5 @@ describe('Navigation Test', () => {
     cy.get('*[class^="footer"]').should('exist')
     cy.get('[href="https://www.linkedin.com/in/daniel-teel-a6465017b"]').should('exist').should('have.attr', 'target', '_blank')
     cy.get('[href="https://github.com/TheManOfTeel"]').should('exist').should('have.attr', 'target', '_blank')
-    cy.get('[href="#"]').should('exist')
   })
 })

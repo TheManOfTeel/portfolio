@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { StateService } from './services/state/state.service';
-import { ContactService } from './services/contact/contact.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +10,7 @@ import { ContactService } from './services/contact/contact.service';
 export class AppComponent {
   title = 'portfolio';
 
-  constructor(public stateService: StateService, public contactService: ContactService) {}
+  constructor(public stateService: StateService) {}
 
   ngOnInit() {
     this.stateService.isMobile();
