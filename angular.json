@@ -127,7 +127,7 @@
           "builder": "@cypress/schematic:cypress",
           "options": {
             "watch": true,
-            "headless": false
+            "headless": true
           }
         },
         "ct": {
@@ -135,7 +135,7 @@
           "options": {
             "devServerTarget": "portfolio:serve",
             "watch": true,
-            "headless": false,
+            "headless": true,
             "testingType": "component"
           },
           "configurations": {
@@ -149,7 +149,7 @@
           "options": {
             "devServerTarget": "portfolio:serve",
             "watch": true,
-            "headless": false
+            "headless": true
           },
           "configurations": {
             "production": {
