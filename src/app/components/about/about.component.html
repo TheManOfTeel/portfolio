@@ -8,13 +8,7 @@
     <mat-card class="card">
       <div class="mat-expansion-panel-header">
         <h3>Overview</h3>
-        @if (!stateService.isMobilePortrait) {
-          <div style="margin-left: auto;">
-            <button mat-raised-button color="primary" type="button" (click)="accordion.openAll()" >Expand All </button>
-            <div class="divider"></div>
-            <button mat-raised-button color="primary" type="button"  (click)="accordion.closeAll()" >Collapse All </button>
-          </div>
-        } @else {
+        @if (stateService.isMobilePortrait) {
           <button mat-icon-button color="primary" type="button" style="margin-left: auto;" (click)="accordion.openAll()">
             <mat-icon class="material-symbols-rounded">expand_more</mat-icon>
           </button>
@@ -22,6 +16,12 @@
           <button mat-icon-button color="primary" type="button" (click)="accordion.closeAll()">
             <mat-icon class="material-symbols-rounded">expand_less</mat-icon>
           </button>
+        } @else {
+          <div style="margin-left: auto;">
+            <button mat-raised-button color="primary" type="button" (click)="accordion.openAll()" >Expand All </button>
+            <div class="divider"></div>
+            <button mat-raised-button color="primary" type="button"  (click)="accordion.closeAll()" >Collapse All </button>
+          </div>
         }
       </div>
       <mat-accordion #accordion="matAccordion" [multi]="true">
