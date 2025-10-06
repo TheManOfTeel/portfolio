@@ -12,7 +12,7 @@ export class AppComponent {
 
   constructor(public stateService: StateService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.stateService.isMobile();
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
     this.stateService.isDarkMode = prefersDark.matches;

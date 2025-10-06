@@ -7,7 +7,13 @@ export class Project {
   imageStyle: object | undefined;
   repository: string | undefined;
 
-  constructor (title: string, timeline: string, description: string, subtext?: string, image?: string, imageStyle?: object, repository?: string) {
+  constructor (title: string,
+    timeline: string,
+    description: string,
+    subtext?: string,
+    image?: string,
+    imageStyle?: object,
+    repository?: string) {
     this.title = title;
     this.timeline = timeline;
     this.description = description;

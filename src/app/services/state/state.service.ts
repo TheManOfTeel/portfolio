@@ -10,7 +10,7 @@ export class StateService {
   public isMobilePortrait = false;
   public isDarkMode = false;
 
-  isMobile() {
+  isMobile(): void {
     this.responsive.observe([
       Breakpoints.HandsetPortrait
     ]).subscribe(result => {
@@ -23,7 +23,7 @@ export class StateService {
     document.body.classList.toggle('dark-theme');
   }
 
-  scrollToTop() {
+  scrollToTop(): void {
     document.body.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }

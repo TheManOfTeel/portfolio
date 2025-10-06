@@ -10,7 +10,7 @@ import { StateService } from '../../services/state/state.service';
 export class ToolbarComponent {
   constructor(public stateService: StateService) {}
 
-  downloadResume() {
+  downloadResume(): void {
     window.open('assets/cv/Resume.pdf', '_blank');
   }
 }

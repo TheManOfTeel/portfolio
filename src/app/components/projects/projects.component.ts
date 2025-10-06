@@ -182,12 +182,26 @@ export class ProjectsComponent {
     )
   ];
 
-  openRepository(repo: string) {
+  openRepository(repo: string): void {
     const url = `https://github.com/TheManOfTeel/${repo}`;
     window.open(url, '_blank');
   }
 
-  isCurrentlyActive(project: Project) {
-    return project.timeline?.endsWith('Present');
+  isCurrentlyActive(project: Project): boolean {
+    return project.timeline?.endsWith('Present') ?? false;
+  }
+
+  isEnterpriseProject(project: Project): boolean {
+    return project.subtext?.includes('Enterprise') ?? false;
+  }
+
+  getCurrentlyActiveHeader(project: Project): string {
+    return this.isCurrentlyActive(project)
+    ? 'Active' : this.isEnterpriseProject(project)
+      ? 'Prior Position' : 'Inactive';
+  }
+
+  getEnterpriseProjectHeader(project: Project): string {
+    return this.isEnterpriseProject(project) ? 'Enterprise' : 'Personal';
   }
 }
