@@ -25,6 +25,7 @@ jobs:
         start: npm start
         wait-on: 'http://localhost:4200'
         browser: chrome
+        headless: true
     - name: Deploy
       env:
         CLI: true
