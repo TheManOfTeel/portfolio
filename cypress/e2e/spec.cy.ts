@@ -7,22 +7,22 @@ describe('Navigation Test', () => {
 
     cy.get('button').contains('Mode').then(($btn) => {
       if ($btn.text() === 'Dark Mode') {
-        cy.get('.header').find('img').should('not.have.class', 'dark-img')
+        cy.get('.header').find('img').should('be.visible', { timeout: 10000 }).and('not.have.class', 'dark-img')
         cy.get('button').contains('Dark Mode').click()
-        cy.get('body').should('have.class', 'dark-theme')
-        cy.get('.header').find('img').should('have.class', 'dark-img')
+        cy.get('body').should('have.class', 'dark-theme', { timeout: 10000 })
+        cy.get('.header').find('img').should('be.visible').and('have.class', 'dark-img')
         cy.get('button').contains('Light Mode').click()
         cy.get('body').should('not.have.class', 'dark-theme')
-        cy.get('.header').find('img').should('not.have.class', 'dark-img')
+        cy.get('.header').find('img').should('be.visible', { timeout: 10000 }).and('not.have.class', 'dark-img')
       }
     else{
-        cy.get('.header').find('img').should('have.class', 'dark-img')
+        cy.get('.header').find('img').should('be.visible', { timeout: 10000 }).and('have.class', 'dark-img')
         cy.get('button').contains('Light Mode').click()
         cy.get('body').should('not.have.class', 'dark-theme')
-        cy.get('.header').find('img').should('not.have.class', 'dark-img')
+        cy.get('.header').find('img').should('be.visible', { timeout: 10000 }).and('not.have.class', 'dark-img')
         cy.get('button').contains('Dark Mode').click()
         cy.get('body').should('have.class', 'dark-theme')
-        cy.get('.header').find('img').should('have.class', 'dark-img')
+        cy.get('.header').find('img').should('be.visible', { timeout: 10000 }).and('have.class', 'dark-img')
       }
     })
 
