@@ -16,7 +16,7 @@ describe('Navigation Test', () => {
         cy.get('body').should('not.have.class', 'dark-theme')
         cy.get('.header').find('img').should('be.visible').and('not.have.class', 'dark-img')
       }
-    else{
+    else if (mode === 'Light Mode') {
         cy.get('.header').find('img').should('be.visible').and('have.class', 'dark-img')
         cy.get('button').contains('Light Mode').click()
         cy.get('body').should('not.have.class', 'dark-theme')

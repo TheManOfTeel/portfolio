@@ -23,8 +23,6 @@ jobs:
       with:
         install: false
         start: npm start
-        wait-on: 'http://localhost:4200'
-        wait-on-timeout: 120
         browser: chrome
         record: false
     - name: Deploy
