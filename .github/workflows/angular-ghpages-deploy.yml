@@ -19,7 +19,13 @@ jobs:
     - name: Build
       run: npm run build
     - name: Run Cypress E2E Tests
-      run: npm run e2e
+      uses: cypress-io/github-action@v6
+      with:
+        install: false
+        start: npm start
+        wait-on: 'http://localhost:4200'
+        browser: chrome
+        headless: true
     - name: Deploy
       env:
         CLI: true
