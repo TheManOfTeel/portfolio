@@ -22,7 +22,7 @@ jobs:
       uses: cypress-io/github-action@v6
       with:
           install: false
-          working-directory: e2e
+          working-directory: cypress/e2e
     - name: Deploy
       env:
         CLI: true
