@@ -1,5 +1,6 @@
 describe('Navigation Test', () => {
   it('Visits the initial project page and navigates', () => {
+    cy.wait(10000);
     cy.visit('/')
     cy.contains('Welcome')
     cy.contains('About')
