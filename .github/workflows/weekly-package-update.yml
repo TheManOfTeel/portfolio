@@ -21,6 +21,13 @@ jobs:
       run: |
           ncu -u
           npm install --legacy-peer-deps
+    - name: Run Cypress E2E Tests
+      uses: cypress-io/github-action@v6
+      with:
+        install: false
+        start: npm start
+        browser: chrome
+        record: false
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v6
       with:
