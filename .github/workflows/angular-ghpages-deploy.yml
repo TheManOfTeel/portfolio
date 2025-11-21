@@ -11,7 +11,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
     - name: Cypress E2E Tests
-      uses: .github/workflows/cypress-e2e-tests.yml
+      uses: ./.github/workflows/cypress-e2e-tests.yml
     - name: Deploy
       env:
         CLI: true
