@@ -1,0 +1,28 @@
+name: Cypress E2E Tests
+
+on:
+  workflow_call:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  cypress-e2e-tests:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Use Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 'lts/*'
+    - name: Install w/ legacy-peer-deps
+      run: npm ci --legacy-peer-deps
+    - name: Build
+      run: npm run build
+    - name: Run Cypress E2E Tests
+      uses: cypress-io/github-action@v6
+      with:
+        install: false
+        start: npm start
+        browser: chrome
+        record: false
