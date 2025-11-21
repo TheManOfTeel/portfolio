@@ -1,0 +1,22 @@
+name: Karma Tests
+
+on:
+  pull_request:
+    branches: ["main"]
+  workflow_call:
+
+jobs:
+  runs-on: ubuntu-latest
+  steps:
+  - name: Checkout
+    uses: actions/checkout@v4
+  - name: Use Node.js
+    uses: actions/setup-node@v3
+    with:
+      node-version: 'lts/*'
+  - name: Install w/ legacy-peer-deps
+    run: npm ci --legacy-peer-deps
+  - name: Install Puppeteer (headless Chrome)
+    run: npm install puppeteer --save-dev #
+  - name: Run tests
+    run: npm run test:ci
