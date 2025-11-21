@@ -1,6 +1,4 @@
-# Portfolio [![Cypress E2E Tests](https://github.com/TheManOfTeel/portfolio/actions/workflows/cypress-e2e-tests.yml/badge.svg)](https://github.com/TheManOfTeel/portfolio/actions/workflows/cypress-e2e-tests.yml) [![pages-build-deployment](https://github.com/TheManOfTeel/portfolio/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/TheManOfTeel/portfolio/actions/workflows/pages/pages-build-deployment)
-
-## GitHub Pages hosted site
+# Portfolio [![Build and Deploy](https://github.com/TheManOfTeel/portfolio/actions/workflows/angular-ghpages-deploy.yml/badge.svg)](https://github.com/TheManOfTeel/portfolio/actions/workflows/angular-ghpages-deploy.yml)
 
 The GitHub pages hosted site can be found [here](https://themanofteel.github.io/portfolio/).
 
