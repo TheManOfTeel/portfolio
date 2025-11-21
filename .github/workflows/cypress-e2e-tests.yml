@@ -17,8 +17,6 @@ jobs:
         node-version: 'lts/*'
     - name: Install w/ legacy-peer-deps
       run: npm ci --legacy-peer-deps
-    - name: Build
-      run: npm run build
     - name: Run Cypress E2E Tests
       uses: cypress-io/github-action@v6
       with:

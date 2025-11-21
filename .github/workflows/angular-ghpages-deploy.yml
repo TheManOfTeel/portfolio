@@ -1,4 +1,4 @@
-name: Test and Deploy
+name: Build and Deploy
 
 on:
   push:
@@ -8,11 +8,14 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout
+      uses: actions/checkout@v4
     - name: Cypress E2E Tests
-      uses: ./.github/workflows/cypress-e2e-tests.yml
+      uses: .github/workflows/cypress-e2e-tests.yml
     - name: Deploy
       env:
         CLI: true
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
+        npm run build
         npm run deploy
