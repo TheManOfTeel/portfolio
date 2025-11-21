@@ -10,12 +10,19 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-    - name: Cypress E2E Tests
+    - name: Use Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 'lts/*'
+    - name: Install w/ legacy-peer-deps
+      run: npm ci --legacy-peer-deps
+    - name: Build
+      run: npm run build
+    - name: Call Cypress E2E Tests Workflow
       uses: ./.github/workflows/cypress-e2e-tests.yml
     - name: Deploy
       env:
         CLI: true
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
-        npm run build
         npm run deploy
