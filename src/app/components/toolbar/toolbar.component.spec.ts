@@ -9,6 +9,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../../app-routing.module';
+import { AboutComponent } from '../about/about.component';
+import { ProjectsComponent } from '../projects/projects.component';
 
 describe('ToolbarComponent', () => {
   let component: ToolbarComponent;
@@ -18,6 +20,8 @@ describe('ToolbarComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ToolbarComponent],
       imports: [
+        AboutComponent,
+        ProjectsComponent,
         BrowserModule,
         AppRoutingModule,
         MatButtonModule,
