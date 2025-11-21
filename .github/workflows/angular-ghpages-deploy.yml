@@ -19,9 +19,8 @@ jobs:
     - name: Build
       run: npm run build
   cypress-e2e-tests:
-    runs-on: ubuntu-latest
-    needs: [build]
     uses: ./.github/workflows/cypress-e2e-tests.yml
+    needs: [build]
   deploy:
     runs-on: ubuntu-latest
     needs: [build, cypress-e2e-tests]
