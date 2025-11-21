@@ -1,9 +1,9 @@
 name: Cypress E2E Tests
 
 on:
-  workflow_call:
   pull_request:
     branches: [ "main" ]
+  workflow_call:
 
 jobs:
   cypress-e2e-tests:
