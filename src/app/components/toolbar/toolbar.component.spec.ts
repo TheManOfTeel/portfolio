@@ -18,10 +18,8 @@ describe('ToolbarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ToolbarComponent],
+      declarations: [ToolbarComponent, AboutComponent, ProjectsComponent],
       imports: [
-        AboutComponent,
-        ProjectsComponent,
         BrowserModule,
         AppRoutingModule,
         MatButtonModule,
@@ -30,7 +28,7 @@ describe('ToolbarComponent', () => {
         MatIconModule,
         MatTabsModule,
         MatRippleModule,
-        MatExpansionModule,
+        MatExpansionModule
       ]
     })
     .compileComponents();

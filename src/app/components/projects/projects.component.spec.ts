@@ -26,7 +26,7 @@ describe('ProjectsComponent', () => {
         MatIconModule,
         MatTabsModule,
         MatRippleModule,
-        MatExpansionModule,
+        MatExpansionModule
       ]
     })
     .compileComponents();

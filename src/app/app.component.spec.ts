@@ -27,13 +27,13 @@ describe('AppComponent', () => {
         MatIconModule,
         MatTabsModule,
         MatRippleModule,
-        MatExpansionModule,
+        MatExpansionModule
+      ],
+      declarations: [
+        AppComponent,
         AboutComponent,
         ProjectsComponent,
         ToolbarComponent
-      ],
-      declarations: [
-        AppComponent
       ],
     }).compileComponents();
   });
