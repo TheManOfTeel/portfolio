@@ -18,6 +18,6 @@ jobs:
     - name: Install w/ legacy-peer-deps
       run: npm ci --legacy-peer-deps
     - name: Install Puppeteer (headless Chrome)
-      run: npm install puppeteer --save-dev #
+      run: npm install puppeteer --legacy-peer-deps --save-dev
     - name: Run tests
       run: npm run test:ci
