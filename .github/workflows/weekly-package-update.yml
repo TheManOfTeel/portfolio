@@ -29,9 +29,10 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: "[BOT] Update npm dependencies"
+        committer: "github-actions[bot]"
         title: "[BOT] Weekly npm dependency updates"
         body: "Updated npm packages to their latest versions."
-        labels: dependencies
-        assignees: TheManOfTeel
+        labels: "dependencies"
+        assignees: "TheManOfTeel"
         branch: "dependency-updates-automated"
         delete-branch: true
