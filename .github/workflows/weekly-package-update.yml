@@ -2,7 +2,7 @@ name: Weekly Package Update
 
 on:
   schedule:
-    - cron: '45 20 * * 1'
+    - cron: '0 0 * * 1'
 
 permissions:
   contents: write
