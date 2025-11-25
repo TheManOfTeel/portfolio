@@ -2,7 +2,7 @@ name: Weekly Package Update
 
 on:
   schedule:
-    - cron: '30 22 * * 1'
+    - cron: '0 0 * * 1'
 
 permissions:
   contents: write
@@ -30,7 +30,6 @@ jobs:
         token: ${{ secrets.GH_TOKEN }}
         commit-message: '[BOT] Update npm dependencies'
         committer: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
-        signoff: false
         base: main
         title: '[BOT] Weekly npm dependency updates'
         body: 'Updated npm packages to their latest versions.'
