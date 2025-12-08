@@ -38,7 +38,7 @@
     "@types/jasmine": "~5.1.13",
     "angular-cli-ghpages": "^2.0.3",
     "cypress": "^15.7.0",
-    "jasmine-core": "^5.12.1",
+    "jasmine-core": "^5.13.0",
     "karma": "~6.4.4",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.1",
