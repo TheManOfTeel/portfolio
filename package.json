@@ -33,7 +33,7 @@
   "devDependencies": {
     "@angular/build": "^21.0.5",
     "@angular/cli": "^21.0.5",
-    "@angular/compiler-cli": "^21.0.8",
+    "@angular/compiler-cli": "^21.1.0",
     "@cypress/schematic": "^5.0.0",
     "@types/jasmine": "~5.1.14",
     "angular-cli-ghpages": "^3.0.2",
