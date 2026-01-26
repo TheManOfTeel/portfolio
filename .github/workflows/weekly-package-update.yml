@@ -22,7 +22,7 @@ jobs:
       run: npm install -g npm-check-updates
     - name: Update Packages and Install
       run: |
-          ncu -u
+          ncu -u -x jasmine-core
           npm install --legacy-peer-deps
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v6
