@@ -104,7 +104,8 @@ export class AboutComponent {
             'Developed and maintained a high-performance, scalable web application using React and .NET Core, serving over 4M prior authorizations yearly.',
             'Implemented RESTful APIs and microservices architecture to enhance system modularity and maintainability.',
             'Implemented API retry logic and exponential backoff strategies, reducing failure rates by 30% and improving overall system resilience.',
-            'Introduced payer error code mapping and handling mechanisms, decreasing manual intervention by 25% and enhancing user experience.',
+            'Architected and implemented a full-lifecycle claims management system to automate multi-CPT code submissions and asynchronous payer response handling, ensuring high delivery rates through a plan-aware fallback protocol.',
+            'Implemented a Clinical Automation engine to programmatically generate regulatory documents, eliminating redundant manual entry and improving data integrity across the prior authorization process.',
           ]
         )
       ]
