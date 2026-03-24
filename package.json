@@ -11,7 +11,8 @@
     "deploy": "ng deploy",
     "e2e": "ng e2e",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run",
+    "update": "ncu -t minor -u"
   },
   "private": true,
   "dependencies": {
