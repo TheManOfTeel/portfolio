@@ -28,11 +28,11 @@ jobs:
       uses: peter-evans/create-pull-request@v8
       with:
         token: ${{ secrets.GH_TOKEN }}
-        commit-message: '[BOT] Update npm dependencies'
+        commit-message: '[BOT] Update packages to latest versions'
         committer: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
         base: main
-        title: '[BOT] Automated npm dependency updates'
-        body: 'Updated npm packages to their latest versions.'
+        title: '[BOT] Automated package updates'
+        body: 'Updated packages to their latest versions.'
         labels: dependencies
         assignees: TheManOfTeel
         branch: dependency-updates-automated
