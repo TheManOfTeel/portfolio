@@ -1,4 +1,4 @@
-name: Weekly Package Update
+name: Automated Package Update
 
 on:
   schedule:
@@ -31,7 +31,7 @@ jobs:
         commit-message: '[BOT] Update npm dependencies'
         committer: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
         base: main
-        title: '[BOT] Weekly npm dependency updates'
+        title: '[BOT] Automated npm dependency updates'
         body: 'Updated npm packages to their latest versions.'
         labels: dependencies
         assignees: TheManOfTeel
