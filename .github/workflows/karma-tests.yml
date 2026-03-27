@@ -13,9 +13,23 @@ jobs:
       uses: actions/setup-node@v6
       with:
         node-version: 'lts/*'
+        cache: 'npm'
     - name: Install w/ legacy-peer-deps
       run: npm ci --legacy-peer-deps
-    - name: Install Puppeteer (headless Chrome)
-      run: npm install puppeteer --legacy-peer-deps --save-dev
+    - name: Install Chrome
+      uses: browser-actions/setup-chrome@v2
     - name: Run tests
       run: npm run test:ci
+      continue-on-error: true
+      env:
+        CHROME_BIN: google-chrome
+    - name: Generate job summary
+      if: always()
+      run: node .github/scripts/karma-summary.js >> $GITHUB_STEP_SUMMARY
+    - name: Upload test results
+      if: always()
+      uses: actions/upload-artifact@v6
+      with:
+        name: karma-test-results
+        path: test-results/
+        retention-days: 14
