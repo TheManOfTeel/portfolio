@@ -9,34 +9,61 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v6
+
     - name: Use Node.js
       uses: actions/setup-node@v6
       with:
         node-version: 'lts/*'
         cache: 'npm'
-    - name: Install w/ legacy-peer-deps
+
+    - name: Install dependencies with legacy-peer-deps
       run: npm ci --legacy-peer-deps
+
     - name: Install Chrome
       uses: browser-actions/setup-chrome@v2
-    - name: Run tests
+
+    - name: Run Karma unit tests
       run: npm run test:ci
       continue-on-error: true
       env:
         CHROME_BIN: google-chrome
-    - name: Generate job summary
+
+    - name: Generate Karma summary for GitHub Actions
       if: always()
       run: node .github/scripts/karma-summary.js >> $GITHUB_STEP_SUMMARY
-    - name: Upload test results
+
+    - name: Publish test results to GitHub
+      if: always()
+      uses: EnricoMi/publish-unit-test-result-action@v2
+      with:
+        files: test-results/**/*.xml
+        check_name: Karma Unit Tests
+        comment_title: Karma Test Results
+        compare_to_earlier_commit: true
+
+    - name: Upload test results artifact
       if: always()
       uses: actions/upload-artifact@v6
       with:
         name: karma-test-results
         path: test-results/
         retention-days: 14
-    - name: Upload coverage reports
+        if-no-files-found: ignore
+
+    - name: Upload coverage reports artifact
       if: always()
       uses: actions/upload-artifact@v6
       with:
         name: karma-coverage-reports
         path: coverage/
         retention-days: 14
+        if-no-files-found: ignore
+
+    - name: Check test results
+      if: always()
+      run: |
+        if [ ! -f "test-results/test-results.xml" ]; then
+          echo "⚠️ Warning: No test results found"
+        else
+          echo "✅ Test results generated successfully"
+        fi

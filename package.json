@@ -18,6 +18,8 @@
     "cypress:run:performance": "cypress run --spec 'cypress/e2e/performance.cy.ts'",
     "cypress:run:mobile": "cypress run --spec 'cypress/e2e/mobile.cy.ts'",
     "cypress:run:visual": "cypress run --spec 'cypress/e2e/visual-regression.cy.ts'",
+    "karma:validate": "node .github/scripts/validate-karma-setup.js",
+    "karma:preview": "node .github/scripts/preview-karma-summary.js",
     "update": "ncu -t minor -u"
   },
   "private": true,

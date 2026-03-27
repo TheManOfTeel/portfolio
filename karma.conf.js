@@ -6,6 +6,7 @@ module.exports = function (config) {
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage'),
+      require('karma-junit-reporter'),
       require('@angular-devkit/build-angular/plugins/karma')
     ],
     reporters: ['progress', 'kjhtml', 'coverage', 'junit'],
@@ -14,19 +15,23 @@ module.exports = function (config) {
       subdir: '.',
       reporters: [
         { type: 'html' },
-        { type: 'text-summary' }
+        { type: 'text-summary' },
+        { type: 'lcovonly' }
       ]
     },
     junitReporter: {
-      outputDir: 'test-results',         // relative to basePath
+      outputDir: 'test-results',
       outputFile: 'test-results.xml',
-      useBrowserName: false,             // prevents browser name prefix in suite names
-      classNameFormatter: undefined,     // default: suite.className
+      useBrowserName: false,
+      classNameFormatter: undefined,
       titleFormatter: undefined,
+      properties: {},
+      xmlVersion: null
     },
 
     singleRun: true,
     browsers: ['ChromeHeadless'],
+    baseUrl: 'http://localhost:9876',
 
     // Edge case: if using custom launchers for CI
     customLaunchers: {
