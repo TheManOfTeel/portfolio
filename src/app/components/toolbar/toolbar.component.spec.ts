@@ -1,4 +1,5 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { ToolbarComponent } from './toolbar.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -7,7 +8,6 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../../app-routing.module';
 import { AboutComponent } from '../about/about.component';
 import { ProjectsComponent } from '../projects/projects.component';
@@ -23,7 +23,7 @@ describe('ToolbarComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ToolbarComponent, AboutComponent, ProjectsComponent],
       imports: [
-        BrowserModule,
+        NoopAnimationsModule,
         AppRoutingModule,
         MatButtonModule,
         MatCardModule,
@@ -125,20 +125,19 @@ describe('ToolbarComponent', () => {
       expect(aboutComponent).toBeTruthy();
     });
 
-    it('should render ProjectsComponent in second tab', async () => {
+    it('should render ProjectsComponent in second tab', fakeAsync(() => {
       const compiled = fixture.nativeElement as HTMLElement;
 
-      // Click the second tab label to activate it
       const tabLabelButtons = compiled.querySelectorAll<HTMLElement>('.mat-mdc-tab');
       tabLabelButtons[1].click();
 
-      // Allow Angular + Material animations/change detection to settle
       fixture.detectChanges();
-      await fixture.whenStable();
+      tick();                   // flush any remaining async tasks/timers
+      fixture.detectChanges();  // second pass after tick to pick up DOM changes
 
       const projectsComponent = compiled.querySelector('app-projects');
       expect(projectsComponent).toBeTruthy();
-    });
+    }));
 
     it('should apply dark-img class to logo when in dark mode', () => {
       stateService.isDarkMode = true;
