@@ -1,4 +1,4 @@
-# Portfolio [![Build and Deploy](https://github.com/TheManOfTeel/portfolio/actions/workflows/angular-ghpages-deploy.yml/badge.svg)](https://github.com/TheManOfTeel/portfolio/actions/workflows/angular-ghpages-deploy.yml)
+# Portfolio [![Test and Deploy to GH Pages](https://github.com/TheManOfTeel/portfolio/actions/workflows/angular-ghpages-deploy.yml/badge.svg?branch=main)](https://github.com/TheManOfTeel/portfolio/actions/workflows/angular-ghpages-deploy.yml?query=branch%3Amain)
 
 The GitHub pages hosted site can be found [here](https://themanofteel.github.io/portfolio/).
 
