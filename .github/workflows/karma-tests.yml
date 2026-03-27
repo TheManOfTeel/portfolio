@@ -7,29 +7,29 @@ jobs:
   karma-test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v6
-      - name: Use Node.js
-        uses: actions/setup-node@v6
-        with:
-          node-version: 'lts/*'
-          cache: 'npm'
-      - name: Install w/ legacy-peer-deps
-        run: npm ci --legacy-peer-deps
-      - name: Install Chrome
-        uses: browser-actions/setup-chrome@v1
-      - name: Run tests
-        run: npm run test
-        continue-on-error: true
-        env:
-          CHROME_BIN: google-chrome
-      - name: Generate job summary
-        if: always()
-        run: node .github/scripts/karma-summary.js >> $GITHUB_STEP_SUMMARY
-      - name: Upload test results
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: karma-test-results
-          path: test-results/
-          retention-days: 14
+    - name: Checkout
+      uses: actions/checkout@v6
+    - name: Use Node.js
+      uses: actions/setup-node@v6
+      with:
+        node-version: 'lts/*'
+        cache: 'npm'
+    - name: Install w/ legacy-peer-deps
+      run: npm ci --legacy-peer-deps
+    - name: Install Chrome
+      uses: browser-actions/setup-chrome@v1
+    - name: Run tests
+      run: npm run test:ci
+      continue-on-error: true
+      env:
+        CHROME_BIN: google-chrome
+    - name: Generate job summary
+      if: always()
+      run: node .github/scripts/karma-summary.js >> $GITHUB_STEP_SUMMARY
+    - name: Upload test results
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: karma-test-results
+        path: test-results/
+        retention-days: 14
