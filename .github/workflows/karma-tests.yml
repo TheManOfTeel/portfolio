@@ -19,7 +19,7 @@ jobs:
       - name: Install Chrome
         uses: browser-actions/setup-chrome@v1
       - name: Run tests
-        run: npx karma start karma.conf.js --single-run
+        run: npm run test
         continue-on-error: true
         env:
           CHROME_BIN: google-chrome
