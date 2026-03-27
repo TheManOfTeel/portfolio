@@ -32,7 +32,9 @@ describe('Visual Regression Tests', () => {
   });
 
   it('should capture dark mode visual snapshot', () => {
-    cy.get('button').contains('Dark Mode').click();
+    // Click the dark mode button (may be labeled differently)
+    cy.get('mat-toolbar button').contains(/Mode/).click();
+    cy.wait(300); // Wait for theme transition
     cy.screenshot('dark-mode');
   });
 
@@ -56,6 +58,6 @@ describe('Visual Regression Tests', () => {
   });
 
   it('should capture toolbar visual snapshot', () => {
-    cy.get('mat-toolbar').screenshot('toolbar');
+    cy.get('mat-toolbar').first().screenshot('toolbar');
   });
 });
