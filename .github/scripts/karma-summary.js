@@ -40,18 +40,13 @@ const testCases = [...xml.matchAll(testcasePattern)];
 const failedTests = testCases.filter(tc => tc[2]); // Has failure content
 const passedTests = testCases.filter(tc => !tc[2]); // No failure
 
-let summary = `## ${icon} Karma Unit Tests\n\n`;
+let summary = `## Karma Results\n\n`;
 summary += `**Status:** ${status}\n\n`;
 
 // Results table
-summary += `| Metric | Value |\n`;
-summary += `|---|---|\n`;
-summary += `| **Total Tests** | ${tests} |\n`;
-summary += `| **Passed** ✅ | ${passed} |\n`;
-summary += `| **Failed** ❌ | ${failures} |\n`;
-summary += `| **Errors** 💥 | ${errors} |\n`;
-summary += `| **Skipped** ↩️ | ${skipped} |\n`;
-summary += `| **Duration** 🕗 | ${time}s |\n\n`;
+summary += `| **Result** | **Passed** ✅ | **Failed** ❌ | **Errors** 💥 | **Skipped** ↩️ | **Duration** 🕗 |\n`;
+summary += `|---|---|---|---|---|---|\n`;
+summary += `| ${status} ${icon} | ${passed} | ${failures} | ${errors} | ${skipped} | ${time}s |\n\n`;
 
 // Pass rate percentage
 if (tests > 0) {

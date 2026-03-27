@@ -26,14 +26,6 @@ jobs:
     - name: Generate Karma summary for GitHub Actions
       if: always()
       run: node .github/scripts/karma-summary.js >> $GITHUB_STEP_SUMMARY
-    - name: Publish test results to GitHub
-      if: always()
-      uses: EnricoMi/publish-unit-test-result-action@v2
-      with:
-        files: test-results/**/*.xml
-        check_name: Karma Unit Tests
-        comment_title: Karma Test Results
-        compare_to_earlier_commit: true
     - name: Upload test results artifact
       if: always()
       uses: actions/upload-artifact@v6
