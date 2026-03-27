@@ -3,6 +3,11 @@ name: Karma Tests
 on:
   workflow_call:
 
+permissions:
+  checks: write
+  pull-requests: write
+  contents: read
+
 jobs:
   karma-test:
     runs-on: ubuntu-latest
