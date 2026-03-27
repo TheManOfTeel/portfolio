@@ -1,4 +1,4 @@
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { provideNoopAnimations } from '@angular/platform-browser/animations';
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { ToolbarComponent } from './toolbar.component';
 import { MatButtonModule } from '@angular/material/button';
@@ -23,7 +23,6 @@ describe('ToolbarComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ToolbarComponent, AboutComponent, ProjectsComponent],
       imports: [
-        NoopAnimationsModule,
         AppRoutingModule,
         MatButtonModule,
         MatCardModule,
@@ -34,6 +33,7 @@ describe('ToolbarComponent', () => {
         MatExpansionModule
       ],
       providers: [
+        provideNoopAnimations(),
         StateService,
         BreakpointObserver
       ]
