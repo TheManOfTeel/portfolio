@@ -1,4 +1,4 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -13,8 +13,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AboutComponent } from './components/about/about.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { StateService } from './services/state/state.service';
+import { BreakpointObserver } from '@angular/cdk/layout';
 
 describe('AppComponent', () => {
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+  let stateService: StateService;
+  let breakpointObserver: BreakpointObserver;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
@@ -35,18 +42,93 @@ describe('AppComponent', () => {
         ProjectsComponent,
         ToolbarComponent
       ],
+      providers: [
+        StateService,
+        BreakpointObserver
+      ]
     }).compileComponents();
+
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+    stateService = TestBed.inject(StateService);
+    breakpointObserver = TestBed.inject(BreakpointObserver);
   });
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+    expect(component).toBeTruthy();
   });
 
   it(`should have as title 'portfolio'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('portfolio');
+    expect(component.title).toEqual('portfolio');
+  });
+
+  it('should inject StateService', () => {
+    expect(component.stateService).toBe(stateService);
+  });
+
+  describe('ngOnInit', () => {
+    beforeEach(() => {
+      spyOn(stateService, 'isMobile');
+    });
+
+    it('should call stateService.isMobile() on init', () => {
+      component.ngOnInit();
+      expect(stateService.isMobile).toHaveBeenCalled();
+    });
+
+    it('should set dark mode based on prefers-color-scheme: dark', () => {
+      spyOn(window, 'matchMedia').and.returnValue({
+        matches: true,
+        addEventListener: jasmine.createSpy(),
+        removeEventListener: jasmine.createSpy()
+      } as any);
+
+      component.ngOnInit();
+      expect(stateService.isDarkMode).toBe(true);
+      expect(document.body.classList.contains('dark-theme')).toBe(true);
+    });
+
+    it('should not set dark mode when prefers-color-scheme is light', () => {
+      spyOn(window, 'matchMedia').and.returnValue({
+        matches: false,
+        addEventListener: jasmine.createSpy(),
+        removeEventListener: jasmine.createSpy()
+      } as any);
+
+      component.ngOnInit();
+      expect(stateService.isDarkMode).toBe(false);
+      expect(document.body.classList.contains('dark-theme')).toBe(false);
+    });
+  });
+
+  it('should render router-outlet', () => {
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('router-outlet')).toBeTruthy();
+  });
+
+  it('should render footer with toolbar', () => {
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    const footer = compiled.querySelector('.footer');
+    expect(footer).toBeTruthy();
+    expect(footer?.querySelector('mat-toolbar')).toBeTruthy();
+  });
+
+  it('should render LinkedIn and GitHub links in footer', () => {
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    const links = compiled.querySelectorAll('.footer a');
+    expect(links.length).toBe(2);
+    expect(links[0].getAttribute('href')).toBe('https://www.linkedin.com/in/daniel-teel-a6465017b');
+    expect(links[1].getAttribute('href')).toBe('https://github.com/TheManOfTeel');
+  });
+
+  it('should render scroll to top button in footer', () => {
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    const button = compiled.querySelector('.footer button');
+    expect(button).toBeTruthy();
+    expect(button?.getAttribute('type')).toBe('button');
   });
 });

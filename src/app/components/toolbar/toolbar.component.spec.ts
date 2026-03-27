@@ -11,10 +11,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../../app-routing.module';
 import { AboutComponent } from '../about/about.component';
 import { ProjectsComponent } from '../projects/projects.component';
+import { StateService } from '../../services/state/state.service';
+import { BreakpointObserver } from '@angular/cdk/layout';
 
 describe('ToolbarComponent', () => {
   let component: ToolbarComponent;
   let fixture: ComponentFixture<ToolbarComponent>;
+  let stateService: StateService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -29,16 +32,115 @@ describe('ToolbarComponent', () => {
         MatTabsModule,
         MatRippleModule,
         MatExpansionModule
+      ],
+      providers: [
+        StateService,
+        BreakpointObserver
       ]
     })
     .compileComponents();
 
     fixture = TestBed.createComponent(ToolbarComponent);
     component = fixture.componentInstance;
+    stateService = TestBed.inject(StateService);
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should inject StateService', () => {
+    expect(component.stateService).toBe(stateService);
+  });
+
+  describe('downloadResume()', () => {
+    it('should open resume PDF in new window', () => {
+      spyOn(window, 'open');
+
+      component.downloadResume();
+
+      expect(window.open).toHaveBeenCalledWith('assets/cv/Resume.pdf', '_blank');
+    });
+  });
+
+  describe('template rendering', () => {
+    it('should render toolbar with logo and name', () => {
+      const compiled = fixture.nativeElement as HTMLElement;
+      const toolbar = compiled.querySelector('mat-toolbar');
+      expect(toolbar).toBeTruthy();
+
+      const img = toolbar?.querySelector('img');
+      expect(img).toBeTruthy();
+      expect(img?.getAttribute('src')).toBe('assets/images/web-dev.png');
+
+      const name = toolbar?.querySelector('h1');
+      expect(name).toBeTruthy();
+      expect(name?.textContent?.trim()).toBe('Danny Teel');
+    });
+
+    it('should render dark mode toggle button', () => {
+      const compiled = fixture.nativeElement as HTMLElement;
+      const buttons = compiled.querySelectorAll('button');
+      expect(buttons.length).toBeGreaterThan(0);
+
+      // Should have at least one button for dark mode toggle
+      const darkModeButton = Array.from(buttons).find(btn =>
+        btn.textContent?.includes('Mode') || btn.textContent?.includes('Dark') || btn.textContent?.includes('Light')
+      );
+      expect(darkModeButton).toBeTruthy();
+    });
+
+    it('should render download resume button', () => {
+      const compiled = fixture.nativeElement as HTMLElement;
+      const buttons = compiled.querySelectorAll('button');
+      const resumeButton = Array.from(buttons).find(btn =>
+        btn.textContent?.includes('Download') || btn.textContent?.includes('Resume')
+      );
+      expect(resumeButton).toBeTruthy();
+    });
+
+    it('should render mat-tab-group with About and Projects tabs', () => {
+      const compiled = fixture.nativeElement as HTMLElement;
+      const tabGroup = compiled.querySelector('mat-tab-group');
+      expect(tabGroup).toBeTruthy();
+
+      const tabs = compiled.querySelectorAll('mat-tab');
+      expect(tabs.length).toBe(2);
+
+      const tabLabels = compiled.querySelectorAll('mat-tab mat-icon + div + div');
+      expect(tabLabels[0]?.textContent?.trim()).toBe('About');
+      expect(tabLabels[1]?.textContent?.trim()).toBe('Projects');
+    });
+
+    it('should render AboutComponent in first tab', () => {
+      const compiled = fixture.nativeElement as HTMLElement;
+      const aboutComponent = compiled.querySelector('app-about');
+      expect(aboutComponent).toBeTruthy();
+    });
+
+    it('should render ProjectsComponent in second tab', () => {
+      const compiled = fixture.nativeElement as HTMLElement;
+      const projectsComponent = compiled.querySelector('app-projects');
+      expect(projectsComponent).toBeTruthy();
+    });
+
+    it('should apply dark-img class to logo when in dark mode', () => {
+      stateService.isDarkMode = true;
+      fixture.detectChanges();
+
+      const compiled = fixture.nativeElement as HTMLElement;
+      const img = compiled.querySelector('mat-toolbar img');
+      expect(img?.classList.contains('dark-img')).toBe(true);
+    });
+
+    it('should not apply dark-img class to logo when in light mode', () => {
+      stateService.isDarkMode = false;
+      fixture.detectChanges();
+
+      const compiled = fixture.nativeElement as HTMLElement;
+      const img = compiled.querySelector('mat-toolbar img');
+      expect(img?.classList.contains('dark-img')).toBe(false);
+    });
   });
 });
