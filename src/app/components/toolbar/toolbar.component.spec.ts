@@ -102,15 +102,21 @@ describe('ToolbarComponent', () => {
 
     it('should render mat-tab-group with About and Projects tabs', () => {
       const compiled = fixture.nativeElement as HTMLElement;
+
+      // mat-tab-group IS rendered as a real element
       const tabGroup = compiled.querySelector('mat-tab-group');
       expect(tabGroup).toBeTruthy();
 
-      const tabs = compiled.querySelectorAll('mat-tab');
-      expect(tabs.length).toBe(2);
+      // mat-tab is NOT a real DOM element — query the rendered label buttons instead
+      // Angular Material renders tab labels into .mat-mdc-tab elements
+      const tabLabelButtons = compiled.querySelectorAll('.mat-mdc-tab');
+      expect(tabLabelButtons.length).toBe(2);
 
-      const tabLabels = compiled.querySelectorAll('mat-tab mat-icon + div + div');
-      expect(tabLabels[0]?.textContent?.trim()).toBe('About');
-      expect(tabLabels[1]?.textContent?.trim()).toBe('Projects');
+      // Text content of each label button includes icon + divider + label text,
+      // so use textContent with trim() and check contains rather than exact match,
+      // OR target the text node more precisely
+      expect(tabLabelButtons[0]?.textContent?.trim()).toContain('About');
+      expect(tabLabelButtons[1]?.textContent?.trim()).toContain('Projects');
     });
 
     it('should render AboutComponent in first tab', () => {
@@ -119,8 +125,17 @@ describe('ToolbarComponent', () => {
       expect(aboutComponent).toBeTruthy();
     });
 
-    it('should render ProjectsComponent in second tab', () => {
+    it('should render ProjectsComponent in second tab', async () => {
       const compiled = fixture.nativeElement as HTMLElement;
+
+      // Click the second tab label to activate it
+      const tabLabelButtons = compiled.querySelectorAll<HTMLElement>('.mat-mdc-tab');
+      tabLabelButtons[1].click();
+
+      // Allow Angular + Material animations/change detection to settle
+      fixture.detectChanges();
+      await fixture.whenStable();
+
       const projectsComponent = compiled.querySelector('app-projects');
       expect(projectsComponent).toBeTruthy();
     });
