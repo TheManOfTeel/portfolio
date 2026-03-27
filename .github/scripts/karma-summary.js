@@ -35,7 +35,7 @@ const status   = failures + errors > 0 ? 'Failing' : 'Passing';
 const failureBlocks = [...xml.matchAll(/<testcase[^>]+name="([^"]+)"[^>]*>[\s\S]*?<failure[^>]*>([\s\S]*?)<\/failure>[\s\S]*?<\/testcase>/g)];
 
 let summary = `## Karma Results\n\n`;
-summary += `| Result | Passed ✅ | Failed ❌ | Errors 💥 | Skipped ⏭️ | Duration ⏱️ |\n`;
+summary += `| Result | Passed ✅ | Failed ❌ | Errors 💥 | Skipped ↩️ | Duration 🕗 |\n`;
 summary += `|---|---|---|---|---|---|\n`;
 summary += `| ${status} ${icon} | ${passed} | ${failures} | ${errors} | ${skipped} | ${time}s |\n\n`;
 
