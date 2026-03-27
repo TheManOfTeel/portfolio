@@ -18,13 +18,18 @@ jobs:
     - name: Install Puppeteer (headless Chrome)
       run: npm install puppeteer --legacy-peer-deps --save-dev
     - name: Run tests
+      id: karma-test
       run: |
-        npm run test:ci > test_output.txt
-        TEST_RESULTS=$(cat test_output.txt)
-        echo "karma_output<<EOF" >> "$GITHUB_OUTPUT"
-        echo "$TEST_RESULTS" >> "$GITHUB_OUTPUT"
+        TEST_OUTPUT=$(npm run test:ci || true)
+        echo "test_results<<EOF" >> "$GITHUB_OUTPUT"
+        echo "$TEST_OUTPUT" >> "$GITHUB_OUTPUT"
         echo "EOF" >> "$GITHUB_OUTPUT"
-        echo "{markdown content}" >> $GITHUB_STEP_SUMMARY
+      shell: bash
     - name: Set Job Summary
       run: |
-        echo "### Karma Results  ${{steps.run_tests.outputs.karma_output}}" >> $GITHUB_STEP_SUMMARY
+        RESULTS="${{ steps.karma-test.outputs.test_results }}"
+        echo "### Karma Test Results" >> "$GITHUB_STEP_SUMMARY"
+        echo '```markdown' >> "$GITHUB_STEP_SUMMARY"
+        echo "$RESULTS" >> "$GITHUB_STEP_SUMMARY"
+        echo '```' >> "$GITHUB_STEP_SUMMARY"
+      shell: bash
