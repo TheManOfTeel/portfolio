@@ -34,9 +34,9 @@ const status   = failures + errors > 0 ? 'Failed' : 'Passed';
 // Parse individual failure details
 const failureBlocks = [...xml.matchAll(/<testcase[^>]+name="([^"]+)"[^>]*>[\s\S]*?<failure[^>]*>([\s\S]*?)<\/failure>[\s\S]*?<\/testcase>/g)];
 
-let summary = `## Karma Results\n\n`;
-summary += `| Result | Passed ✅ | Failed ❌ | Errors 💥 | Skipped ↩️ | Duration 🕗 |\n`;
-summary += `| **${status} ${icon}** |**${passed}** | **${failures}** |**${errors}** |**${skipped}** |${time}s |\n`;
+let summary = `## ${icon} Karma Test Results\n\n`;
+summary += `| Result | Passed ✅ | Failed ❌ | Errors 💥 | Skipped ⏭️ | Duration ⏱️ |\n`;
+summary += `| ${status} ${icon} | ${passed} | ${failures} | ${errors} | ${skipped} | ${time}s |\n\n`;
 
 if (failureBlocks.length > 0) {
   summary += `### Failed Tests\n\n`;
