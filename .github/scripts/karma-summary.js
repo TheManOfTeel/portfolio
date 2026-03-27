@@ -29,17 +29,14 @@ const skipped  = parseInt(attr('skipped'),  10);
 const time     = parseFloat(attr('time')).toFixed(2);
 const passed   = tests - failures - errors - skipped;
 const icon     = failures + errors > 0 ? '❌' : '✅';
+const status   = failures + errors > 0 ? 'Failed' : 'Passed';
 
 // Parse individual failure details
 const failureBlocks = [...xml.matchAll(/<testcase[^>]+name="([^"]+)"[^>]*>[\s\S]*?<failure[^>]*>([\s\S]*?)<\/failure>[\s\S]*?<\/testcase>/g)];
 
-let summary = `## ${icon} Karma Test Results\n\n`;
-summary += `| | Count |\n|---|---|\n`;
-summary += `| ✅ Passed  | **${passed}** |\n`;
-summary += `| ❌ Failed  | **${failures}** |\n`;
-summary += `| 💥 Errors  | **${errors}** |\n`;
-summary += `| ⏭️ Skipped | **${skipped}** |\n`;
-summary += `| ⏱️ Duration | ${time}s |\n\n`;
+let summary = `## Karma Results\n\n`;
+summary += `| Result | Passed ✅ | Failed ❌ | Errors 💥 | Skipped ↩️ | Duration 🕗 |\n`;
+summary += `| **${status} ${icon}** |**${passed}** | **${failures}** |**${errors}** |**${skipped}** |${time}s |\n`;
 
 if (failureBlocks.length > 0) {
   summary += `### Failed Tests\n\n`;
