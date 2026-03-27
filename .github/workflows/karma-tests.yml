@@ -29,7 +29,7 @@ jobs:
       run: |
         RESULTS="${{ steps.karma-test.outputs.test_results }}"
         echo "### Karma Test Results" >> "$GITHUB_STEP_SUMMARY"
-        echo '```markdown' >> "$GITHUB_STEP_SUMMARY"
+        echo '```' >> "$GITHUB_STEP_SUMMARY"
         echo "$RESULTS" >> "$GITHUB_STEP_SUMMARY"
         echo '```' >> "$GITHUB_STEP_SUMMARY"
       shell: bash
