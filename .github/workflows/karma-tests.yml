@@ -17,7 +17,7 @@ jobs:
     - name: Install w/ legacy-peer-deps
       run: npm ci --legacy-peer-deps
     - name: Install Chrome
-      uses: browser-actions/setup-chrome@v1
+      uses: browser-actions/setup-chrome@v2
     - name: Run tests
       run: npm run test:ci
       continue-on-error: true
@@ -28,7 +28,7 @@ jobs:
       run: node .github/scripts/karma-summary.js >> $GITHUB_STEP_SUMMARY
     - name: Upload test results
       if: always()
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
         name: karma-test-results
         path: test-results/
