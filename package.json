@@ -12,6 +12,12 @@
     "e2e": "ng e2e",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
+    "cypress:run:e2e": "cypress run --spec 'cypress/e2e/**/*.cy.ts'",
+    "cypress:run:component": "cypress run --component --spec 'cypress/**/*.cy.ts'",
+    "cypress:run:accessibility": "cypress run --spec 'cypress/e2e/accessibility.cy.ts'",
+    "cypress:run:performance": "cypress run --spec 'cypress/e2e/performance.cy.ts'",
+    "cypress:run:mobile": "cypress run --spec 'cypress/e2e/mobile.cy.ts'",
+    "cypress:run:visual": "cypress run --spec 'cypress/e2e/visual-regression.cy.ts'",
     "update": "ncu -t minor -u"
   },
   "private": true,
