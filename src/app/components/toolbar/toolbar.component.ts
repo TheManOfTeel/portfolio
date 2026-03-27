@@ -13,4 +13,8 @@ export class ToolbarComponent {
   downloadResume(): void {
     window.open('assets/cv/Resume.pdf', '_blank');
   }
+
+  onTabChange(): void {
+    this.stateService.scrollToTop();
+  }
 }

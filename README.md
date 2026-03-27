@@ -46,15 +46,107 @@ To execute unit tests with the [Karma](https://karma-runner.github.io) test runn
 ng test
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+For CI environments, use:
 
 ```bash
-ng e2e
+npm run test:ci
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. This project uses Cypress for e2e.
+This runs tests with code coverage reporting and JUnit output for CI integration.
+
+## Running end-to-end tests
+
+For end-to-end (e2e) testing, this project uses [Cypress](https://cypress.io). Run the following commands:
+
+### All E2E Tests
+```bash
+npm run cypress:run:e2e
+```
+
+### Component Tests
+```bash
+npm run cypress:run:component
+```
+
+### Specific Test Suites
+
+#### Accessibility Tests
+```bash
+npm run cypress:run:accessibility
+```
+Tests WCAG compliance, keyboard navigation, screen reader support, and color contrast.
+
+#### Performance Tests
+```bash
+npm run cypress:run:performance
+```
+Tests page load times, Core Web Vitals, bundle size, and runtime performance.
+
+#### Mobile Responsiveness Tests
+```bash
+npm run cypress:run:mobile
+```
+Tests mobile layouts, touch interactions, and responsive design across different viewports.
+
+#### Visual Regression Tests
+```bash
+npm run cypress:run:visual
+```
+Captures and compares visual snapshots to detect UI changes (requires cypress-image-snapshot plugin).
+
+### Interactive Test Development
+```bash
+npm run cypress:open
+```
+
+## Test Coverage
+
+The project includes comprehensive test coverage for:
+
+### Unit Tests (Karma/Jasmine)
+- Component logic and templates
+- Service methods and state management
+- Model classes and data structures
+- Code coverage reporting with Istanbul
+
+### E2E Tests (Cypress)
+- User workflows and navigation
+- UI interactions and state changes
+- Responsive design and mobile support
+- Accessibility compliance
+- Performance monitoring
+- Visual regression detection
+
+### Component Tests (Cypress)
+- Individual component mounting and rendering
+- Template binding and change detection
+- User interaction simulation
+- Dark mode theming
+- Mobile-specific layouts
+
+## CI/CD Integration
+
+Tests are automatically run in GitHub Actions with:
+- Unit test execution and coverage reporting
+- E2E test execution across multiple browsers
+- Accessibility and performance validation
+- Test result artifacts and summaries
+
+## Test Structure
+
+```
+cypress/
+├── e2e/
+│   ├── spec.cy.ts          # Main E2E test suite
+│   ├── footer.cy.ts        # Footer component tests
+│   ├── mobile.cy.ts        # Mobile responsiveness tests
+│   ├── accessibility.cy.ts # Accessibility compliance tests
+│   ├── performance.cy.ts   # Performance monitoring tests
+│   └── visual-regression.cy.ts # Visual snapshot tests
+├── about.cy.ts             # About component tests
+├── projects.cy.ts          # Projects component tests
+└── toolbar.cy.ts           # Toolbar component tests
+```
 
 ## Additional Resources
 

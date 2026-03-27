@@ -1,22 +1,52 @@
 // ***********************************************
-// This example namespace declaration will help
-// with Intellisense and code completion in your
-// IDE or Text Editor.
+// Custom Portfolio Commands
 // ***********************************************
-// declare namespace Cypress {
-//   interface Chainable<Subject = any> {
-//     customCommand(param: any): typeof customCommand;
-//   }
-// }
-//
-// function customCommand(param: any): void {
-//   console.warn(param);
-// }
-//
-// NOTE: You can use it like so:
-// Cypress.Commands.add('customCommand', customCommand);
-//
-// ***********************************************
+
+declare global {
+  namespace Cypress {
+    interface Chainable {
+      toggleDarkMode(): Chainable<void>;
+      expandAllPanels(): Chainable<void>;
+      collapseAllPanels(): Chainable<void>;
+      switchToTab(tabName: string): Chainable<void>;
+      checkPerformanceMetrics(): Chainable<void>;
+      takeVisualSnapshot(name: string): Chainable<void>;
+    }
+  }
+}
+
+Cypress.Commands.add('toggleDarkMode', () => {
+  cy.get('button').contains(/Mode/).click();
+});
+
+Cypress.Commands.add('expandAllPanels', () => {
+  cy.get('button').contains('Expand All').click();
+});
+
+Cypress.Commands.add('collapseAllPanels', () => {
+  cy.get('button').contains('Collapse All').click();
+});
+
+Cypress.Commands.add('switchToTab', (tabName: string) => {
+  cy.contains(tabName).click();
+});
+
+Cypress.Commands.add('checkPerformanceMetrics', () => {
+  cy.window().then((win) => {
+    const perfData = win.performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+    cy.wrap({
+      domContentLoaded: perfData.domContentLoadedEventEnd - perfData.domContentLoadedEventStart,
+      loadComplete: perfData.loadEventEnd - perfData.loadEventStart,
+      totalTime: perfData.loadEventEnd - perfData.fetchStart
+    }).as('performanceMetrics');
+  });
+});
+
+Cypress.Commands.add('takeVisualSnapshot', (name: string) => {
+  cy.screenshot(name);
+});
+
+export {};
 // This example commands.js shows you how to
 // create various custom commands and overwrite
 // existing commands.
