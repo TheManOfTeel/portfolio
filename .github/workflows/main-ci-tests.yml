@@ -5,10 +5,6 @@ on:
     branches: ["main"]
   workflow_call:
 
-permissions:
-  checks: write
-  pull-requests: write
-
 jobs:
   karma-tests:
     uses: ./.github/workflows/karma-tests.yml
