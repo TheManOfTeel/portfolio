@@ -26,4 +26,4 @@ jobs:
         echo "EOF" >> "$GITHUB_OUTPUT"
     - name: Set Job Summary
       run: |
-        echo "### Karma Results  ${{steps.run_tests.outputs.karma_output}}" >> $GITHUB_STEP_SUMMARY
+        echo "### Karma Results  ${{steps.run_tests.outputs.karma_output}}" >> $GITHUB_OUTPUT
