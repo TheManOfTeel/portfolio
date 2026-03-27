@@ -25,6 +25,3 @@ jobs:
         npm ci --legacy-peer-deps
         npm run build
         npm run deploy
-    - name: Set Job Summary
-      run: |
-        echo "### GitHub Pages Deployment Results " >> $GITHUB_STEP_SUMMARY

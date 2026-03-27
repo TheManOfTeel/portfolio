@@ -19,17 +19,18 @@ jobs:
       run: npm install puppeteer --legacy-peer-deps --save-dev
     - name: Run tests
       id: karma-test
-      run: |
-        TEST_OUTPUT=$(npm run test:ci || true)
-        echo "test_results<<EOF" >> "$GITHUB_OUTPUT"
-        echo "$TEST_OUTPUT" >> "$GITHUB_OUTPUT"
-        echo "EOF" >> "$GITHUB_OUTPUT"
+      run: npx karma start karma.conf.js --single-run
+        continue-on-error: true   # CRITICAL: lets the summary step run even on test failure
+      env:
+        CHROME_BIN: google-chrome_OUTPUT"
       shell: bash
-    - name: Set Job Summary
-      run: |
-        RESULTS="${{ steps.karma-test.outputs.test_results }}"
-        echo "### Karma Test Results" >> "$GITHUB_STEP_SUMMARY"
-        echo '```' >> "$GITHUB_STEP_SUMMARY"
-        echo "$RESULTS" >> "$GITHUB_STEP_SUMMARY"
-        echo '```' >> "$GITHUB_STEP_SUMMARY"
-      shell: bash
+    - name: Generate job summary
+      if: always()              # run even if karma step failed
+      run: node .github/scripts/karma-summary.js >> $GITHUB_STEP_SUMMARY
+    - name: Upload test results
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: karma-test-results
+        path: test-results/
+        retention-days: 14
