@@ -24,20 +24,13 @@ if (!fs.existsSync(xmlPath)) {
   console.log('\nExample output when tests pass:');
   console.log('─'.repeat(70));
 
-  const exampleOutput = `## ✅ Karma Unit Tests
+  const exampleOutput = `## Karma Results
 
-**Status:** Passing
+| **Result** | **Passed** ✅ | **Failed** ❌ | **Errors** 💥 | **Skipped** ↩️ | **Duration** 🕗 |
+|---|---|---|---|---|---|
+| Passing ✅ | 24 | 0 | 0 | 0 | 15.234s |
 
-| Metric | Value |
-|---|---|
-| **Total Tests** | 24 |
-| **Passed** ✅ | 24 |
-| **Failed** ❌ | 0 |
-| **Errors** 💥 | 0 |
-| **Skipped** ↩️ | 0 |
-| **Duration** 🕗 | 15.234s |
-
-### Pass Rate: 100.0%
+**Pass Rate:** 100.0%
 
 ### ✅ Test Summary
 
@@ -59,16 +52,11 @@ if (!fs.existsSync(xmlPath)) {
 
 **Status:** Failing
 
-| Metric | Value |
-|---|---|
-| **Total Tests** | 24 |
-| **Passed** ✅ | 22 |
-| **Failed** ❌ | 2 |
-| **Errors** 💥 | 0 |
-| **Skipped** ↩️ | 0 |
-| **Duration** 🕗 | 18.456s |
+| **Result** | **Passed** ✅ | **Failed** ❌ | **Errors** 💥 | **Skipped** ↩️ | **Duration** 🕗 |
+|---|---|---|---|---|---|
+| Failing ❌ | 22 | 2 | 0 | 0 | 18.456s |
 
-### Pass Rate: 91.7%
+**Pass Rate:** 91.7%
 
 ### ❌ Failed Tests (2)
 
@@ -103,7 +91,6 @@ console.log('\n📍 Where to find test results in GitHub Actions:\n');
 console.log('1. Job Summary: Visible in the workflow run summary page');
 console.log('2. Artifacts: Download "karma-test-results" for detailed XML');
 console.log('3. Artifacts: Download "karma-coverage-reports" for coverage');
-console.log('4. PR Comments: Automatically posted for PRs (with publish-unit-test-result-action)');
 console.log('\n🔗 GitHub Actions Integration Features:\n');
 console.log('✅ JUnit XML test results (karma-junit-reporter)');
 console.log('✅ GitHub Actions job summary (karma-summary.js)');

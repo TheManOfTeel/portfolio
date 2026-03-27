@@ -41,7 +41,6 @@ const failedTests = testCases.filter(tc => tc[2]); // Has failure content
 const passedTests = testCases.filter(tc => !tc[2]); // No failure
 
 let summary = `## Karma Results\n\n`;
-summary += `**Status:** ${status}\n\n`;
 
 // Results table
 summary += `| **Result** | **Passed** ✅ | **Failed** ❌ | **Errors** 💥 | **Skipped** ↩️ | **Duration** 🕗 |\n`;
@@ -51,7 +50,7 @@ summary += `| ${status} ${icon} | ${passed} | ${failures} | ${errors} | ${skippe
 // Pass rate percentage
 if (tests > 0) {
   const passPercent = ((passed / tests) * 100).toFixed(1);
-  summary += `### Pass Rate: ${passPercent}%\n\n`;
+  summary += `**Pass Rate:** ${passPercent}%\n\n`;
 }
 
 // Failure details if any
