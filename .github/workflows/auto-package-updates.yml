@@ -1,4 +1,4 @@
-name: Automated Package Update
+name: Automated Package Updates
 
 on:
   schedule:

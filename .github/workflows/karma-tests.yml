@@ -19,3 +19,6 @@ jobs:
       run: npm install puppeteer --legacy-peer-deps --save-dev
     - name: Run tests
       run: npm run test:ci
+    - name: Set Job Summary
+      run: |
+        echo "### Karma Results " >> $GITHUB_STEP_SUMMARY
