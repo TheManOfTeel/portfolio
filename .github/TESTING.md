@@ -61,12 +61,6 @@ Two artifacts are automatically uploaded and stored for 14 days:
 1. **karma-test-results** - JUnit XML test results
 2. **karma-coverage-reports** - Code coverage HTML reports
 
-### PR Comments
-For pull requests, `publish-unit-test-result-action` automatically comments with:
-- Test results summary
-- Comparison to previous commits
-- Direct links to rerun failed tests
-
 ## Local Development
 
 ### Validate Setup
