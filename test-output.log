@@ -1,0 +1,417 @@
+
+> portfolio@1.10.0 e2e
+> ng e2e
+
+Passing watch mode to DevServer - watch mode is true
+❯ Building...
+✔ Building...
+Initial chunk files | Names         | Raw size
+main.js             | main          | 78.16 kB | 
+styles.css          | styles        | 11.14 kB | 
+polyfills.js        | polyfills     | 95 bytes | 
+
+                    | Initial total | 89.39 kB
+
+Application bundle generation complete. [1.461 seconds] - 2026-03-29T15:03:29.975Z
+
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mAll "@import" rules must come first[0m [1m[35m[plugin angular-compiler][0m [invalid-@import]
+
+    src/app/components/about/about.component.css:8:0:
+[37m      8 │ [32m@import[37m '../../../styles.css';
+        ╵ [32m~~~~~~~[0m
+
+  This rule cannot come before an "@import" rule
+
+    src/app/components/about/about.component.css:2:0:
+[37m      2 │ [32m[37m.about-img-center {
+        ╵ [32m^[0m
+
+
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mAll "@import" rules must come first[0m [1m[35m[plugin angular-compiler][0m [invalid-@import]
+
+    src/app/components/projects/projects.component.css:8:0:
+[37m      8 │ [32m@import[37m '../../../styles.css';
+        ╵ [32m~~~~~~~[0m
+
+  This rule cannot come before an "@import" rule
+
+    src/app/components/projects/projects.component.css:2:0:
+[37m      2 │ [32m[37m.image-container {
+        ╵ [32m^[0m
+
+
+Watch mode enabled. Watching for file changes...
+NOTE: Raw file sizes do not reflect development server per-request transformations.
+  ➜  Local:   http://localhost:4200/
+  ➜  press h + enter to show help
+Warning: The allowCypressEnv configuration option is enabled. This allows any browser code to read values from Cypress.env(). This is insecure and will be removed in a future major version.
+
+1. Replace Cypress.env() calls with cy.env() (for sensitive values) or Cypress.expose() (for public configuration)
+2. Set allowCypressEnv: false in your Cypress configuration to disable Cypress.env()
+
+Learn more: https://on.cypress.io/cypress-env-migration
+
+
+================================================================================
+
+  (Run Starting)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Cypress:        15.13.0                                                                        │
+  │ Browser:        Electron 138 (headless)                                                        │
+  │ Node Version:   v24.14.0 (/Users/dannyteel/.nvm/versions/node/v24.14.0/bin/node)               │
+  │ Specs:          6 found (accessibility.cy.ts, footer.cy.ts, mobile.cy.ts, performance.cy.ts, s │
+  │                 pec.cy.ts, visual-regression.cy.ts)                                            │
+  │ Searched:       cypress/e2e/**/*.cy.ts                                                         │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  accessibility.cy.ts                                                             (1 of 6)
+
+
+  Accessibility Tests
+    ✓ should have proper heading structure (1193ms)
+    ✓ should have proper ARIA attributes (300ms)
+    ✓ should support keyboard navigation (277ms)
+    ✓ should have proper alt text for images (271ms)
+    ✓ should have proper link attributes (289ms)
+    ✓ should maintain accessibility in dark mode (395ms)
+    ✓ should have proper form controls (294ms)
+    ✓ should support screen reader navigation (253ms)
+    ✓ should have sufficient touch target sizes on mobile (259ms)
+    ✓ should not have accessibility violations in expanded content (476ms)
+
+
+  10 passing (4s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        10                                                                               │
+  │ Passing:      10                                                                               │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     4 seconds                                                                        │
+  │ Spec Ran:     accessibility.cy.ts                                                              │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  footer.cy.ts                                                                    (2 of 6)
+
+
+  Footer Component Tests
+    ✓ should display footer with all required elements (769ms)
+    ✓ should display LinkedIn link with correct attributes (286ms)
+    ✓ should display GitHub link with correct attributes (239ms)
+    ✓ should display scroll to top button (237ms)
+    ✓ should apply dark mode styling to footer images (357ms)
+    ✓ should have proper spacing and layout (213ms)
+    ✓ should be positioned at the bottom of the page (277ms)
+
+
+  7 passing (3s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        7                                                                                │
+  │ Passing:      7                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     2 seconds                                                                        │
+  │ Spec Ran:     footer.cy.ts                                                                     │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  mobile.cy.ts                                                                    (3 of 6)
+
+
+  Mobile Responsiveness Tests
+    Mobile Layout (iPhone 6)
+      ✓ should display mobile-optimized toolbar (769ms)
+      ✓ should display mobile-optimized footer (298ms)
+      ✓ should show icon buttons instead of text buttons (284ms)
+      ✓ should display tabs with icons (273ms)
+      ✓ should handle touch interactions (374ms)
+      ✓ should display mobile-optimized expand/collapse buttons (250ms)
+      ✓ should maintain functionality in mobile view (588ms)
+    Tablet Layout (iPad)
+      ✓ should display tablet-optimized layout (251ms)
+      ✓ should display tablet-optimized footer (251ms)
+      ✓ should show appropriate button sizes (261ms)
+      ✓ should handle tablet-specific interactions (347ms)
+    Desktop Layout (MacBook)
+      ✓ should display full desktop layout (272ms)
+      ✓ should display desktop-optimized footer (245ms)
+      ✓ should show full button text (270ms)
+    Orientation Changes
+      ✓ should handle orientation change from portrait to landscape (287ms)
+    Touch and Gesture Support
+      ✓ should support tap interactions (370ms)
+      ✓ should handle accordion panel interactions on mobile (1226ms)
+
+
+  17 passing (7s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        17                                                                               │
+  │ Passing:      17                                                                               │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     7 seconds                                                                        │
+  │ Spec Ran:     mobile.cy.ts                                                                     │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  performance.cy.ts                                                               (4 of 6)
+
+
+  Performance Tests
+    ✓ should load the page within acceptable time (762ms)
+    ✓ should have acceptable First Contentful Paint (420ms)
+    ✓ should have acceptable Largest Contentful Paint (242ms)
+    ✓ should not have excessive bundle size (232ms)
+    ✓ should load images efficiently (332ms)
+    ✓ should have acceptable Time to Interactive (237ms)
+    ✓ should not have memory leaks on navigation (1426ms)
+    ✓ should handle rapid user interactions without issues (885ms)
+    ✓ should load third-party resources efficiently (252ms)
+    ✓ should have acceptable Core Web Vitals (2247ms)
+
+
+  10 passing (7s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        10                                                                               │
+  │ Passing:      10                                                                               │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     7 seconds                                                                        │
+  │ Spec Ran:     performance.cy.ts                                                                │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  spec.cy.ts                                                                      (5 of 6)
+
+
+  Portfolio Application E2E Tests
+    Initial Page Load
+      ✓ should load the application successfully (734ms)
+      ✓ should display the toolbar with proper branding (284ms)
+      ✓ should show About tab by default (247ms)
+      ✓ should display footer with social links (241ms)
+    Navigation and Tabs
+      ✓ should switch between About and Projects tabs (887ms)
+      ✓ should maintain tab state on page refresh (620ms)
+    Dark Mode Functionality
+      ✓ should toggle dark mode correctly (351ms)
+      ✓ should apply dark mode styling to images (632ms)
+      ✓ should persist dark mode preference (840ms)
+    About Section Functionality
+      ✓ should display all required sections (410ms)
+      ✓ should expand and collapse accordion panels (573ms)
+      ✓ should display skills correctly (537ms)
+      ✓ should display experience with proper formatting (487ms)
+      ✓ should display education information (534ms)
+    Projects Section Functionality
+      ✓ should display projects header and description (451ms)
+      ✓ should display project panels (825ms)
+      ✓ should expand and collapse project panels (1074ms)
+      ✓ should display project images (470ms)
+      ✓ should have working repository links (949ms)
+      ✓ should display project status indicators (433ms)
+    Footer Functionality
+      1) should display footer with proper links
+      2) should have working LinkedIn link
+      3) should have working GitHub link
+      4) should have scroll to top button
+    Responsive Design
+      ✓ should work on mobile viewport (418ms)
+      ✓ should work on tablet viewport (217ms)
+      ✓ should work on desktop viewport (214ms)
+    Accessibility
+      ✓ should have proper heading structure (331ms)
+      ✓ should have proper ARIA attributes (203ms)
+      ✓ should support keyboard navigation (193ms)
+    Performance
+      ✓ should load within acceptable time (376ms)
+      ✓ should not have console errors (203ms)
+    Download Resume Functionality
+      ✓ should trigger resume download (322ms)
+
+
+  29 passing (33s)
+  4 failing
+
+  1) Portfolio Application E2E Tests
+       Footer Functionality
+         should display footer with proper links:
+     AssertionError: Timed out retrying after 4000ms: Expected to find element: `.footer`, but never found it.
+      at Context.eval (webpack://portfolio/./cypress/e2e/spec.cy.ts:192:24)
+
+  2) Portfolio Application E2E Tests
+       Footer Functionality
+         should have working LinkedIn link:
+     AssertionError: Timed out retrying after 4000ms: Expected to find element: `.footer [href*="linkedin"]`, but never found it.
+      at Context.eval (webpack://portfolio/./cypress/e2e/spec.cy.ts:197:43)
+
+  3) Portfolio Application E2E Tests
+       Footer Functionality
+         should have working GitHub link:
+     AssertionError: Timed out retrying after 4000ms: Expected to find element: `.footer [href*="github"]`, but never found it.
+      at Context.eval (webpack://portfolio/./cypress/e2e/spec.cy.ts:202:41)
+
+  4) Portfolio Application E2E Tests
+       Footer Functionality
+         should have scroll to top button:
+     AssertionError: Timed out retrying after 4000ms: Expected to find element: `.footer button`, but never found it.
+      at Context.eval (webpack://portfolio/./cypress/e2e/spec.cy.ts:207:31)
+
+
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        33                                                                               │
+  │ Passing:      29                                                                               │
+  │ Failing:      4                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  4                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     33 seconds                                                                       │
+  │ Spec Ran:     spec.cy.ts                                                                       │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /Users/dannyteel/Dev/Projects/portfolio/cypress/screenshots/spec.cy.ts/Portfolio    (2560x1440)
+      Application E2E Tests -- Footer Functionality -- should display footer with pro               
+     per links (failed).png                                                                         
+  -  /Users/dannyteel/Dev/Projects/portfolio/cypress/screenshots/spec.cy.ts/Portfolio    (2560x1440)
+      Application E2E Tests -- Footer Functionality -- should have working LinkedIn l               
+     ink (failed).png                                                                               
+  -  /Users/dannyteel/Dev/Projects/portfolio/cypress/screenshots/spec.cy.ts/Portfolio    (2560x1440)
+      Application E2E Tests -- Footer Functionality -- should have working GitHub lin               
+     k (failed).png                                                                                 
+  -  /Users/dannyteel/Dev/Projects/portfolio/cypress/screenshots/spec.cy.ts/Portfolio    (2560x1440)
+      Application E2E Tests -- Footer Functionality -- should have scroll to top butt               
+     on (failed).png                                                                                
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  visual-regression.cy.ts                                                         (6 of 6)
+
+
+  Visual Regression Tests
+    ✓ should capture homepage visual snapshot (2248ms)
+    ✓ should capture About section visual snapshot (1795ms)
+    ✓ should capture Projects section visual snapshot (3275ms)
+    ✓ should capture expanded About section (4789ms)
+    ✓ should capture expanded Projects section (9281ms)
+    ✓ should capture dark mode visual snapshot (1938ms)
+    ✓ should capture mobile layout (1338ms)
+    ✓ should capture tablet layout (1557ms)
+    ✓ should capture desktop layout (1935ms)
+    ✓ should capture footer visual snapshot (736ms)
+    ✓ should capture toolbar visual snapshot (650ms)
+
+
+  11 passing (30s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        11                                                                               │
+  │ Passing:      11                                                                               │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  11                                                                               │
+  │ Video:        false                                                                            │
+  │ Duration:     29 seconds                                                                       │
+  │ Spec Ran:     visual-regression.cy.ts                                                          │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /Users/dannyteel/Dev/Projects/portfolio/cypress/screenshots/visual-regression.cy    (2000x1812)
+     .ts/homepage-initial.png                                                                       
+  -  /Users/dannyteel/Dev/Projects/portfolio/cypress/screenshots/visual-regression.cy    (2000x1812)
+     .ts/about-section.png                                                                          
+  -  /Users/dannyteel/Dev/Projects/portfolio/cypress/screenshots/visual-regression.cy    (2000x4170)
+     .ts/projects-section.png                                                                       
+  -  /Users/dannyteel/Dev/Projects/portfolio/cypress/screenshots/visual-regression.cy    (2000x6244)
+     .ts/about-expanded.png                                                                         
+  -  /Users/dannyteel/Dev/Projects/portfolio/cypress/screenshots/visual-regression.cy   (2000x13030)
+     .ts/projects-expanded.png                                                                      
+  -  /Users/dannyteel/Dev/Projects/portfolio/cypress/screenshots/visual-regression.cy    (2000x1812)
+     .ts/dark-mode.png                                                                              
+  -  /Users/dannyteel/Dev/Projects/portfolio/cypress/screenshots/visual-regression.cy     (750x2342)
+     .ts/mobile-layout.png                                                                          
+  -  /Users/dannyteel/Dev/Projects/portfolio/cypress/screenshots/visual-regression.cy    (1536x1894)
+     .ts/tablet-layout.png                                                                          
+  -  /Users/dannyteel/Dev/Projects/portfolio/cypress/screenshots/visual-regression.cy    (2560x1764)
+     .ts/desktop-layout.png                                                                         
+  -  /Users/dannyteel/Dev/Projects/portfolio/cypress/screenshots/visual-regression.cy     (2000x128)
+     .ts/footer.png                                                                                 
+  -  /Users/dannyteel/Dev/Projects/portfolio/cypress/screenshots/visual-regression.cy     (2000x128)
+     .ts/toolbar.png                                                                                
+
+
+====================================================================================================
+
+  (Run Finished)
+
+
+       Spec                                              Tests  Passing  Failing  Pending  Skipped  
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ ✔  accessibility.cy.ts                      00:04       10       10        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  footer.cy.ts                             00:02        7        7        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  mobile.cy.ts                             00:07       17       17        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  performance.cy.ts                        00:07       10       10        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✖  spec.cy.ts                               00:33       33       29        4        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  visual-regression.cy.ts                  00:29       11       11        -        -        - │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+    ✖  1 of 6 failed (17%)                      01:24       88       84        4        -        -  
+

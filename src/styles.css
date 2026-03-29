@@ -1,16 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'https://fonts.googleapis.com/icon?family=Material+Icons';
 
+/* Fix for iOS Safari white bar at bottom */
+:root {
+  /* Set --vh to 1% of the viewport height */
+  --vh: 1vh;
+}
+
+@supports (height: 100dvh) {
+  :root {
+    --vh: 1dvh;
+  }
+}
+
+/* Responsive helpers */
+@media (max-width: 600px) {
+  .main-div {
+    width: 100vw;
+    max-width: 100vw;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .footer-toolbar, .footer-bar {
+    min-height: 48px;
+    padding: 0 4px;
+  }
+  .footer-icon {
+    height: 32px;
+    width: 32px;
+    margin: 0 8px;
+  }
+  .divider {
+    width: 4px;
+    margin: 0 4px;
+  }
+}
+
 * {
   font-family: 'Inconsolata', monospace;
 }
 
 html, body {
-  height: 100%;
-  height: 100vh;
-  height: 100dvh;
-  height: 100dvh;
-  height: -webkit-fill-available;
+  /* Use the custom --vh variable for full height */
+  height: calc(var(--vh, 1vh) * 100);
+  min-height: 100%;
+  box-sizing: border-box;
   margin: 0;
   scroll-behavior: smooth;
   background-color: var(--mat-sys-surface);
@@ -19,6 +53,8 @@ html, body {
   -ms-text-size-adjust: 100%;
 }
 body {
+  /* Add padding for iOS safe area at the bottom */
+  padding-bottom: env(safe-area-inset-bottom);
   margin: 0;
   --text-color: #000000;
   --mat-expansion-header-indicator-color: #000000;
@@ -44,69 +80,75 @@ body.dark-theme {
   --mat-icon-color: #eee;
 }
 
-.toolbar {
-  background-color: var(--mat-toolbar-container-background-color);
-}
-
-app-root {
-  display: block;
-  background-color: var(--mat-toolbar-container-background-color);
-}
-
-h1, h2, h3, h4, h5, h6, p {
-  color: var(--text-color);
-}
-
-main {
-  align-content: center;
-  width: 100%;
-  min-height: 100%;
-  min-height: 100vh;
-  min-height: 100dvh;
-  min-height: -webkit-fill-available;
+/* Main content width and centering */
+.main-div {
+  width: 85%;
+  max-width: 85%;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-.main-div {
+/* Layout and scaling classes */
+.main-layout {
+  min-height: 100vh;
   display: flex;
-  flex: inherit;
-  justify-content: center;
-  font-size: medium;
+  flex-direction: column;
+  background: var(--mat-sys-surface);
+}
+
+.content {
+  flex: 1 0 auto;
+  padding-bottom: min(56px + env(safe-area-inset-bottom), 10vh); /* Footer height, max 10vh */
   width: 100%;
+  box-sizing: border-box;
 }
 
-.container {
-  text-align: center;
-  height: 80%;
-  max-width: 90%;
+/* Footer and toolbar overrides */
+.footer-bar {
+  width: 100vw;
+  background: var(--mat-sys-surface);
+  border: none;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
 }
 
-.image-container {
+.footer-toolbar {
+  background: var(--mat-toolbar-container-background-color, var(--mat-sys-surface));
+  color: var(--mat-icon-color);
+  min-height: 56px;
   display: flex;
+  align-items: center;
   justify-content: center;
+  width: 100vw;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.footer-icon {
+  height: 48px;
+  width: 48px;
+  margin: 0 4px;
+  vertical-align: middle;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* Theme and typography */
+h1, h2, h3, h4, h5, h6, p {
+  color: var(--text-color);
+  text-align: center;
 }
 
 .dark-img {
   filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0) brightness(100%) contrast(100%);
-}
-
-.toolbar {
-  height: 100%;
-  width: 100%;
-  margin-bottom: 0%;
-}
-
-.header{
-  text-align: center;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-.footer {
-  align-self: center;
-  margin-top: auto;
-  width: 100%;
 }
 
 .card {
@@ -127,4 +169,19 @@ main {
 .accordion-content {
   font-size: medium;
   text-align: left;
+}
+
+/* Ensure last card clears the fixed footer */
+.main-div .card:last-child,
+.content .card:last-child {
+  margin-bottom: calc(4px + env(safe-area-inset-bottom));
+}
+/* Prevent text overflow in mat-expansion-panel on orientation change */
+.mat-expansion-panel, .mat-expansion-panel * {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+/* Left justify all text in mat-expansion-panel */
+.mat-expansion-panel, .mat-expansion-panel * {
+  text-align: left !important;
 }

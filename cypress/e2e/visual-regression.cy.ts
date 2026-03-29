@@ -54,7 +54,7 @@ describe('Visual Regression Tests', () => {
   });
 
   it('should capture footer visual snapshot', () => {
-    cy.get('.footer').screenshot('footer');
+    cy.get('.footer-bar').screenshot('footer');
   });
 
   it('should capture toolbar visual snapshot', () => {

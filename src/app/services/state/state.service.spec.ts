@@ -102,11 +102,11 @@ describe('StateService', () => {
 
   describe('scrollToTop()', () => {
     it('should call document.body.scrollTo', () => {
-      const scrollToSpy = spyOn(window, 'scrollTo');
+      const scrollToSpy = spyOn(document.body, 'scrollTo');
 
       service.scrollToTop();
 
-      expect(scrollToSpy).toHaveBeenCalled();
+      expect(scrollToSpy).toHaveBeenCalledWith({ top: 0, behavior: 'smooth' });
     });
   });
 });

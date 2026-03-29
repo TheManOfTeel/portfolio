@@ -17,9 +17,11 @@ describe('ProjectsComponent', () => {
   });
 
   it('should display projects header with description', () => {
-    cy.contains('Notable Projects').should('be.visible');
-    cy.contains('Below are notable projects that I have worked on').should('be.visible');
-    cy.get('.header img').should('be.visible');
+    cy.get('.header').within(() => {
+      cy.contains('Notable Projects').should('be.visible');
+      cy.contains('Below are notable projects that I have worked on').should('be.visible');
+      cy.get('.image-container img').should('be.visible');
+    });
   });
 
   it('should display projects section with expand/collapse buttons', () => {
@@ -104,7 +106,7 @@ describe('ProjectsComponent', () => {
     cy.window().then((win) => {
       const stateService = win['ng'].getInjector(win.document.querySelector('app-projects')).get(StateService);
       stateService.isDarkMode = true;
-      cy.get('.header img').should('have.class', 'dark-img');
+      cy.get('.image-container img').should('have.class', 'dark-img');
     });
   });
 

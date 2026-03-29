@@ -51,6 +51,7 @@ describe('Accessibility Tests', () => {
     // Find and click dark mode button
     cy.get('mat-toolbar button').contains(/Mode/).click();
     // After toggle, main content should still be visible
+    cy.get('.main-layout .content').should('exist');
     cy.get('h1, h2, h3').should('exist');
     cy.get('button').should('be.visible');
   });

@@ -13,6 +13,11 @@ describe('Mobile Responsiveness Tests', () => {
       cy.contains('Danny Teel').should('be.visible');
     });
 
+    it('should display mobile-optimized footer', () => {
+      cy.get('.footer-bar').should('be.visible');
+      cy.get('.footer-toolbar').should('exist');
+    });
+
     it('should show icon buttons instead of text buttons', () => {
       cy.get('button mat-icon').should('have.length.greaterThan', 0);
       // On mobile, text labels might not be visible for some buttons
@@ -56,6 +61,11 @@ describe('Mobile Responsiveness Tests', () => {
       cy.contains('Download Resume').should('be.visible');
     });
 
+    it('should display tablet-optimized footer', () => {
+      cy.get('.footer-bar').should('be.visible');
+      cy.get('.footer-toolbar').should('exist');
+    });
+
     it('should show appropriate button sizes', () => {
       cy.get('button').should('be.visible');
       cy.get('button mat-icon').should('exist');
@@ -75,6 +85,11 @@ describe('Mobile Responsiveness Tests', () => {
     it('should display full desktop layout', () => {
       cy.contains('Download Resume').should('be.visible');
       cy.contains(/Mode/).should('be.visible');
+    });
+
+    it('should display desktop-optimized footer', () => {
+      cy.get('.footer-bar').should('be.visible');
+      cy.get('.footer-toolbar').should('exist');
     });
 
     it('should show full button text', () => {
