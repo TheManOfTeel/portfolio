@@ -34,7 +34,7 @@ if (!fs.existsSync(xmlPath)) {
 
 **Pass Rate:** 100.0%
 
-### Code Coverage
+### Code Coverage Results
 
 | **Metric** | **Coverage** |
 |---|---|
@@ -71,7 +71,7 @@ if (!fs.existsSync(xmlPath)) {
 
 **Pass Rate:** 91.7%
 
-### Code Coverage
+### Code Coverage Results
 
 | **Metric** | **Coverage** |
 |---|---|

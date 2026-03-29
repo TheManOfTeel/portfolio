@@ -86,7 +86,7 @@ try {
     const total = coverageData.total;
 
     if (total) {
-      summary += `\n### Code Coverage\n\n`;
+      summary += `\n### Code Coverage Results\n\n`;
       summary += `| **Metric** | **Coverage** |\n`;
       summary += `|---|---|\n`;
       summary += `| Statements | ${total.statements.pct}% |\n`;
