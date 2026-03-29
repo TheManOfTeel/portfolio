@@ -109,6 +109,7 @@ body.dark-theme {
 /* Footer and toolbar overrides */
 .footer-bar {
   width: 100vw;
+  height: (--mat-tab-container-height, 48px);
   background: var(--mat-sys-surface);
   border: none;
   position: fixed;
@@ -174,7 +175,7 @@ h1, h2, h3, h4, h5, h6, p {
 /* Ensure last card clears the fixed footer */
 .main-div .card:last-child,
 .content .card:last-child {
-  margin-bottom: calc(4px + env(safe-area-inset-bottom));
+  margin-bottom: calc(28px + env(safe-area-inset-bottom));
 }
 /* Prevent text overflow in mat-expansion-panel on orientation change */
 .mat-expansion-panel, .mat-expansion-panel * {
