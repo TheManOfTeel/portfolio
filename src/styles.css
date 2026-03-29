@@ -6,7 +6,7 @@
 }
 
 html, body {
-  height: 100vh;
+  height: 100dvh !important;
   margin: 0;
   scroll-behavior: smooth;
   background-color: var(--mat-sys-surface);
@@ -56,7 +56,7 @@ h1, h2, h3, h4, h5, h6, p {
 main {
   align-content: center;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100dvh;
   min-height: -webkit-fill-available;
   display: flex;
   flex-direction: column;
