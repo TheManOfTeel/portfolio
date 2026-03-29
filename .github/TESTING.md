@@ -15,7 +15,6 @@ karma-summary.js parses XML and formats for GitHub Actions
     ↓
 Results displayed in:
   - Job Summary page
-  - PR comments (auto-posted)
   - Downloadable artifacts
 ```
 
@@ -142,4 +141,3 @@ Required npm packages:
 - [Karma Test Runner](https://karma-runner.github.io/)
 - [JUnit Reporter Plugin](https://github.com/karma-runner/karma-junit-reporter)
 - [GitHub Actions Workflow Syntax](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions)
-- [Test Result Publishing Action](https://github.com/EnricoMi/publish-unit-test-result-action)
