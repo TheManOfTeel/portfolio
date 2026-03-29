@@ -22,7 +22,7 @@ export class ProjectsComponent {
       data management.`,
       `Enterprise application developed while at Rhyme.`,
       'assets/images/rhyme.png',
-      { 'width':'70%', 'height':'70%' },
+      { 'width':'100%', 'height':'100%' },
       undefined
     ),
     new Project(
@@ -47,7 +47,7 @@ export class ProjectsComponent {
       for environmental law compliance, including features for incident tracking, audits, and reporting.`,
       'Enterprise application developed while at StarTex Software.',
       'assets/images/ehs-insight.png',
-      { 'width':'60%', 'height':'60%' },
+      { 'width':'100%', 'height':'100%' },
       undefined
     ),
     new Project(
@@ -71,7 +71,7 @@ export class ProjectsComponent {
       developed in JavaScript using the Aurelia framework, and a SQL Server database for persistent data management.`,
       'Enterprise application developed while at Relativity.',
       'assets/images/review-center.png',
-      { 'width':'65%', 'height':'65%' },
+      { 'width':'100%', 'height':'100%' },
       undefined
     ),
     new Project(

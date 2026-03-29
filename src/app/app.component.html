@@ -1,17 +1,20 @@
-<main>
-  <router-outlet></router-outlet>
-  <div class="footer">
-    <mat-toolbar>
-      <a href="https://www.linkedin.com/in/daniel-teel-a6465017b" target="_blank">
-        <img src="assets/images/linkedin.svg" [ngClass]="stateService.isDarkMode ? 'dark-img' : ''">
+<main class="main-layout">
+  <section class="content">
+    <router-outlet></router-outlet>
+  </section>
+  <footer class="footer-bar" role="contentinfo">
+    <mat-toolbar color="primary" class="footer-toolbar">
+      <a href="https://www.linkedin.com/in/daniel-teel-a6465017b" target="_blank" aria-label="LinkedIn">
+        <img src="assets/images/linkedin.svg" [ngClass]="stateService.isDarkMode ? 'dark-img' : ''" class="footer-icon">
       </a>
-      <div class="divider"></div>
-      <a href="https://github.com/TheManOfTeel" target="_blank">
-        <img src="assets/images/github.svg" [ngClass]="stateService.isDarkMode ? 'dark-img' : ''">
+      <span class="divider"></span>
+      <a href="https://github.com/TheManOfTeel" target="_blank" aria-label="GitHub">
+        <img src="assets/images/github.svg" [ngClass]="stateService.isDarkMode ? 'dark-img' : ''" class="footer-icon">
       </a>
-      <button mat-icon-button color="primary" type="button" (click)="stateService.scrollToTop()" style="margin-left: auto;">
+      <span class="spacer"></span>
+      <button mat-icon-button color="primary" type="button" (click)="stateService.scrollToTop()" aria-label="Scroll to top">
         <mat-icon class="material-symbols-rounded">arrow_upward</mat-icon>
       </button>
     </mat-toolbar>
-  </div>
+  </footer>
 </main>

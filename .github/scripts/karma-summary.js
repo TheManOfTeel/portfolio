@@ -43,6 +43,7 @@ const passedTests = testCases.filter(tc => !tc[2]); // No failure
 let summary = `## Karma Results\n\n`;
 
 // Results table
+summary += `### Unit Test Results\n\n`;
 summary += `| **Result** | **Passed** ✅ | **Failed** ❌ | **Errors** 💥 | **Skipped** ↩️ | **Duration** 🕗 |\n`;
 summary += `|---|---|---|---|---|---|\n`;
 summary += `| ${status} ${icon} | ${passed} | ${failures} | ${errors} | ${skipped} | ${time}s |\n\n`;
@@ -75,6 +76,36 @@ if (passed > 0 && passed <= 20) {
   if (passedTests.length > 20) {
     summary += `\n... and ${passedTests.length - 20} more passed tests\n`;
   }
+}
+
+// Code Coverage Section
+try {
+  const coverageJsonPath = path.resolve('coverage/portfolio/coverage-summary.json');
+  if (fs.existsSync(coverageJsonPath)) {
+    const coverageData = JSON.parse(fs.readFileSync(coverageJsonPath, 'utf8'));
+    const total = coverageData.total;
+
+    if (total) {
+      summary += `\n### Code Coverage Results\n\n`;
+      summary += `| **Statements** | **Branches** | **Functions** | **Lines** |\n`;
+      summary += `|---|---|---|---|\n`;
+      summary += `| ${total.statements.pct}% | ${total.branches.pct}% | ${total.functions.pct}% | ${total.lines.pct}% |\n\n`;
+
+      // Visual indicator for coverage
+      const avgCoverage = (total.statements.pct + total.branches.pct + total.functions.pct + total.lines.pct) / 4;
+      if (avgCoverage >= 80) {
+        summary += `✅ **Overall Coverage:** ${avgCoverage.toFixed(1)}% (Excellent)\n`;
+      } else if (avgCoverage >= 70) {
+        summary += `🟡 **Overall Coverage:** ${avgCoverage.toFixed(1)}% (Good)\n`;
+      } else if (avgCoverage >= 50) {
+        summary += `🟠 **Overall Coverage:** ${avgCoverage.toFixed(1)}% (Fair)\n`;
+      } else {
+        summary += `🔴 **Overall Coverage:** ${avgCoverage.toFixed(1)}% (Needs Improvement)\n`;
+      }
+    }
+  }
+} catch (err) {
+  // Coverage file doesn't exist yet, which is fine
 }
 
 process.stdout.write(summary);

@@ -1,0 +1,5 @@
+/* Cypress Component Test Stylesheet
+   This file imports the main application styles for use in Cypress component tests.
+   It ensures that all global and component styles are available during test execution.
+*/
+@import '../../src/styles.css';

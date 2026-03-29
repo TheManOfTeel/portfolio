@@ -22,9 +22,9 @@ describe('Portfolio Application E2E Tests', () => {
     });
 
     it('should display footer with social links', () => {
-      cy.get('.footer').should('be.visible');
-      cy.get('.footer [href*="linkedin"]').should('exist');
-      cy.get('.footer [href*="github"]').should('exist');
+      cy.get('.footer-bar').should('be.visible');
+      cy.get('.footer-bar [href*="linkedin"]').should('exist');
+      cy.get('.footer-bar [href*="github"]').should('exist');
     });
   });
 
@@ -37,7 +37,7 @@ describe('Portfolio Application E2E Tests', () => {
       // Switch to Projects
       cy.contains('Projects').click();
       cy.contains('Welcome!').should('not.be.visible');
-      cy.contains('Projects', { selector: 'h2' }).should('be.visible');
+      cy.get('h2').contains('Projects').should('be.visible');
 
       // Switch back to About
       cy.contains('About').click();
@@ -47,7 +47,7 @@ describe('Portfolio Application E2E Tests', () => {
     it('should maintain tab state on page refresh', () => {
       // Switch to Projects tab
       cy.contains('Projects').click();
-      cy.contains('Projects', { selector: 'h1, h2, h3' }).should('be.visible');
+      cy.get('h1, h2, h3').contains('Projects').should('be.visible');
 
       // Refresh page
       cy.reload();
@@ -189,23 +189,23 @@ describe('Portfolio Application E2E Tests', () => {
 
   describe('Footer Functionality', () => {
     it('should display footer with proper links', () => {
-      cy.get('.footer').should('be.visible');
-      cy.get('.footer a').should('have.length', 2);
+      cy.get('.footer-bar').should('be.visible');
+      cy.get('.footer-bar a').should('have.length', 2);
     });
 
     it('should have working LinkedIn link', () => {
-      cy.get('.footer [href*="linkedin"]').should('have.attr', 'target', '_blank');
-      cy.get('.footer [href*="linkedin"]').should('have.attr', 'href', 'https://www.linkedin.com/in/daniel-teel-a6465017b');
+      cy.get('.footer-bar [href*="linkedin"]').should('have.attr', 'target', '_blank');
+      cy.get('.footer-bar [href*="linkedin"]').should('have.attr', 'href', 'https://www.linkedin.com/in/daniel-teel-a6465017b');
     });
 
     it('should have working GitHub link', () => {
-      cy.get('.footer [href*="github"]').should('have.attr', 'target', '_blank');
-      cy.get('.footer [href*="github"]').should('have.attr', 'href', 'https://github.com/TheManOfTeel');
+      cy.get('.footer-bar [href*="github"]').should('have.attr', 'target', '_blank');
+      cy.get('.footer-bar [href*="github"]').should('have.attr', 'href', 'https://github.com/TheManOfTeel');
     });
 
     it('should have scroll to top button', () => {
-      cy.get('.footer button').should('exist');
-      cy.get('.footer button mat-icon').should('contain', 'arrow_upward');
+      cy.get('.footer-bar button').should('exist');
+      cy.get('.footer-bar button mat-icon').should('contain', 'arrow_upward');
     });
   });
 
@@ -253,7 +253,7 @@ describe('Portfolio Application E2E Tests', () => {
     });
 
     it('should support keyboard navigation', () => {
-      cy.get('button').first().focus({ force: true });
+      cy.get('button').first().focus();
       // Verify focus works
       cy.get('button:focus').should('exist');
     });

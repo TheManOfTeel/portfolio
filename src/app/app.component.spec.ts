@@ -110,7 +110,7 @@ describe('AppComponent', () => {
   it('should render footer with toolbar', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    const footer = compiled.querySelector('.footer');
+    const footer = compiled.querySelector('.footer-bar');
     expect(footer).toBeTruthy();
     expect(footer?.querySelector('mat-toolbar')).toBeTruthy();
   });
@@ -118,7 +118,7 @@ describe('AppComponent', () => {
   it('should render LinkedIn and GitHub links in footer', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    const links = compiled.querySelectorAll('.footer a');
+    const links = compiled.querySelectorAll('.footer-bar a');
     expect(links.length).toBe(2);
     expect(links[0].getAttribute('href')).toBe('https://www.linkedin.com/in/daniel-teel-a6465017b');
     expect(links[1].getAttribute('href')).toBe('https://github.com/TheManOfTeel');
@@ -127,7 +127,7 @@ describe('AppComponent', () => {
   it('should render scroll to top button in footer', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    const button = compiled.querySelector('.footer button');
+    const button = compiled.querySelector('.footer-bar button');
     expect(button).toBeTruthy();
     expect(button?.getAttribute('type')).toBe('button');
   });

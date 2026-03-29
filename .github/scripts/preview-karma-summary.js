@@ -26,11 +26,21 @@ if (!fs.existsSync(xmlPath)) {
 
   const exampleOutput = `## Karma Results
 
+### Unit Test Results
+
 | **Result** | **Passed** ✅ | **Failed** ❌ | **Errors** 💥 | **Skipped** ↩️ | **Duration** 🕗 |
 |---|---|---|---|---|---|
 | Passing ✅ | 24 | 0 | 0 | 0 | 15.234s |
 
 **Pass Rate:** 100.0%
+
+### Code Coverage Results
+
+| **Statements** | **Branches** | **Functions** | **Lines** |
+|---|---|---|---|
+| 87.5% | 82.3% | 90.1% | 88.7% |
+
+✅ **Overall Coverage:** 87.2% (Excellent)
 
 ### ✅ Test Summary
 
@@ -48,15 +58,23 @@ if (!fs.existsSync(xmlPath)) {
   console.log('\nExample output when tests fail:');
   console.log('─'.repeat(70));
 
-  const failureExample = `## ❌ Karma Unit Tests
+  const failureExample = `## Karma Results
 
-**Status:** Failing
+### Unit Test Results
 
 | **Result** | **Passed** ✅ | **Failed** ❌ | **Errors** 💥 | **Skipped** ↩️ | **Duration** 🕗 |
 |---|---|---|---|---|---|
 | Failing ❌ | 22 | 2 | 0 | 0 | 18.456s |
 
 **Pass Rate:** 91.7%
+
+### Code Coverage Results
+
+| **Statements** | **Branches** | **Functions** | **Lines** |
+|---|---|---|---|
+| 75.2% | 68.9% | 80.5% | 76.8% |
+
+🟡 **Overall Coverage:** 75.4% (Good)
 
 ### ❌ Failed Tests (2)
 

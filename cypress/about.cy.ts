@@ -17,9 +17,11 @@ describe('AboutComponent', () => {
   });
 
   it('should display welcome header with image and text', () => {
-    cy.contains('Welcome!').should('be.visible');
-    cy.contains('My name is Danny Teel and I am a full stack software engineer').should('be.visible');
-    cy.get('.header img').should('be.visible');
+    cy.get('.header').within(() => {
+      cy.contains('Welcome!').should('be.visible');
+      cy.contains('My name is Danny Teel and I am a full stack software engineer').should('be.visible');
+      cy.get('.about-img-center img').should('be.visible');
+    });
   });
 
   it('should display overview section with expand/collapse buttons', () => {
@@ -106,13 +108,12 @@ describe('AboutComponent', () => {
     cy.window().then((win) => {
       const stateService = win['ng'].getInjector(win.document.querySelector('app-about')).get(StateService);
       stateService.isDarkMode = true;
-      cy.get('.header img').should('have.class', 'dark-img');
+      cy.get('.about-img-center img').should('have.class', 'dark-img');
     });
   });
 
   it('should calculate years of experience correctly', () => {
     cy.contains('Expand All').click();
-
     // The summary should contain a number for years of experience
     cy.get('.accordion-content p').first().invoke('text').should('match', /\d+ years of experience/);
   });

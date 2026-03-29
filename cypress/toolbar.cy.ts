@@ -78,7 +78,6 @@ describe('ToolbarComponent', () => {
   it('should apply dark mode styling to toolbar image', () => {
     cy.get('button').contains(/Dark Mode/).click();
     cy.get('mat-toolbar img').should('have.class', 'dark-img');
-
     cy.get('button').contains('Light Mode').click();
     cy.get('mat-toolbar img').should('not.have.class', 'dark-img');
   });
