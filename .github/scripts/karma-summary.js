@@ -43,6 +43,7 @@ const passedTests = testCases.filter(tc => !tc[2]); // No failure
 let summary = `## Karma Results\n\n`;
 
 // Results table
+summary += `### Unit Test Results\n\n`;
 summary += `| **Result** | **Passed** ✅ | **Failed** ❌ | **Errors** 💥 | **Skipped** ↩️ | **Duration** 🕗 |\n`;
 summary += `|---|---|---|---|---|---|\n`;
 summary += `| ${status} ${icon} | ${passed} | ${failures} | ${errors} | ${skipped} | ${time}s |\n\n`;
@@ -85,7 +86,7 @@ try {
     const total = coverageData.total;
 
     if (total) {
-      summary += `\n### 📊 Code Coverage\n\n`;
+      summary += `\n### Code Coverage\n\n`;
       summary += `| **Metric** | **Coverage** |\n`;
       summary += `|---|---|\n`;
       summary += `| Statements | ${total.statements.pct}% |\n`;

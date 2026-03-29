@@ -26,13 +26,15 @@ if (!fs.existsSync(xmlPath)) {
 
   const exampleOutput = `## Karma Results
 
+### Unit Test Results
+
 | **Result** | **Passed** ✅ | **Failed** ❌ | **Errors** 💥 | **Skipped** ↩️ | **Duration** 🕗 |
 |---|---|---|---|---|---|
 | Passing ✅ | 24 | 0 | 0 | 0 | 15.234s |
 
 **Pass Rate:** 100.0%
 
-### 📊 Code Coverage
+### Code Coverage
 
 | **Metric** | **Coverage** |
 |---|---|
@@ -59,9 +61,9 @@ if (!fs.existsSync(xmlPath)) {
   console.log('\nExample output when tests fail:');
   console.log('─'.repeat(70));
 
-  const failureExample = `## ❌ Karma Unit Tests
+  const failureExample = `## Karma Results
 
-**Status:** Failing
+### Unit Test Results
 
 | **Result** | **Passed** ✅ | **Failed** ❌ | **Errors** 💥 | **Skipped** ↩️ | **Duration** 🕗 |
 |---|---|---|---|---|---|
@@ -69,7 +71,7 @@ if (!fs.existsSync(xmlPath)) {
 
 **Pass Rate:** 91.7%
 
-### 📊 Code Coverage
+### Code Coverage
 
 | **Metric** | **Coverage** |
 |---|---|
