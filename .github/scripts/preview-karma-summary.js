@@ -36,12 +36,9 @@ if (!fs.existsSync(xmlPath)) {
 
 ### Code Coverage Results
 
-| **Metric** | **Coverage** |
-|---|---|
-| Statements | 87.5% |
-| Branches | 82.3% |
-| Functions | 90.1% |
-| Lines | 88.7% |
+| **Statements** | **Branches** | **Functions** | **Lines** |
+|---|---|---|---|
+| 87.5% | 82.3% | 90.1% | 88.7% |
 
 ✅ **Overall Coverage:** 87.2% (Excellent)
 
@@ -73,12 +70,9 @@ if (!fs.existsSync(xmlPath)) {
 
 ### Code Coverage Results
 
-| **Metric** | **Coverage** |
-|---|---|
-| Statements | 75.2% |
-| Branches | 68.9% |
-| Functions | 80.5% |
-| Lines | 76.8% |
+| **Statements** | **Branches** | **Functions** | **Lines** |
+|---|---|---|---|
+| 75.2% | 68.9% | 80.5% | 76.8% |
 
 🟡 **Overall Coverage:** 75.4% (Good)
 

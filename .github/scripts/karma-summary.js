@@ -87,12 +87,9 @@ try {
 
     if (total) {
       summary += `\n### Code Coverage Results\n\n`;
-      summary += `| **Metric** | **Coverage** |\n`;
-      summary += `|---|---|\n`;
-      summary += `| Statements | ${total.statements.pct}% |\n`;
-      summary += `| Branches | ${total.branches.pct}% |\n`;
-      summary += `| Functions | ${total.functions.pct}% |\n`;
-      summary += `| Lines | ${total.lines.pct}% |\n\n`;
+      summary += `| **Statements** | **Branches** | **Functions** | **Lines** |\n`;
+      summary += `|---|---|---|---|\n`;
+      summary += `| ${total.statements.pct}% | ${total.branches.pct}% | ${total.functions.pct}% | ${total.lines.pct}% |\n\n`;
 
       // Visual indicator for coverage
       const avgCoverage = (total.statements.pct + total.branches.pct + total.functions.pct + total.lines.pct) / 4;
