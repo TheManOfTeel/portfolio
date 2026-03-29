@@ -102,7 +102,7 @@ describe('StateService', () => {
 
   describe('scrollToTop()', () => {
     it('should call document.body.scrollTo', () => {
-      const scrollToSpy = spyOn(document.body, 'scrollTo');
+      const scrollToSpy = spyOn(window, 'scrollTo');
 
       service.scrollToTop();
 
