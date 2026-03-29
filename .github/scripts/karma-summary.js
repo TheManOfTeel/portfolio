@@ -77,4 +77,37 @@ if (passed > 0 && passed <= 20) {
   }
 }
 
+// Code Coverage Section
+try {
+  const coverageJsonPath = path.resolve('coverage/portfolio/coverage-summary.json');
+  if (fs.existsSync(coverageJsonPath)) {
+    const coverageData = JSON.parse(fs.readFileSync(coverageJsonPath, 'utf8'));
+    const total = coverageData.total;
+
+    if (total) {
+      summary += `\n### 📊 Code Coverage\n\n`;
+      summary += `| **Metric** | **Coverage** |\n`;
+      summary += `|---|---|\n`;
+      summary += `| Statements | ${total.statements.pct}% |\n`;
+      summary += `| Branches | ${total.branches.pct}% |\n`;
+      summary += `| Functions | ${total.functions.pct}% |\n`;
+      summary += `| Lines | ${total.lines.pct}% |\n\n`;
+
+      // Visual indicator for coverage
+      const avgCoverage = (total.statements.pct + total.branches.pct + total.functions.pct + total.lines.pct) / 4;
+      if (avgCoverage >= 80) {
+        summary += `✅ **Overall Coverage:** ${avgCoverage.toFixed(1)}% (Excellent)\n`;
+      } else if (avgCoverage >= 70) {
+        summary += `🟡 **Overall Coverage:** ${avgCoverage.toFixed(1)}% (Good)\n`;
+      } else if (avgCoverage >= 50) {
+        summary += `🟠 **Overall Coverage:** ${avgCoverage.toFixed(1)}% (Fair)\n`;
+      } else {
+        summary += `🔴 **Overall Coverage:** ${avgCoverage.toFixed(1)}% (Needs Improvement)\n`;
+      }
+    }
+  }
+} catch (err) {
+  // Coverage file doesn't exist yet, which is fine
+}
+
 process.stdout.write(summary);

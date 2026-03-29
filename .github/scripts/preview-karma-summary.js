@@ -32,6 +32,17 @@ if (!fs.existsSync(xmlPath)) {
 
 **Pass Rate:** 100.0%
 
+### 📊 Code Coverage
+
+| **Metric** | **Coverage** |
+|---|---|
+| Statements | 87.5% |
+| Branches | 82.3% |
+| Functions | 90.1% |
+| Lines | 88.7% |
+
+✅ **Overall Coverage:** 87.2% (Excellent)
+
 ### ✅ Test Summary
 
 - ✅ \`AppComponent should create\`
@@ -57,6 +68,17 @@ if (!fs.existsSync(xmlPath)) {
 | Failing ❌ | 22 | 2 | 0 | 0 | 18.456s |
 
 **Pass Rate:** 91.7%
+
+### 📊 Code Coverage
+
+| **Metric** | **Coverage** |
+|---|---|
+| Statements | 75.2% |
+| Branches | 68.9% |
+| Functions | 80.5% |
+| Lines | 76.8% |
+
+🟡 **Overall Coverage:** 75.4% (Good)
 
 ### ❌ Failed Tests (2)
 
