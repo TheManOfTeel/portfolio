@@ -44,40 +44,40 @@
           }
         </mat-expansion-panel>
         <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            Experience
-          </mat-expansion-panel-header>
-          @for (experience of experiences; track experience; let isLast = $last) {
-            <div class="accordion-content">
-              <p><strong>{{ experience.companyName }}</strong></p>
-              @for (position of experience.positions; track position) {
-                <div>
-                  <p>{{ position.title }} &mdash; {{ position.date }}</p>
-                  <ul>
-                    @for (task of position.tasks; track task) {
-                      <li>
-                        {{ task }}
-                      </li>
-                    }
-                  </ul>
-                </div>
-              }
-              @if (!isLast) {
-                <br>
-                }
+        <mat-expansion-panel-header>
+          Experience
+        </mat-expansion-panel-header>
+        @for (experience of experiences; track experience; let isLast = $last) {
+          <div class="accordion-content">
+            <p><strong>{{ experience.companyName }}</strong></p>
+            @for (position of experience.positions; track position) {
+              <div>
+                <p>{{ position.title }} &mdash; {{ position.date }}</p>
+                <ul>
+                  @for (task of position.tasks; track task) {
+                    <li>
+                      {{ task }}
+                    </li>
+                  }
+                </ul>
               </div>
             }
-          </mat-expansion-panel>
-          <mat-expansion-panel>
-            <mat-expansion-panel-header>
-              Education
-            </mat-expansion-panel-header>
-            <div class="accordion-content">
-              <p>Bachelor of Science in Computer Science</p>
-              <p>Oakland University - Rochester, MI</p>
+            @if (!isLast) {
+              <br>
+              }
             </div>
-          </mat-expansion-panel>
-        </mat-accordion>
-      </mat-card>
-    </div>
+          }
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            Education
+          </mat-expansion-panel-header>
+          <div class="accordion-content">
+            <p>Bachelor of Science in Computer Science</p>
+            <p>Oakland University - Rochester, MI</p>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-card>
   </div>
+</div>
