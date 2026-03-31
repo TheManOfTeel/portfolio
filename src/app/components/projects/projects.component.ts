@@ -11,6 +11,8 @@ import { Project } from '../../models/project';
 export class ProjectsComponent {
   constructor(public stateService: StateService) {}
 
+  private readonly imgDefaultStyle = { 'max-width': '100%', 'max-height': 'min(70vh, 400px)', 'display': 'block', 'object-fit': 'contain' };
+
   public projects: Project[] = [
     new Project(
       'Rhyme',
@@ -22,7 +24,7 @@ export class ProjectsComponent {
       data management.`,
       `Enterprise application developed while at Rhyme.`,
       'assets/images/rhyme.png',
-      { 'width':'100%', 'height':'100%' },
+      this.imgDefaultStyle,
       undefined
     ),
     new Project(
@@ -47,7 +49,7 @@ export class ProjectsComponent {
       for environmental law compliance, including features for incident tracking, audits, and reporting.`,
       'Enterprise application developed while at StarTex Software.',
       'assets/images/ehs-insight.png',
-      { 'width':'100%', 'height':'100%' },
+      this.imgDefaultStyle,
       undefined
     ),
     new Project(
@@ -71,7 +73,7 @@ export class ProjectsComponent {
       developed in JavaScript using the Aurelia framework, and a SQL Server database for persistent data management.`,
       'Enterprise application developed while at Relativity.',
       'assets/images/review-center.png',
-      { 'width':'100%', 'height':'100%' },
+      this.imgDefaultStyle,
       undefined
     ),
     new Project(
@@ -97,7 +99,7 @@ export class ProjectsComponent {
       authorized external applications to access and integrate with the generated licensing data.`,
       'Enterprise application developed while at Kunz, Leigh & Associates.',
       'assets/images/mdard.png',
-      { 'width':'20%', 'height':'20%' },
+      { 'max-width':'15%', 'max-height':'15%' },
       undefined
     ),
     new Project(
@@ -109,7 +111,7 @@ export class ProjectsComponent {
       in TypeScript using the Angular framework, and a SQL database.`,
       'Enterprise application developed while at Kunz, Leigh & Associates.',
       'assets/images/msp.png',
-      { 'width':'25%', 'height':'25%' },
+      { 'max-width':'20%', 'max-height':'20%' },
       undefined
     ),
     new Project(
@@ -127,7 +129,7 @@ export class ProjectsComponent {
       data storage.`,
       'Enterprise application developed while at Kunz, Leigh & Associates.',
       'assets/images/mdard.png',
-      { 'width':'20%', 'height':'20%' },
+      { 'max-width':'15%', 'max-height':'15%' },
       undefined
     ),
     new Project(
