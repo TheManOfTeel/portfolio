@@ -1,5 +1,6 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Injectable } from '@angular/core';
+import { signal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -7,19 +8,19 @@ import { Injectable } from '@angular/core';
 export class StateService {
   constructor(private responsive: BreakpointObserver) {}
 
-  public isMobilePortrait = false;
-  public isDarkMode = false;
+  public isMobilePortrait = signal(false);
+  public isDarkMode = signal(false);
 
   isMobile(): void {
     this.responsive.observe([
       Breakpoints.HandsetPortrait
     ]).subscribe(result => {
-      this.isMobilePortrait = result.matches;
+      this.isMobilePortrait.set(result.matches);
     });
   }
 
   toggleDarkTheme(): void {
-    this.isDarkMode = !this.isDarkMode;
+    this.isDarkMode.update(value => !value);
     document.body.classList.toggle('dark-theme');
   }
 

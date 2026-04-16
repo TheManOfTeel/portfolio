@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { StateService } from '../../services/state/state.service';
 import { Project } from '../../models/project';
 
 @Component({
   selector: 'app-projects',
-  standalone: false,
+  standalone: true,
+  imports: [CommonModule, MatCardModule, MatButtonModule, MatIconModule, MatExpansionModule],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css'
 })

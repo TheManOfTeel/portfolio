@@ -1,11 +1,17 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { StateService } from '../../services/state/state.service';
 import { Experience, Position } from '../../models/experience';
 import { Skill } from '../../models/skill';
 
 @Component({
   selector: 'app-about',
-  standalone: false,
+  standalone: true,
+  imports: [CommonModule, MatExpansionModule, MatCardModule, MatButtonModule, MatIconModule],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
 })

@@ -28,8 +28,8 @@ describe('StateService', () => {
 
   describe('initial state', () => {
     it('should initialize with default values', () => {
-      expect(service.isMobilePortrait).toBe(false);
-      expect(service.isDarkMode).toBe(false);
+      expect(service.isMobilePortrait()).toBe(false);
+      expect(service.isDarkMode()).toBe(false);
     });
   });
 
@@ -42,7 +42,7 @@ describe('StateService', () => {
 
       service.isMobile();
 
-      expect(service.isMobilePortrait).toBe(true);
+      expect(service.isMobilePortrait()).toBe(true);
     });
 
     it('should set isMobilePortrait to false when HandsetPortrait breakpoint does not match', () => {
@@ -53,7 +53,7 @@ describe('StateService', () => {
 
       service.isMobile();
 
-      expect(service.isMobilePortrait).toBe(false);
+      expect(service.isMobilePortrait()).toBe(false);
     });
 
     it('should observe HandsetPortrait breakpoint', () => {
@@ -72,29 +72,31 @@ describe('StateService', () => {
     beforeEach(() => {
       // Reset body classes
       document.body.classList.remove('dark-theme');
+      // Reset isDarkMode to false
+      service.isDarkMode.set(false);
     });
 
     it('should toggle isDarkMode from false to true', () => {
-      service.isDarkMode = false;
+      expect(service.isDarkMode()).toBe(false);
       service.toggleDarkTheme();
-      expect(service.isDarkMode).toBe(true);
+      expect(service.isDarkMode()).toBe(true);
     });
 
     it('should toggle isDarkMode from true to false', () => {
-      service.isDarkMode = true;
+      service.isDarkMode.set(true);
       service.toggleDarkTheme();
-      expect(service.isDarkMode).toBe(false);
+      expect(service.isDarkMode()).toBe(false);
     });
 
     it('should add dark-theme class to body when toggling to dark mode', () => {
-      service.isDarkMode = false;
+      service.isDarkMode.set(false);
       service.toggleDarkTheme();
       expect(document.body.classList.contains('dark-theme')).toBe(true);
     });
 
     it('should remove dark-theme class from body when toggling to light mode', () => {
       document.body.classList.add('dark-theme');
-      service.isDarkMode = true;
+      service.isDarkMode.set(true);
       service.toggleDarkTheme();
       expect(document.body.classList.contains('dark-theme')).toBe(false);
     });
