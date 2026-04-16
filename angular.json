@@ -87,9 +87,7 @@
             "karmaConfig": "karma.conf.js",
             "browsers": "ChromeHeadless",
             "codeCoverage": false,
-            "polyfills": [
-              "zone.js/testing"
-            ],
+            "polyfills": [],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
               {
