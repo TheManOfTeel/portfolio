@@ -3,14 +3,14 @@
     <div class="header">
       <h2>Welcome!</h2>
       <div class="about-img-center">
-        <img src="assets/images/programmer.png" [ngClass]="stateService.isDarkMode ? 'dark-img' : ''" style="max-height:180px;">
+        <img src="assets/images/programmer.png" [ngClass]="stateService.isDarkMode() ? 'dark-img' : ''" style="max-height:180px;">
       </div>
       <p>My name is Danny Teel and I am a full stack software engineer. Click around to get to know me!</p>
     </div>
     <mat-card class="card">
       <div class="mat-expansion-panel-header">
         <h3>Overview</h3>
-        @if (stateService.isMobilePortrait) {
+        @if (stateService.isMobilePortrait()) {
           <button mat-icon-button color="primary" type="button" style="margin-left: auto;" (click)="accordion.openAll()">
             <mat-icon class="material-symbols-rounded">expand_more</mat-icon>
           </button>

@@ -107,7 +107,7 @@ describe('AboutComponent', () => {
     // Mock dark mode
     cy.window().then((win) => {
       const stateService = win['ng'].getInjector(win.document.querySelector('app-about')).get(StateService);
-      stateService.isDarkMode = true;
+      stateService.isDarkMode.set(true);
       cy.get('.about-img-center img').should('have.class', 'dark-img');
     });
   });

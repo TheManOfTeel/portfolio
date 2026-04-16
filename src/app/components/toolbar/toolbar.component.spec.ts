@@ -1,5 +1,5 @@
 import { provideNoopAnimations } from '@angular/platform-browser/animations';
-import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ToolbarComponent } from './toolbar.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -8,7 +8,6 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { AppRoutingModule } from '../../app-routing.module';
 import { AboutComponent } from '../about/about.component';
 import { ProjectsComponent } from '../projects/projects.component';
 import { StateService } from '../../services/state/state.service';
@@ -21,9 +20,10 @@ describe('ToolbarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ToolbarComponent, AboutComponent, ProjectsComponent],
       imports: [
-        AppRoutingModule,
+        ToolbarComponent,
+        AboutComponent,
+        ProjectsComponent,
         MatButtonModule,
         MatCardModule,
         MatToolbarModule,
@@ -125,22 +125,20 @@ describe('ToolbarComponent', () => {
       expect(aboutComponent).toBeTruthy();
     });
 
-    it('should render ProjectsComponent in second tab', fakeAsync(() => {
+    it('should render ProjectsComponent in second tab', () => {
       const compiled = fixture.nativeElement as HTMLElement;
 
       const tabLabelButtons = compiled.querySelectorAll<HTMLElement>('.mat-mdc-tab');
       tabLabelButtons[1].click();
 
       fixture.detectChanges();
-      tick();                   // flush any remaining async tasks/timers
-      fixture.detectChanges();  // second pass after tick to pick up DOM changes
 
       const projectsComponent = compiled.querySelector('app-projects');
       expect(projectsComponent).toBeTruthy();
-    }));
+    });
 
     it('should apply dark-img class to logo when in dark mode', () => {
-      stateService.isDarkMode = true;
+      stateService.isDarkMode.set(true);
       fixture.detectChanges();
 
       const compiled = fixture.nativeElement as HTMLElement;
@@ -149,7 +147,7 @@ describe('ToolbarComponent', () => {
     });
 
     it('should not apply dark-img class to logo when in light mode', () => {
-      stateService.isDarkMode = false;
+      stateService.isDarkMode.set(false);
       fixture.detectChanges();
 
       const compiled = fixture.nativeElement as HTMLElement;

@@ -7,8 +7,6 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from '../../app-routing.module';
 import { StateService } from '../../services/state/state.service';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Project } from '../../models/project';
@@ -20,10 +18,8 @@ describe('ProjectsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ProjectsComponent],
       imports: [
-        BrowserModule,
-        AppRoutingModule,
+        ProjectsComponent,
         MatButtonModule,
         MatCardModule,
         MatToolbarModule,
@@ -228,7 +224,7 @@ describe('ProjectsComponent', () => {
     });
 
     it('should apply dark-img class to header image when in dark mode', () => {
-      stateService.isDarkMode = true;
+      stateService.isDarkMode.set(true);
       fixture.detectChanges();
 
       const compiled = fixture.nativeElement as HTMLElement;

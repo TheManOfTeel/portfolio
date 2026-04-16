@@ -3,14 +3,14 @@
     <div class="header">
       <h2>Notable Projects</h2>
       <div class="image-container">
-        <img src="assets/images/cross-platform.png" [ngClass]="stateService.isDarkMode ? 'dark-img' : ''" style="max-height:180px;">
+      <img src="assets/images/cross-platform.png" [ngClass]="stateService.isDarkMode() ? 'dark-img' : ''" style="max-height:180px;">
       </div>
       <p>Below are notable projects that I have worked on. Enterprise applications are labeled as such and were worked on professionally as an employee of the relevant company.</p>
     </div>
     <mat-card class="card">
       <div class="mat-expansion-panel-header">
         <h3>Projects</h3>
-        @if (stateService.isMobilePortrait) {
+        @if (stateService.isMobilePortrait()) {
           <button mat-icon-button color="primary" type="button" style="margin-left: auto;" (click)="accordion.openAll()">
             <mat-icon class="material-symbols-rounded">expand_more</mat-icon>
           </button>
@@ -29,7 +29,7 @@
       <mat-accordion #accordion="matAccordion" [multi]="true">
         <mat-expansion-panel *ngFor="let project of projects first as isFirst" [expanded]="isFirst || isCurrentlyActive(project)">
           <mat-expansion-panel-header>
-            @if (stateService.isMobilePortrait) {
+            @if (stateService.isMobilePortrait()) {
               {{ project.title }}
             } @else {
               {{ project.title }} | {{ getEnterpriseProjectHeader(project) }} | {{ getCurrentlyActiveHeader(project) }}
