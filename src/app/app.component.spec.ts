@@ -72,7 +72,7 @@ describe('AppComponent', () => {
       } as any);
 
       component.ngOnInit();
-      expect(stateService.isDarkMode).toBe(true);
+      expect(stateService.isDarkMode()).toBe(true);
       expect(document.body.classList.contains('dark-theme')).toBe(true);
     });
 
@@ -84,7 +84,7 @@ describe('AppComponent', () => {
       } as any);
 
       component.ngOnInit();
-      expect(stateService.isDarkMode).toBe(false);
+      expect(stateService.isDarkMode()).toBe(false);
       expect(document.body.classList.contains('dark-theme')).toBe(false);
     });
   });
