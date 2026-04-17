@@ -6,10 +6,12 @@ import { StateService } from './state.service';
 
 describe('StateService', () => {
   let service: StateService;
-  let breakpointObserver: jasmine.SpyObj<BreakpointObserver>;
+  let breakpointObserver: any;
 
   beforeEach(() => {
-    const breakpointObserverSpy = jasmine.createSpyObj('BreakpointObserver', ['observe']);
+    const breakpointObserverSpy = {
+      observe: jest.fn()
+    };
 
     TestBed.configureTestingModule({
       providers: [
@@ -19,7 +21,7 @@ describe('StateService', () => {
     });
 
     service = TestBed.inject(StateService);
-    breakpointObserver = TestBed.inject(BreakpointObserver) as jasmine.SpyObj<BreakpointObserver>;
+    breakpointObserver = TestBed.inject(BreakpointObserver);
   });
 
   it('should be created', () => {
@@ -35,7 +37,7 @@ describe('StateService', () => {
 
   describe('isMobile()', () => {
     it('should set isMobilePortrait to true when HandsetPortrait breakpoint matches', () => {
-      breakpointObserver.observe.and.returnValue(of({
+      breakpointObserver.observe.mockReturnValue(of({
         matches: true,
         breakpoints: { [Breakpoints.HandsetPortrait]: true }
       }));
@@ -46,7 +48,7 @@ describe('StateService', () => {
     });
 
     it('should set isMobilePortrait to false when HandsetPortrait breakpoint does not match', () => {
-      breakpointObserver.observe.and.returnValue(of({
+      breakpointObserver.observe.mockReturnValue(of({
         matches: false,
         breakpoints: { [Breakpoints.HandsetPortrait]: false }
       }));
@@ -57,7 +59,7 @@ describe('StateService', () => {
     });
 
     it('should observe HandsetPortrait breakpoint', () => {
-      breakpointObserver.observe.and.returnValue(of({
+      breakpointObserver.observe.mockReturnValue(of({
         matches: false,
         breakpoints: { [Breakpoints.HandsetPortrait]: false }
       }));
@@ -104,7 +106,7 @@ describe('StateService', () => {
 
   describe('scrollToTop()', () => {
     it('should call window.scrollTo with smooth behavior', () => {
-      const scrollToSpy = spyOn(window, 'scrollTo');
+      const scrollToSpy = jest.spyOn(window, 'scrollTo').mockImplementation();
 
       service.scrollToTop();
 

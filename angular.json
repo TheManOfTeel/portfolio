@@ -82,11 +82,8 @@
           "builder": "@angular/build:extract-i18n"
         },
         "test": {
-          "builder": "@angular/build:karma",
+          "builder": "@angular-devkit/build-angular:jest",
           "options": {
-            "karmaConfig": "karma.conf.js",
-            "browsers": "ChromeHeadless",
-            "codeCoverage": false,
             "polyfills": [],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
@@ -99,7 +96,9 @@
               "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "collectCoverage": false,
+            "testTimeout": 10000
           }
         },
         "deploy": {

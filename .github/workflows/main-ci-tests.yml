@@ -6,7 +6,7 @@ on:
   workflow_call:
 
 jobs:
-  karma-tests:
-    uses: ./.github/workflows/karma-tests.yml
+  jest-tests:
+    uses: ./.github/workflows/jest-tests.yml
   cypress-e2e-tests:
       uses: ./.github/workflows/cypress-e2e-tests.yml

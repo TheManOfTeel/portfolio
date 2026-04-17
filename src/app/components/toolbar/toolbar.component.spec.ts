@@ -56,7 +56,7 @@ describe('ToolbarComponent', () => {
 
   describe('downloadResume()', () => {
     it('should open resume PDF in new window', () => {
-      spyOn(window, 'open');
+      jest.spyOn(window, 'open').mockImplementation();
 
       component.downloadResume();
 

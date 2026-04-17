@@ -1,19 +1,28 @@
 const fs = require('fs');
 const path = require('path');
 
+// Resolve paths relative to workspace root
 const xmlPath = path.resolve('test-results/test-results.xml');
+const coverageJsonPath = path.resolve('coverage/portfolio/coverage-summary.json');
 
 if (!fs.existsSync(xmlPath)) {
-  console.log('## ⚠️ Karma Test Results\n\nNo test result XML found. Tests may not have run.');
+  console.log('## ⚠️ Jest Test Results\n\nNo test result XML found. Tests may not have run.');
   process.exit(0);
+}
+
+// Debug: Log available files
+if (process.env.DEBUG_JEST_SUMMARY) {
+  console.error('Available files:');
+  console.error('- XML exists:', fs.existsSync(xmlPath));
+  console.error('- Coverage exists:', fs.existsSync(coverageJsonPath));
 }
 
 const xml = fs.readFileSync(xmlPath, 'utf8');
 
-// Parse testsuite attributes (works for both JUnit and Karma XML schemas)
+// Parse testsuite attributes (works for both JUnit and Jest XML schemas)
 const suiteMatch = xml.match(/<testsuite[^>]+>/);
 if (!suiteMatch) {
-  console.log('## ⚠️ Karma Test Results\n\nCould not parse test results XML.');
+  console.log('## ⚠️ Jest Test Results\n\nCould not parse test results XML.');
   process.exit(0);
 }
 
@@ -40,7 +49,7 @@ const testCases = [...xml.matchAll(testcasePattern)];
 const failedTests = testCases.filter(tc => tc[2]); // Has failure content
 const passedTests = testCases.filter(tc => !tc[2]); // No failure
 
-let summary = `## Karma Results\n\n`;
+let summary = `## Jest Results\n\n`;
 
 // Results table
 summary += `### Unit Test Results\n\n`;
@@ -80,12 +89,11 @@ if (passed > 0 && passed <= 20) {
 
 // Code Coverage Section
 try {
-  const coverageJsonPath = path.resolve('coverage/portfolio/coverage-summary.json');
   if (fs.existsSync(coverageJsonPath)) {
     const coverageData = JSON.parse(fs.readFileSync(coverageJsonPath, 'utf8'));
     const total = coverageData.total;
 
-    if (total) {
+    if (total && total.statements && total.branches && total.functions && total.lines) {
       summary += `\n### Code Coverage Results\n\n`;
       summary += `| **Statements** | **Branches** | **Functions** | **Lines** |\n`;
       summary += `|---|---|---|---|\n`;
@@ -102,9 +110,16 @@ try {
       } else {
         summary += `🔴 **Overall Coverage:** ${avgCoverage.toFixed(1)}% (Needs Improvement)\n`;
       }
+    } else if (process.env.DEBUG_JEST_SUMMARY) {
+      console.error('Warning: Coverage data structure unexpected:', total);
     }
+  } else if (process.env.DEBUG_JEST_SUMMARY) {
+    console.error('Coverage file not found at:', coverageJsonPath);
   }
 } catch (err) {
+  if (process.env.DEBUG_JEST_SUMMARY) {
+    console.error('Error reading coverage file:', err.message);
+  }
   // Coverage file doesn't exist yet, which is fine
 }
 
