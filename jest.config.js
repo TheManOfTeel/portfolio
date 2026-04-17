@@ -10,7 +10,14 @@ module.exports = {
     '^@src/(.*)$': '<rootDir>/src/$1',
     '^@app/(.*)$': '<rootDir>/src/app/$1',
   },
+  collectCoverage: true,
   coverageDirectory: 'coverage/portfolio',
+  collectCoverageFrom: [
+    'src/**/*.ts',
+    '!src/**/*.spec.ts',
+    '!src/main.ts',
+    '!src/polyfills.ts',
+  ],
   reporters: [
     'default',
     [

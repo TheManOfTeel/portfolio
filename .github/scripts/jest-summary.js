@@ -4,16 +4,16 @@ const path = require('path');
 const xmlPath = path.resolve('test-results/test-results.xml');
 
 if (!fs.existsSync(xmlPath)) {
-  console.log('## ⚠️ Karma Test Results\n\nNo test result XML found. Tests may not have run.');
+  console.log('## ⚠️ Jest Test Results\n\nNo test result XML found. Tests may not have run.');
   process.exit(0);
 }
 
 const xml = fs.readFileSync(xmlPath, 'utf8');
 
-// Parse testsuite attributes (works for both JUnit and Karma XML schemas)
+// Parse testsuite attributes (works for both JUnit and Jest XML schemas)
 const suiteMatch = xml.match(/<testsuite[^>]+>/);
 if (!suiteMatch) {
-  console.log('## ⚠️ Karma Test Results\n\nCould not parse test results XML.');
+  console.log('## ⚠️ Jest Test Results\n\nCould not parse test results XML.');
   process.exit(0);
 }
 
@@ -40,7 +40,7 @@ const testCases = [...xml.matchAll(testcasePattern)];
 const failedTests = testCases.filter(tc => tc[2]); // Has failure content
 const passedTests = testCases.filter(tc => !tc[2]); // No failure
 
-let summary = `## Karma Results\n\n`;
+let summary = `## Jest Results\n\n`;
 
 // Results table
 summary += `### Unit Test Results\n\n`;

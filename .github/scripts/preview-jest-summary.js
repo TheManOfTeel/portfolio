@@ -1,15 +1,15 @@
 #!/usr/bin/env node
 
 /**
- * GitHub Actions Karma Summary Test Runner
- * This demonstrates what the karma-summary.js output looks like
+ * GitHub Actions Jest Summary Test Runner
+ * This demonstrates what the jest-summary.js output looks like
  * Useful for previewing the summary format before running in CI
  */
 
 const fs = require('fs');
 const path = require('path');
 
-console.log('\n📊 KARMA GITHUB ACTIONS SUMMARY - EXAMPLE OUTPUT\n');
+console.log('\n📊 JEST GITHUB ACTIONS SUMMARY - EXAMPLE OUTPUT\n');
 console.log('='.repeat(70));
 
 // Check if test results exist
@@ -24,7 +24,7 @@ if (!fs.existsSync(xmlPath)) {
   console.log('\nExample output when tests pass:');
   console.log('─'.repeat(70));
 
-  const exampleOutput = `## Karma Results
+  const exampleOutput = `## Jest Results
 
 ### Unit Test Results
 
@@ -58,7 +58,7 @@ if (!fs.existsSync(xmlPath)) {
   console.log('\nExample output when tests fail:');
   console.log('─'.repeat(70));
 
-  const failureExample = `## Karma Results
+  const failureExample = `## Jest Results
 
 ### Unit Test Results
 
@@ -101,19 +101,19 @@ Expected 5 project cards but got 3
 } else {
   console.log('\n✅ Test results found! Running summary generator...\n');
 
-  // Run the actual karma-summary.js script
-  const summary = require('./karma-summary.js');
+  // Run the actual jest-summary.js script
+  const summary = require('./jest-summary.js');
 }
 
 console.log('\n📍 Where to find test results in GitHub Actions:\n');
 console.log('1. Job Summary: Visible in the workflow run summary page');
-console.log('2. Artifacts: Download "karma-test-results" for detailed XML');
-console.log('3. Artifacts: Download "karma-coverage-reports" for coverage');
+console.log('2. Artifacts: Download "jest-test-results" for detailed XML');
+console.log('3. Artifacts: Download "jest-coverage-reports" for coverage');
 console.log('\n🔗 GitHub Actions Integration Features:\n');
-console.log('✅ JUnit XML test results (karma-junit-reporter)');
-console.log('✅ GitHub Actions job summary (karma-summary.js)');
+console.log('✅ JUnit XML test results (jest-junit)');
+console.log('✅ GitHub Actions job summary (jest-summary.js)');
 console.log('✅ Test result publishing (publish-unit-test-result-action)');
-console.log('✅ Coverage report generation (karma-coverage)');
+console.log('✅ Coverage report generation (Jest built-in)');
 console.log('✅ Artifact storage and retention');
 console.log('\nℹ️  Test results are stored for 14 days');
 console.log('\n' + '='.repeat(70) + '\n');

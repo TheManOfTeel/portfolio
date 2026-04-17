@@ -1,10 +1,10 @@
-name: Karma Tests
+name: Jest Tests
 
 on:
   workflow_call:
 
 jobs:
-  karma-test:
+  jest-test:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -18,19 +18,19 @@ jobs:
       run: npm ci --legacy-peer-deps
     - name: Install Chrome
       uses: browser-actions/setup-chrome@v2
-    - name: Run Karma unit tests
+    - name: Run Jest unit tests
       run: npm run test:ci
       continue-on-error: true
       env:
         CHROME_BIN: google-chrome
-    - name: Generate Karma summary for GitHub Actions
+    - name: Generate Jest summary for GitHub Actions
       if: always()
-      run: node .github/scripts/karma-summary.js >> $GITHUB_STEP_SUMMARY
+      run: node .github/scripts/jest-summary.js >> $GITHUB_STEP_SUMMARY
     - name: Upload test results artifact
       if: always()
       uses: actions/upload-artifact@v6
       with:
-        name: karma-test-results
+        name: jest-test-results
         path: test-results/
         retention-days: 14
         if-no-files-found: ignore
@@ -38,7 +38,7 @@ jobs:
       if: always()
       uses: actions/upload-artifact@v6
       with:
-        name: karma-coverage-reports
+        name: jest-coverage-reports
         path: coverage/
         retention-days: 14
         if-no-files-found: ignore
