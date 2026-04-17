@@ -23,9 +23,22 @@ jobs:
       continue-on-error: true
       env:
         CHROME_BIN: google-chrome
+    - name: Verify coverage files
+      if: always()
+      run: |
+        echo "Checking for coverage files..."
+        if [ -f "coverage/portfolio/coverage-summary.json" ]; then
+          echo "✅ Coverage summary found"
+          cat coverage/portfolio/coverage-summary.json | head -c 200
+        else
+          echo "⚠️ Coverage summary not found"
+          ls -la coverage/portfolio/ 2>/dev/null || echo "Coverage directory not found"
+        fi
     - name: Generate Jest summary for GitHub Actions
       if: always()
       run: node .github/scripts/jest-summary.js >> $GITHUB_STEP_SUMMARY
+      env:
+        DEBUG_JEST_SUMMARY: 'false'
     - name: Upload test results artifact
       if: always()
       uses: actions/upload-artifact@v6

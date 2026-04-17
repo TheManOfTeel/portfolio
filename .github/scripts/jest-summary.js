@@ -1,11 +1,20 @@
 const fs = require('fs');
 const path = require('path');
 
+// Resolve paths relative to workspace root
 const xmlPath = path.resolve('test-results/test-results.xml');
+const coverageJsonPath = path.resolve('coverage/portfolio/coverage-summary.json');
 
 if (!fs.existsSync(xmlPath)) {
   console.log('## ⚠️ Jest Test Results\n\nNo test result XML found. Tests may not have run.');
   process.exit(0);
+}
+
+// Debug: Log available files
+if (process.env.DEBUG_JEST_SUMMARY) {
+  console.error('Available files:');
+  console.error('- XML exists:', fs.existsSync(xmlPath));
+  console.error('- Coverage exists:', fs.existsSync(coverageJsonPath));
 }
 
 const xml = fs.readFileSync(xmlPath, 'utf8');
@@ -80,12 +89,11 @@ if (passed > 0 && passed <= 20) {
 
 // Code Coverage Section
 try {
-  const coverageJsonPath = path.resolve('coverage/portfolio/coverage-summary.json');
   if (fs.existsSync(coverageJsonPath)) {
     const coverageData = JSON.parse(fs.readFileSync(coverageJsonPath, 'utf8'));
     const total = coverageData.total;
 
-    if (total) {
+    if (total && total.statements && total.branches && total.functions && total.lines) {
       summary += `\n### Code Coverage Results\n\n`;
       summary += `| **Statements** | **Branches** | **Functions** | **Lines** |\n`;
       summary += `|---|---|---|---|\n`;
@@ -102,9 +110,16 @@ try {
       } else {
         summary += `🔴 **Overall Coverage:** ${avgCoverage.toFixed(1)}% (Needs Improvement)\n`;
       }
+    } else if (process.env.DEBUG_JEST_SUMMARY) {
+      console.error('Warning: Coverage data structure unexpected:', total);
     }
+  } else if (process.env.DEBUG_JEST_SUMMARY) {
+    console.error('Coverage file not found at:', coverageJsonPath);
   }
 } catch (err) {
+  if (process.env.DEBUG_JEST_SUMMARY) {
+    console.error('Error reading coverage file:', err.message);
+  }
   // Coverage file doesn't exist yet, which is fine
 }
 
