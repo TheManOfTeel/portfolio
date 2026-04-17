@@ -1,91 +1,175 @@
-<?xml version="1.0"?>
-<testsuite name="Chrome Headless 147.0.0.0 (Mac OS 10.15.7)" package="" timestamp="2026-04-16T02:16:25" id="0" hostname="Dannys-MacBook-Pro.local" tests="80" errors="0" failures="0" time="0.862">
-  <properties>
-    <property name="browser.fullName" value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36"/>
-  </properties>
-  <testcase name="ToolbarComponent template rendering should render download resume button" time="0.148" classname="ToolbarComponent template rendering"/>
-  <testcase name="ToolbarComponent template rendering should render AboutComponent in first tab" time="0.034" classname="ToolbarComponent template rendering"/>
-  <testcase name="ToolbarComponent template rendering should render mat-tab-group with About and Projects tabs" time="0.034" classname="ToolbarComponent template rendering"/>
-  <testcase name="ToolbarComponent template rendering should render ProjectsComponent in second tab" time="0.047" classname="ToolbarComponent template rendering"/>
-  <testcase name="ToolbarComponent template rendering should render dark mode toggle button" time="0.028" classname="ToolbarComponent template rendering"/>
-  <testcase name="ToolbarComponent template rendering should not apply dark-img class to logo when in light mode" time="0.028" classname="ToolbarComponent template rendering"/>
-  <testcase name="ToolbarComponent template rendering should apply dark-img class to logo when in dark mode" time="0.054" classname="ToolbarComponent template rendering"/>
-  <testcase name="ToolbarComponent template rendering should render toolbar with logo and name" time="0.024" classname="ToolbarComponent template rendering"/>
-  <testcase name="ToolbarComponent should create" time="0.024" classname="ToolbarComponent"/>
-  <testcase name="ToolbarComponent downloadResume() should open resume PDF in new window" time="0.025" classname="ToolbarComponent downloadResume()"/>
-  <testcase name="ToolbarComponent should inject StateService" time="0.024" classname="ToolbarComponent"/>
-  <testcase name="Models Project should create a project with required parameters" time="0" classname="Models Project"/>
-  <testcase name="Models Project should handle undefined optional parameters" time="0" classname="Models Project"/>
-  <testcase name="Models Project should create a project with optional parameters" time="0" classname="Models Project"/>
-  <testcase name="Models Experience should create an experience with company and positions" time="0.001" classname="Models Experience"/>
-  <testcase name="Models Skill should create a skill with type and skills array" time="0" classname="Models Skill"/>
-  <testcase name="Models Position should create a position with title, date, and tasks" time="0.001" classname="Models Position"/>
-  <testcase name="AboutComponent should create" time="0.007" classname="AboutComponent"/>
-  <testcase name="AboutComponent component properties should have skills array with expected categories" time="0.005" classname="AboutComponent component properties"/>
-  <testcase name="AboutComponent component properties should have experiences array" time="0.006" classname="AboutComponent component properties"/>
-  <testcase name="AboutComponent component properties should have positions with required properties" time="0.005" classname="AboutComponent component properties"/>
-  <testcase name="AboutComponent component properties should have summary text" time="0.005" classname="AboutComponent component properties"/>
-  <testcase name="AboutComponent should inject StateService" time="0.006" classname="AboutComponent"/>
-  <testcase name="AboutComponent template rendering should render mat-card with overview section" time="0.005" classname="AboutComponent template rendering"/>
-  <testcase name="AboutComponent template rendering should render header with welcome message" time="0.005" classname="AboutComponent template rendering"/>
-  <testcase name="AboutComponent template rendering should render expand/collapse buttons" time="0.006" classname="AboutComponent template rendering"/>
-  <testcase name="AboutComponent template rendering should render technical skills panel" time="0.005" classname="AboutComponent template rendering"/>
-  <testcase name="AboutComponent template rendering should render experience panel with company information" time="0.005" classname="AboutComponent template rendering"/>
-  <testcase name="AboutComponent template rendering should render mat-accordion with multiple panels" time="0.005" classname="AboutComponent template rendering"/>
-  <testcase name="AboutComponent template rendering should render education panel" time="0.005" classname="AboutComponent template rendering"/>
-  <testcase name="AboutComponent template rendering should render summary panel with content" time="0.005" classname="AboutComponent template rendering"/>
-  <testcase name="AboutComponent template rendering should apply dark-img class to header image when in dark mode" time="0.006" classname="AboutComponent template rendering"/>
-  <testcase name="AboutComponent getYearsOfExperience() should return integer value" time="0.005" classname="AboutComponent getYearsOfExperience()"/>
-  <testcase name="AboutComponent getYearsOfExperience() should calculate years of experience correctly" time="0.006" classname="AboutComponent getYearsOfExperience()"/>
-  <testcase name="StateService scrollToTop() should call window.scrollTo with smooth behavior" time="0.002" classname="StateService scrollToTop()"/>
-  <testcase name="StateService should be created" time="0.001" classname="StateService"/>
-  <testcase name="StateService toggleDarkTheme() should remove dark-theme class from body when toggling to light mode" time="0.001" classname="StateService toggleDarkTheme()"/>
-  <testcase name="StateService toggleDarkTheme() should toggle isDarkMode from true to false" time="0.005" classname="StateService toggleDarkTheme()"/>
-  <testcase name="StateService toggleDarkTheme() should add dark-theme class to body when toggling to dark mode" time="0.001" classname="StateService toggleDarkTheme()"/>
-  <testcase name="StateService toggleDarkTheme() should toggle isDarkMode from false to true" time="0.001" classname="StateService toggleDarkTheme()"/>
-  <testcase name="StateService isMobile() should observe HandsetPortrait breakpoint" time="0.001" classname="StateService isMobile()"/>
-  <testcase name="StateService isMobile() should set isMobilePortrait to true when HandsetPortrait breakpoint matches" time="0.001" classname="StateService isMobile()"/>
-  <testcase name="StateService isMobile() should set isMobilePortrait to false when HandsetPortrait breakpoint does not match" time="0.001" classname="StateService isMobile()"/>
-  <testcase name="StateService initial state should initialize with default values" time="0.001" classname="StateService initial state"/>
-  <testcase name="ProjectsComponent template rendering should apply dark-img class to header image when in dark mode" time="0.009" classname="ProjectsComponent template rendering"/>
-  <testcase name="ProjectsComponent template rendering should render repository buttons for projects with repositories" time="0.01" classname="ProjectsComponent template rendering"/>
-  <testcase name="ProjectsComponent template rendering should render project details in panels" time="0.009" classname="ProjectsComponent template rendering"/>
-  <testcase name="ProjectsComponent template rendering should render mat-card with projects section" time="0.01" classname="ProjectsComponent template rendering"/>
-  <testcase name="ProjectsComponent template rendering should render first project as expanded by default" time="0.008" classname="ProjectsComponent template rendering"/>
-  <testcase name="ProjectsComponent template rendering should render header with title and description" time="0.008" classname="ProjectsComponent template rendering"/>
-  <testcase name="ProjectsComponent template rendering should render mat-accordion with project panels" time="0.008" classname="ProjectsComponent template rendering"/>
-  <testcase name="ProjectsComponent template rendering should render expand/collapse buttons" time="0.009" classname="ProjectsComponent template rendering"/>
-  <testcase name="ProjectsComponent getEnterpriseProjectHeader() should return &quot;Enterprise&quot; for enterprise projects" time="0.009" classname="ProjectsComponent getEnterpriseProjectHeader()"/>
-  <testcase name="ProjectsComponent getEnterpriseProjectHeader() should return &quot;Personal&quot; for projects with undefined subtext" time="0.009" classname="ProjectsComponent getEnterpriseProjectHeader()"/>
-  <testcase name="ProjectsComponent getEnterpriseProjectHeader() should return &quot;Personal&quot; for non-enterprise projects" time="0.008" classname="ProjectsComponent getEnterpriseProjectHeader()"/>
-  <testcase name="ProjectsComponent should create" time="0.008" classname="ProjectsComponent"/>
-  <testcase name="ProjectsComponent component properties should have projects with required properties" time="0.009" classname="ProjectsComponent component properties"/>
-  <testcase name="ProjectsComponent component properties should have projects with optional properties" time="0.01" classname="ProjectsComponent component properties"/>
-  <testcase name="ProjectsComponent component properties should have projects array" time="0.009" classname="ProjectsComponent component properties"/>
-  <testcase name="ProjectsComponent isCurrentlyActive() should return true for projects ending with &quot;Present&quot;" time="0.009" classname="ProjectsComponent isCurrentlyActive()"/>
-  <testcase name="ProjectsComponent isCurrentlyActive() should return false for projects with undefined timeline" time="0.009" classname="ProjectsComponent isCurrentlyActive()"/>
-  <testcase name="ProjectsComponent isCurrentlyActive() should return false for projects not ending with &quot;Present&quot;" time="0.01" classname="ProjectsComponent isCurrentlyActive()"/>
-  <testcase name="ProjectsComponent should inject StateService" time="0.01" classname="ProjectsComponent"/>
-  <testcase name="ProjectsComponent getCurrentlyActiveHeader() should return &quot;Inactive&quot; for personal inactive projects" time="0.01" classname="ProjectsComponent getCurrentlyActiveHeader()"/>
-  <testcase name="ProjectsComponent getCurrentlyActiveHeader() should return &quot;Prior Position&quot; for enterprise inactive projects" time="0.01" classname="ProjectsComponent getCurrentlyActiveHeader()"/>
-  <testcase name="ProjectsComponent getCurrentlyActiveHeader() should return &quot;Active&quot; for currently active projects" time="0.009" classname="ProjectsComponent getCurrentlyActiveHeader()"/>
-  <testcase name="ProjectsComponent isEnterpriseProject() should return true for projects with &quot;Enterprise&quot; in subtext" time="0.009" classname="ProjectsComponent isEnterpriseProject()"/>
-  <testcase name="ProjectsComponent isEnterpriseProject() should return false for projects with undefined subtext" time="0.01" classname="ProjectsComponent isEnterpriseProject()"/>
-  <testcase name="ProjectsComponent isEnterpriseProject() should return false for projects without &quot;Enterprise&quot; in subtext" time="0.009" classname="ProjectsComponent isEnterpriseProject()"/>
-  <testcase name="ProjectsComponent openRepository() should open repository URL in new window" time="0.009" classname="ProjectsComponent openRepository()"/>
-  <testcase name="AppComponent should create the app" time="0.011" classname="AppComponent"/>
-  <testcase name="AppComponent should inject StateService" time="0.004" classname="AppComponent"/>
-  <testcase name="AppComponent should have as title 'portfolio'" time="0.003" classname="AppComponent"/>
-  <testcase name="AppComponent ngOnInit should set dark mode based on prefers-color-scheme: dark" time="0.003" classname="AppComponent ngOnInit"/>
-  <testcase name="AppComponent ngOnInit should call stateService.isMobile() on init" time="0.004" classname="AppComponent ngOnInit"/>
-  <testcase name="AppComponent ngOnInit should not set dark mode when prefers-color-scheme is light" time="0.004" classname="AppComponent ngOnInit"/>
-  <testcase name="AppComponent should render footer with toolbar" time="0.005" classname="AppComponent"/>
-  <testcase name="AppComponent should render LinkedIn and GitHub links in footer" time="0.004" classname="AppComponent"/>
-  <testcase name="AppComponent should render router-outlet" time="0.004" classname="AppComponent"/>
-  <testcase name="AppComponent should render scroll to top button in footer" time="0.004" classname="AppComponent"/>
-  <system-out>
-    <![CDATA[
-]]>
-  </system-out>
-  <system-err/>
-</testsuite>
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="80" failures="0" errors="0" time="6.626">
+  <testsuite name="Models" errors="0" failures="0" skipped="0" timestamp="2026-04-17T01:10:42" time="2.32" tests="6">
+    <testcase classname="Models › Project" name="should create a project with required parameters" time="0.006">
+    </testcase>
+    <testcase classname="Models › Project" name="should create a project with optional parameters" time="0.001">
+    </testcase>
+    <testcase classname="Models › Project" name="should handle undefined optional parameters" time="0.001">
+    </testcase>
+    <testcase classname="Models › Experience" name="should create an experience with company and positions" time="0.001">
+    </testcase>
+    <testcase classname="Models › Position" name="should create a position with title, date, and tasks" time="0.001">
+    </testcase>
+    <testcase classname="Models › Skill" name="should create a skill with type and skills array" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="StateService" errors="0" failures="0" skipped="0" timestamp="2026-04-17T01:10:42" time="2.394" tests="10">
+    <testcase classname="StateService" name="should be created" time="0.04">
+    </testcase>
+    <testcase classname="StateService › initial state" name="should initialize with default values" time="0.004">
+    </testcase>
+    <testcase classname="StateService › isMobile()" name="should set isMobilePortrait to true when HandsetPortrait breakpoint matches" time="0.006">
+    </testcase>
+    <testcase classname="StateService › isMobile()" name="should set isMobilePortrait to false when HandsetPortrait breakpoint does not match" time="0.003">
+    </testcase>
+    <testcase classname="StateService › isMobile()" name="should observe HandsetPortrait breakpoint" time="0.004">
+    </testcase>
+    <testcase classname="StateService › toggleDarkTheme()" name="should toggle isDarkMode from false to true" time="0.006">
+    </testcase>
+    <testcase classname="StateService › toggleDarkTheme()" name="should toggle isDarkMode from true to false" time="0.035">
+    </testcase>
+    <testcase classname="StateService › toggleDarkTheme()" name="should add dark-theme class to body when toggling to dark mode" time="0.003">
+    </testcase>
+    <testcase classname="StateService › toggleDarkTheme()" name="should remove dark-theme class from body when toggling to light mode" time="0.01">
+    </testcase>
+    <testcase classname="StateService › scrollToTop()" name="should call window.scrollTo with smooth behavior" time="0.004">
+    </testcase>
+  </testsuite>
+  <testsuite name="AppComponent" errors="0" failures="0" skipped="0" timestamp="2026-04-17T01:10:42" time="3.12" tests="10">
+    <testcase classname="AppComponent" name="should create the app" time="0.09">
+    </testcase>
+    <testcase classname="AppComponent" name="should have as title &apos;portfolio&apos;" time="0.02">
+    </testcase>
+    <testcase classname="AppComponent" name="should inject StateService" time="0.016">
+    </testcase>
+    <testcase classname="AppComponent › ngOnInit" name="should call stateService.isMobile() on init" time="0.019">
+    </testcase>
+    <testcase classname="AppComponent › ngOnInit" name="should set dark mode based on prefers-color-scheme: dark" time="0.015">
+    </testcase>
+    <testcase classname="AppComponent › ngOnInit" name="should not set dark mode when prefers-color-scheme is light" time="0.016">
+    </testcase>
+    <testcase classname="AppComponent" name="should render router-outlet" time="0.024">
+    </testcase>
+    <testcase classname="AppComponent" name="should render footer with toolbar" time="0.015">
+    </testcase>
+    <testcase classname="AppComponent" name="should render LinkedIn and GitHub links in footer" time="0.018">
+    </testcase>
+    <testcase classname="AppComponent" name="should render scroll to top button in footer" time="0.015">
+    </testcase>
+  </testsuite>
+  <testsuite name="AboutComponent" errors="0" failures="0" skipped="0" timestamp="2026-04-17T01:10:42" time="3.613" tests="17">
+    <testcase classname="AboutComponent" name="should create" time="0.169">
+    </testcase>
+    <testcase classname="AboutComponent" name="should inject StateService" time="0.058">
+    </testcase>
+    <testcase classname="AboutComponent › component properties" name="should have summary text" time="0.042">
+    </testcase>
+    <testcase classname="AboutComponent › component properties" name="should have skills array with expected categories" time="0.052">
+    </testcase>
+    <testcase classname="AboutComponent › component properties" name="should have experiences array" time="0.044">
+    </testcase>
+    <testcase classname="AboutComponent › component properties" name="should have positions with required properties" time="0.049">
+    </testcase>
+    <testcase classname="AboutComponent › getYearsOfExperience()" name="should calculate years of experience correctly" time="0.035">
+    </testcase>
+    <testcase classname="AboutComponent › getYearsOfExperience()" name="should return integer value" time="0.03">
+    </testcase>
+    <testcase classname="AboutComponent › template rendering" name="should render header with welcome message" time="0.034">
+    </testcase>
+    <testcase classname="AboutComponent › template rendering" name="should render mat-card with overview section" time="0.034">
+    </testcase>
+    <testcase classname="AboutComponent › template rendering" name="should render expand/collapse buttons" time="0.034">
+    </testcase>
+    <testcase classname="AboutComponent › template rendering" name="should render mat-accordion with multiple panels" time="0.032">
+    </testcase>
+    <testcase classname="AboutComponent › template rendering" name="should render summary panel with content" time="0.033">
+    </testcase>
+    <testcase classname="AboutComponent › template rendering" name="should render technical skills panel" time="0.03">
+    </testcase>
+    <testcase classname="AboutComponent › template rendering" name="should render experience panel with company information" time="0.029">
+    </testcase>
+    <testcase classname="AboutComponent › template rendering" name="should render education panel" time="0.029">
+    </testcase>
+    <testcase classname="AboutComponent › template rendering" name="should apply dark-img class to header image when in dark mode" time="0.031">
+    </testcase>
+  </testsuite>
+  <testsuite name="ToolbarComponent" errors="0" failures="0" skipped="0" timestamp="2026-04-17T01:10:42" time="4.224" tests="11">
+    <testcase classname="ToolbarComponent" name="should create" time="0.359">
+    </testcase>
+    <testcase classname="ToolbarComponent" name="should inject StateService" time="0.126">
+    </testcase>
+    <testcase classname="ToolbarComponent › downloadResume()" name="should open resume PDF in new window" time="0.118">
+    </testcase>
+    <testcase classname="ToolbarComponent › template rendering" name="should render toolbar with logo and name" time="0.101">
+    </testcase>
+    <testcase classname="ToolbarComponent › template rendering" name="should render dark mode toggle button" time="0.107">
+    </testcase>
+    <testcase classname="ToolbarComponent › template rendering" name="should render download resume button" time="0.094">
+    </testcase>
+    <testcase classname="ToolbarComponent › template rendering" name="should render mat-tab-group with About and Projects tabs" time="0.099">
+    </testcase>
+    <testcase classname="ToolbarComponent › template rendering" name="should render AboutComponent in first tab" time="0.071">
+    </testcase>
+    <testcase classname="ToolbarComponent › template rendering" name="should render ProjectsComponent in second tab" time="0.08">
+    </testcase>
+    <testcase classname="ToolbarComponent › template rendering" name="should apply dark-img class to logo when in dark mode" time="0.089">
+    </testcase>
+    <testcase classname="ToolbarComponent › template rendering" name="should not apply dark-img class to logo when in light mode" time="0.069">
+    </testcase>
+  </testsuite>
+  <testsuite name="ProjectsComponent" errors="0" failures="0" skipped="0" timestamp="2026-04-17T01:10:42" time="4.416" tests="26">
+    <testcase classname="ProjectsComponent" name="should create" time="0.22">
+    </testcase>
+    <testcase classname="ProjectsComponent" name="should inject StateService" time="0.102">
+    </testcase>
+    <testcase classname="ProjectsComponent › component properties" name="should have projects array" time="0.084">
+    </testcase>
+    <testcase classname="ProjectsComponent › component properties" name="should have projects with required properties" time="0.061">
+    </testcase>
+    <testcase classname="ProjectsComponent › component properties" name="should have projects with optional properties" time="0.068">
+    </testcase>
+    <testcase classname="ProjectsComponent › openRepository()" name="should open repository URL in new window" time="0.065">
+    </testcase>
+    <testcase classname="ProjectsComponent › isCurrentlyActive()" name="should return true for projects ending with &quot;Present&quot;" time="0.058">
+    </testcase>
+    <testcase classname="ProjectsComponent › isCurrentlyActive()" name="should return false for projects not ending with &quot;Present&quot;" time="0.055">
+    </testcase>
+    <testcase classname="ProjectsComponent › isCurrentlyActive()" name="should return false for projects with undefined timeline" time="0.054">
+    </testcase>
+    <testcase classname="ProjectsComponent › isEnterpriseProject()" name="should return true for projects with &quot;Enterprise&quot; in subtext" time="0.063">
+    </testcase>
+    <testcase classname="ProjectsComponent › isEnterpriseProject()" name="should return false for projects without &quot;Enterprise&quot; in subtext" time="0.047">
+    </testcase>
+    <testcase classname="ProjectsComponent › isEnterpriseProject()" name="should return false for projects with undefined subtext" time="0.055">
+    </testcase>
+    <testcase classname="ProjectsComponent › getCurrentlyActiveHeader()" name="should return &quot;Active&quot; for currently active projects" time="0.048">
+    </testcase>
+    <testcase classname="ProjectsComponent › getCurrentlyActiveHeader()" name="should return &quot;Prior Position&quot; for enterprise inactive projects" time="0.043">
+    </testcase>
+    <testcase classname="ProjectsComponent › getCurrentlyActiveHeader()" name="should return &quot;Inactive&quot; for personal inactive projects" time="0.041">
+    </testcase>
+    <testcase classname="ProjectsComponent › getEnterpriseProjectHeader()" name="should return &quot;Enterprise&quot; for enterprise projects" time="0.038">
+    </testcase>
+    <testcase classname="ProjectsComponent › getEnterpriseProjectHeader()" name="should return &quot;Personal&quot; for non-enterprise projects" time="0.038">
+    </testcase>
+    <testcase classname="ProjectsComponent › getEnterpriseProjectHeader()" name="should return &quot;Personal&quot; for projects with undefined subtext" time="0.048">
+    </testcase>
+    <testcase classname="ProjectsComponent › template rendering" name="should render header with title and description" time="0.065">
+    </testcase>
+    <testcase classname="ProjectsComponent › template rendering" name="should render mat-card with projects section" time="0.042">
+    </testcase>
+    <testcase classname="ProjectsComponent › template rendering" name="should render expand/collapse buttons" time="0.036">
+    </testcase>
+    <testcase classname="ProjectsComponent › template rendering" name="should render mat-accordion with project panels" time="0.038">
+    </testcase>
+    <testcase classname="ProjectsComponent › template rendering" name="should render first project as expanded by default" time="0.038">
+    </testcase>
+    <testcase classname="ProjectsComponent › template rendering" name="should render project details in panels" time="0.034">
+    </testcase>
+    <testcase classname="ProjectsComponent › template rendering" name="should render repository buttons for projects with repositories" time="0.032">
+    </testcase>
+    <testcase classname="ProjectsComponent › template rendering" name="should apply dark-img class to header image when in dark mode" time="0.037">
+    </testcase>
+  </testsuite>
+</testsuites>

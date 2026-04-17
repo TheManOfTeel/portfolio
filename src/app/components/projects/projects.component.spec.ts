@@ -74,7 +74,7 @@ describe('ProjectsComponent', () => {
 
   describe('openRepository()', () => {
     it('should open repository URL in new window', () => {
-      spyOn(window, 'open');
+      jest.spyOn(window, 'open').mockImplementation();
 
       const repoName = 'test-repo';
       component.openRepository(repoName);

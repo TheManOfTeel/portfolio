@@ -56,7 +56,21 @@ describe('AppComponent', () => {
 
   describe('ngOnInit', () => {
     beforeEach(() => {
-      spyOn(stateService, 'isMobile');
+      jest.spyOn(stateService, 'isMobile');
+      // Mock window.matchMedia for all tests in this describe block
+      Object.defineProperty(window, 'matchMedia', {
+        writable: true,
+        value: jest.fn().mockImplementation(query => ({
+          matches: false,
+          media: query,
+          onchange: null,
+          addListener: jest.fn(),
+          removeListener: jest.fn(),
+          addEventListener: jest.fn(),
+          removeEventListener: jest.fn(),
+          dispatchEvent: jest.fn(),
+        })),
+      });
     });
 
     it('should call stateService.isMobile() on init', () => {
@@ -65,10 +79,10 @@ describe('AppComponent', () => {
     });
 
     it('should set dark mode based on prefers-color-scheme: dark', () => {
-      spyOn(window, 'matchMedia').and.returnValue({
+      jest.spyOn(window, 'matchMedia').mockReturnValue({
         matches: true,
-        addEventListener: jasmine.createSpy(),
-        removeEventListener: jasmine.createSpy()
+        addEventListener: jest.fn(),
+        removeEventListener: jest.fn()
       } as any);
 
       component.ngOnInit();
@@ -77,10 +91,10 @@ describe('AppComponent', () => {
     });
 
     it('should not set dark mode when prefers-color-scheme is light', () => {
-      spyOn(window, 'matchMedia').and.returnValue({
+      jest.spyOn(window, 'matchMedia').mockReturnValue({
         matches: false,
-        addEventListener: jasmine.createSpy(),
-        removeEventListener: jasmine.createSpy()
+        addEventListener: jest.fn(),
+        removeEventListener: jest.fn()
       } as any);
 
       component.ngOnInit();
