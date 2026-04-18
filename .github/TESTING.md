@@ -75,12 +75,6 @@ Two artifacts are automatically uploaded and stored for 14 days:
 
 ## Local Development
 
-### Validate Setup
-```bash
-npm run validate:jest
-```
-This checks that all required files and dependencies are properly configured for Jest.
-
 ### Preview Summary Format
 ```bash
 npm run jest:preview
