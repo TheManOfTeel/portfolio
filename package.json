@@ -54,7 +54,7 @@
     "jest-environment-jsdom": "^30.4.1",
     "jest-junit": "^16.0.0",
     "jest-preset-angular": "^16.1.5",
-    "puppeteer": "^24.43.1",
+    "puppeteer": "^25.0.4",
     "rimraf": "^3.0.2",
     "start-server-and-test": "^3.0.5",
     "ts-jest": "^29.4.11",
