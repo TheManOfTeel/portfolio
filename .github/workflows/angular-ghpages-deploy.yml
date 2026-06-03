@@ -26,6 +26,6 @@ jobs:
         CLI: true
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
-        npm ci --legacy-peer-deps
+        npm ci
         npm run build
         npm run deploy
