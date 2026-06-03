@@ -23,7 +23,8 @@ jobs:
     - name: Update Packages and Install
       run: |
           ncu -t minor -u
-          npm install --legacy-peer-deps
+          npm install
+          npm audit fix
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v8
       with:
