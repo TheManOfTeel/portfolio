@@ -3,6 +3,7 @@ name: Automated Package Updates
 on:
   schedule:
     - cron: '0 2 * * 1,3,5'
+  workflow_dispatch: # Allows manual runs
 
 permissions:
   contents: write
@@ -20,12 +21,13 @@ jobs:
       uses: actions/setup-node@v6
       with:
         node-version: 'lts/*'
+        cache: 'npm'
     - name: Install npm-check-updates
       run: npm install -g npm-check-updates
     - name: Update Packages and Install
       run: |
           ncu -t minor -u
-          npm install
+          npm ci
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v8
       with:
