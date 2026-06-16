@@ -7,6 +7,7 @@ on:
 permissions:
   checks: write
   pull-requests: write
+  contents: write
 
 jobs:
   main-ci-tests:
@@ -23,6 +24,7 @@ jobs:
       uses: actions/setup-node@v6
       with:
         node-version: 'lts/*'
+        cache: 'npm'
     - name: Build and Deploy
       env:
         CLI: true
@@ -31,3 +33,13 @@ jobs:
         npm ci
         npm run build
         npm run deploy
+    - name: Verify deployment
+      if: always()
+      run: |
+        if [ -d "dist/portfolio/browser" ]; then
+          echo "✅ Build artifacts exist"
+          du -sh dist/portfolio/browser
+        else
+          echo "⚠️ Build artifacts not found"
+          exit 1
+        fi

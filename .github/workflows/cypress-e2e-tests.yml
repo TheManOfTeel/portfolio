@@ -15,6 +15,7 @@ jobs:
       uses: actions/setup-node@v6
       with:
         node-version: 'lts/*'
+        cache: 'npm'
     - name: Install Dependencies
       run: npm ci
     - name: Run Cypress E2E Tests
@@ -24,3 +25,13 @@ jobs:
         start: npm start
         browser: chrome
         record: false
+    - name: Upload Cypress artifacts on failure
+      if: failure()
+      uses: actions/upload-artifact@v6
+      with:
+        name: cypress-artifacts
+        path: |
+          cypress/screenshots/
+          cypress/videos/
+        retention-days: 7
+        if-no-files-found: ignore
