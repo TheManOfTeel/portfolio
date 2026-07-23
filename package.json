@@ -42,7 +42,7 @@
   "devDependencies": {
     "@angular/build": "^22.0.7",
     "@angular/cli": "^22.0.7",
-    "@angular/compiler-cli": "^22.0.7",
+    "@angular/compiler-cli": "^22.0.8",
     "@cypress/schematic": "^5.0.0",
     "@types/jasmine": "~6.0.0",
     "@types/jest": "^30.0.0",
