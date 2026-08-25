@@ -13,6 +13,7 @@ jobs:
       install-command: npm ci
       test-command: npm run test:ci
       coverage-path: coverage/
+      summary-command: node .github/scripts/jest-summary.js
   cypress-e2e-tests:
     uses: TheManOfTeel/SharedWorkflows/.github/workflows/cypress-e2e-tests.yml@v1.0.0
     with:
