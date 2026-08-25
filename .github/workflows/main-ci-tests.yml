@@ -7,6 +7,16 @@ on:
 
 jobs:
   jest-tests:
-    uses: ./.github/workflows/jest-tests.yml
+    uses: TheManOfTeel/SharedWorkflows/.github/workflows/jest-tests.yml@v1.0.0
+    with:
+      working-directory: .
+      install-command: npm ci
+      test-command: npm run test:ci
+      coverage-path: coverage/
   cypress-e2e-tests:
-      uses: ./.github/workflows/cypress-e2e-tests.yml
+    uses: TheManOfTeel/SharedWorkflows/.github/workflows/cypress-e2e-tests.yml@v1.0.0
+    with:
+      working-directory: .
+      install-command: npm ci
+      start-command: npm start
+      browser: chrome
