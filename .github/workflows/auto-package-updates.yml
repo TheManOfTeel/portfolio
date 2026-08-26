@@ -9,8 +9,6 @@ jobs:
   deps:
     uses: TheManOfTeel/SharedWorkflows/.github/workflows/auto-package-updates.yml@v1.0.0
     secrets: inherit
-    with:
-      working-directory: ./Source/ClientApp
-      base-branch: main
-      assignee: TheManOfTeel
-      labels: dependencies
+    permissions:
+      contents: write
+      pull-requests: write
