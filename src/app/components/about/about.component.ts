@@ -49,6 +49,7 @@ export class AboutComponent {
       'Backend',
       [
         '.NET Core',
+        'Node.js',
         'RESTful APIs',
         'Entity Framework Core',
         'Spring Boot'
@@ -77,8 +78,9 @@ export class AboutComponent {
         'Git',
         'Docker',
         'Azure DevOps',
+        'GitHub Actions',
         'Jenkins',
-        'Postman',
+        'Postman/Bruno',
         'SSRS',
         'Jira',
         'Confluence',
@@ -111,7 +113,7 @@ export class AboutComponent {
             'Implemented RESTful APIs and microservices architecture to enhance system modularity and maintainability.',
             'Implemented API retry logic and exponential backoff strategies, reducing failure rates by 30% and improving overall system resilience.',
             'Architected and implemented a full-lifecycle claims management system to automate multi-CPT code submissions and asynchronous payer response handling, ensuring high delivery rates through a plan-aware fallback protocol.',
-            'Implemented a Clinical Automation engine to programmatically generate regulatory documents, eliminating redundant manual entry and improving data integrity across the prior authorization process.',
+            'Engineered an automated clinical document generation engine, streamlining specialty care referral submissions and approval workflows across the prior authorization pipeline.',
           ]
         )
       ]

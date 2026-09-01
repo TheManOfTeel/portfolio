@@ -21,6 +21,20 @@ export class ProjectsComponent {
 
   public projects: Project[] = [
     new Project(
+      'RSS Discord Bot',
+      'August 2025 - Present',
+      `Engineered a Node.js-based RSS/Atom to Discord automation tool that ingests content from multiple feed sources,
+      filters relevant updates using configurable rules, and publishes notifications to Discord via webhooks. Implemented
+      feed normalization, deduplication, batching, rate-limit handling, and role/user mention logic to ensure reliable
+      delivery and a high-quality user experience. The project also incorporates persistent state tracking and scheduled
+      execution through GitHub Actions, demonstrating practical experience in backend automation, API integration, and
+      production-ready system design.`,
+      undefined,
+      undefined,
+      undefined,
+      'RssDiscordBot'
+    ),
+    new Project(
       'Rhyme',
       'July 2025 - Present',
       `Rhyme is a prior authorization application supporting 83 large providers and processing 4 million authorizations
@@ -60,10 +74,11 @@ export class ProjectsComponent {
     ),
     new Project(
       'Review Generator',
-      'January 2024',
+      'January 2024, August 2026',
       `Designed and implemented a .NET and Angular application that transforms raw data into creative output. This system
       ingested a large dataset of Amazon video game reviews, employing a Markov chain algorithm to learn linguistic patterns
-      and subsequently generate synthetic, yet realistic, review text.`,
+      and subsequently generate synthetic, yet realistic, review text. In August 2026 the project was updated to improve the quality
+      of the generated reviews as well as utilize more modern techniques and frameworks.`,
       undefined,
       undefined,
       undefined,
