@@ -118,23 +118,23 @@ describe('Portfolio Application E2E Tests', () => {
       // Test expand all
       cy.contains('Expand All').click();
       cy.contains('C#').should('be.visible');
-      cy.contains('Rhyme').should('be.visible');
+      cy.contains('years of experience').should('be.visible');
 
       // Test collapse all
       cy.contains('Collapse All').click();
       // Summary should remain expanded, others collapsed
-      cy.contains('Full Stack Software Engineer').should('be.visible');
+      cy.contains('Full Stack & Backend Software Engineer').should('be.visible');
     });
 
     it('should display skills correctly', () => {
       cy.contains('Expand All').click();
       cy.contains('Languages: C#, Java, JavaScript, TypeScript, SQL, Python').should('be.visible');
-      cy.contains('Frontend: Angular, React, Vue.js, HTML5, CSS3').should('be.visible');
+      cy.contains('Frontend: Angular, React, Vue.js, HTML5/CSS3, TypeScript').should('be.visible');
     });
 
     it('should display experience with proper formatting', () => {
       cy.contains('Expand All').click();
-      cy.contains('Software Engineer — July 2025 - Present').should('be.visible');
+      cy.contains('Software Engineer (Senior Level Scope) — July 2025 - Present').should('be.visible');
       cy.get('mat-expansion-panel ul li').should('have.length.greaterThan', 0);
     });
 

@@ -51,7 +51,7 @@ describe('AboutComponent', () => {
   describe('component properties', () => {
     it('should have summary text', () => {
       expect(component.summary).toBeDefined();
-      expect(component.summary).toContain('Full Stack Software Engineer');
+      expect(component.summary).toContain('Full Stack & Backend Software Engineer');
       expect(component.summary).toContain('years of experience');
     });
 
@@ -63,7 +63,7 @@ describe('AboutComponent', () => {
       expect(skillTypes).toContain('Languages');
       expect(skillTypes).toContain('Frontend');
       expect(skillTypes).toContain('Backend');
-      expect(skillTypes).toContain('Databases');
+      expect(skillTypes).toContain('Databases & Cloud');
     });
 
     it('should have experiences array', () => {
@@ -147,7 +147,7 @@ describe('AboutComponent', () => {
       expect(summaryPanel).toBeTruthy();
 
       const summaryContent = summaryPanel?.querySelector('.accordion-content p');
-      expect(summaryContent?.textContent).toContain('Full Stack Software Engineer');
+      expect(summaryContent?.textContent).toContain('Full Stack & Backend Software Engineer');
     });
 
     it('should render technical skills panel', () => {
