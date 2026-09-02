@@ -10,11 +10,13 @@ export class Experience {
 
 export class Position {
   title: string | undefined;
+  location: string | undefined;
   date: string | undefined;
   tasks: string[] | undefined;
 
-  constructor (title: string, date: string, tasks: string[]) {
+  constructor (title: string, location: string, date: string, tasks: string[]) {
     this.title = title;
+    this.location = location;
     this.date = date;
     this.tasks = tasks;
   }
