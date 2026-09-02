@@ -42,7 +42,7 @@ describe('Models', () => {
   describe('Experience', () => {
     it('should create an experience with company and positions', () => {
       const positions = [
-        new Position('Developer', '2020-2021', ['Task 1', 'Task 2'])
+        new Position('Developer', 'Anywhere, USA', '2020-2021', ['Task 1', 'Task 2'])
       ];
       const experience = new Experience('Test Company', positions);
 
@@ -55,7 +55,7 @@ describe('Models', () => {
   describe('Position', () => {
     it('should create a position with title, date, and tasks', () => {
       const tasks = ['Developed features', 'Fixed bugs'];
-      const position = new Position('Senior Developer', '2020-2021', tasks);
+      const position = new Position('Senior Developer', 'Anywhere, USA', '2020-2021', tasks);
 
       expect(position.title).toBe('Senior Developer');
       expect(position.date).toBe('2020-2021');

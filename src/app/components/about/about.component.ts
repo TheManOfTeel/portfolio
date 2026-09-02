@@ -18,10 +18,10 @@ import { Skill } from '../../models/skill';
 export class AboutComponent {
   constructor(public stateService: StateService) {}
 
-  public summary = `Full Stack Software Engineer with over ${this.getYearsOfExperience()} years of experience delivering performant, scalable web
-  applications and APIs across .NET, Angular, and cloud platforms. Proven ability to own features end-to-end, collaborate
-  across disciplines, and optimize systems for reliability and throughput. Strengths include backend architecture, RESTful
-  service design, cloud deployments (Azure, AWS), and Agile delivery.`;
+  public summary = `Senior-level Full Stack & Backend Software Engineer with over ${this.getYearsOfExperience()} years of experience designing, architecting, and scaling high-throughput
+  distributed systems, RESTful microservices, and web applications using C#, .NET Core, TypeScript, and Angular/React. Proven track record of optimizing ingestion pipelines,
+  engineering clinical and financial automation engines, and leading CI/CD and architecture practices. Strong background in cloud platforms (Azure, AWS),
+  database optimization (SQL Server), and resilient asynchronous messaging.`;
 
   public skills = [
     new Skill(
@@ -36,57 +36,47 @@ export class AboutComponent {
       ]
     ),
     new Skill(
+      'Backend',
+      [
+        '.NET Core / .NET 8+',
+        'RESTful APIs',
+        'Microservices',
+        'Entity Framework Core',
+        'Node.js',
+        'Express',
+        'Async Pipelines'
+      ]
+    ),
+    new Skill(
       'Frontend',
       [
         'Angular',
         'React',
         'Vue.js',
-        'HTML5',
-        'CSS3'
+        'HTML5/CSS3',
+        'TypeScript'
       ]
     ),
     new Skill(
-      'Backend',
-      [
-        '.NET Core',
-        'Node.js',
-        'RESTful APIs',
-        'Entity Framework Core',
-        'Spring Boot'
-      ]
-    ),
-    new Skill(
-      'Databases',
+      'Databases & Cloud',
       [
         'SQL Server',
         'MySQL',
         'DynamoDB',
-        'Firestore'
+        'Firestore | Azure (App Services, Functions, DevOps)',
+        'AWS (EC2, Lambda, S3)'
       ]
     ),
     new Skill(
-      'Cloud',
+      'DevOps & Architecture',
       [
-        'Azure (App Service, Functions, DevOps)',
-        'AWS (EC2, Lambda, S3)',
-        'GCP (Compute Engine, Cloud Storage)'
-      ]
-    ),
-    new Skill(
-      'Tools',
-      [
-        'Git',
         'Docker',
-        'Azure DevOps',
-        'GitHub Actions',
-        'Jenkins',
-        'Postman/Bruno',
-        'SSRS',
-        'Jira',
-        'Confluence',
-        'CI/CD',
-        'Unit Testing (NUnit, Jest, Cypress)',
-        'Integration Testing'
+        'CI/CD (GitHub Actions, Azure DevOps)',
+        'Event-Driven Architecture',
+        'SOLID Principles',
+        'NUnit',
+        'Jest',
+        'Postman'
       ]
     ),
     new Skill(
@@ -106,14 +96,15 @@ export class AboutComponent {
       'Rhyme',
       [
         new Position(
-          'Software Engineer',
+          'Software Engineer (Senior Level Scope)',
+          'Columbus, OH (Remote)',
           'July 2025 - Present',
           [
-            'Developed and maintained a high-performance, scalable web application using React and .NET Core, serving over 4M prior authorizations yearly.',
-            'Implemented RESTful APIs and microservices architecture to enhance system modularity and maintainability.',
-            'Implemented API retry logic and exponential backoff strategies, reducing failure rates by 30% and improving overall system resilience.',
-            'Architected and implemented a full-lifecycle claims management system to automate multi-CPT code submissions and asynchronous payer response handling, ensuring high delivery rates through a plan-aware fallback protocol.',
-            'Engineered an automated clinical document generation engine, streamlining specialty care referral submissions and approval workflows across the prior authorization pipeline.',
+            'Architected and engineered high-performance .NET Core microservices and RESTful APIs serving over 4M prior authorizations annually across healthcare payers.',
+            'Designed a full-lifecycle claims management engine to automate multi-CPT code submissions and asynchronous payer response handling, implementing a plan-aware fallback protocol that maximized delivery reliability.',
+            'Engineered an automated clinical document generation engine, streamlining specialty care referral submissions and approval workflows across prior authorization pipelines.',
+            'Implemented robust API resilience patterns—including retry policies, exponential backoff, and circuit breakers—reducing system-wide call failure rates by 30%.',
+            'Maintained and optimized dynamic frontends across React and Vue.js while aligning backend endpoints for sub-second response times.'
           ]
         )
       ]
@@ -123,12 +114,13 @@ export class AboutComponent {
       [
         new Position(
           'Software Engineer',
+          'Houston, TX (Remote)',
           'March 2024 - July 2025',
           [
-            'Developed scalable .NET Core APIs to power a safety compliance platform used by 500K+ users across industries.',
-            'Introduced bulk save/update patterns and reusable modal and form components reducing data processing time by 25% and improving UI consistency across the application.',
-            'Created comprehensive Postman API collection and onboarding documentation, reducing integration ramp-up time by 40% and facilitating seamless knowledge transfer to new team members and external partners.',
-            'Contributed to feature parity across web and mobile platforms (Android/iOS), ensuring consistency and reliability.'
+            'Built scalable .NET Core APIs and backend services powering an enterprise safety compliance platform serving 500,000+ active users.',
+            'Redesigned data-access layers by introducing bulk save/update patterns and batch processing, cutting database round-trips and processing times by 25%.',
+            'Standardized team API integration by authoring comprehensive Postman collections, OpenAPI specifications, and developer onboarding workflows, decreasing partner integration ramp-up time by 40%.',
+            'Collaborated on multi-platform feature parity, maintaining strict contract consistency across web and mobile endpoints.'
           ]
         ),
       ]
@@ -138,11 +130,12 @@ export class AboutComponent {
       [
         new Position(
           'Advanced Software Engineer',
+          'Chicago, IL (Remote)',
           'April 2022 - March 2024',
           [
-            'Engineered scalable ingestion pipelines and classification APIs using .NET Core and microservices for an eDiscovery platform, processing over 1M documents/day with 95% accuracy in document classification.',
-            'Enhanced throughput by 35% via microservice integration and classifier optimization.',
-            'Led sprint planning, code reviews, and architecture discussions within Agile teams to maintain engineering quality, fostering a collaborative environment and providing technical guidance.'
+            'Engineered distributed ingestion pipelines and document classification APIs using .NET Core microservices for an enterprise eDiscovery platform, processing over 1,000,000 documents/day with 95% accuracy.',
+            'Improved overall pipeline throughput by 35% through microservice decoupling, query optimization, and classifier parallelization.',
+            'Led sprint planning, technical design reviews, and code quality initiatives across Agile teams; mentored mid-level and junior engineers in SOLID principles and system design.'
           ]
         )
       ]
@@ -152,20 +145,20 @@ export class AboutComponent {
       [
         new Position(
           'Software Engineer',
+          'Okemos, MI',
           'April 2020 - April 2022',
           [
-            'Delivered full-stack solutions for public sector clients using Angular and .NET Core.',
-            'Managed concurrent projects with high reliability, contributing to mission-critical government services.',
-            'Acted as mentor to junior engineers and interns, elevating team-wide technical practices.'
+            'Delivered full-stack enterprise solutions for mission-critical public sector applications utilizing Angular and .NET Core.',
+            'Authored optimized SQL scripts, stored procedures, and Entity Framework queries to maintain zero-downtime operations on high-concurrency public databases.',
+            'Mentored junior engineers and interns, establishing unit testing standards (NUnit, Jest) and code review checklists across the engineering team.'
           ]
         ),
         new Position(
           'Full Stack Developer Intern',
+          'Okemos, MI',
           'August 2019 - April 2020',
           [
-            'Modernized legacy Visual Basic systems to .NET, enhancing code maintainability.',
-            'Authored SQL scripts for data migration and reporting pipelines.',
-            'Supported infrastructure upgrades and internal platform transitions.'
+            'Modernized legacy Visual Basic applications to .NET Core and authored SQL migration scripts.'
           ]
         )
       ]
@@ -175,11 +168,10 @@ export class AboutComponent {
       [
         new Position(
           'Quality Measurement Research (Programmer) Intern',
+          'Bloomfield Hills',
           'June 2019 - August 2019',
           [
-            'Migrated academic research applications to modern hosting environments.',
-            'Collaborated on a dynamic survey application, integrating new frontend features.',
-            'Upgraded legacy tools to .NET framework, improving maintainability and compatibility.'
+            'Upgraded legacy academic tools to modern .NET frameworks and assisted in dynamic survey development.'
           ]
         )
       ]
