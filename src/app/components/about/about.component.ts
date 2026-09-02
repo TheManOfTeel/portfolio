@@ -102,7 +102,7 @@ export class AboutComponent {
           [
             'Architected and engineered high-performance .NET Core microservices and RESTful APIs serving over 4M prior authorizations annually across healthcare payers.',
             'Designed a full-lifecycle claims management engine to automate multi-CPT code submissions and asynchronous payer response handling, implementing a plan-aware fallback protocol that maximized delivery reliability.',
-            'Engineered an automated clinical document generation engine, streamlining specialty care referral submissions and approval workflows across prior authorization pipelines[cite: 1].',
+            'Engineered an automated clinical document generation engine, streamlining specialty care referral submissions and approval workflows across prior authorization pipelines.',
             'Implemented robust API resilience patterns—including retry policies, exponential backoff, and circuit breakers—reducing system-wide call failure rates by 30%.',
             'Maintained and optimized dynamic frontends across React and Vue.js while aligning backend endpoints for sub-second response times.'
           ]
