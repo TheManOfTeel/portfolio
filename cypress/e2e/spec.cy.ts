@@ -134,7 +134,7 @@ describe('Portfolio Application E2E Tests', () => {
 
     it('should display experience with proper formatting', () => {
       cy.contains('Expand All').click();
-      cy.contains('Software Engineer (Senior Level Scope) — July 2025 - Present').should('be.visible');
+      cy.contains('Software Engineer (Senior Level Scope) | Columbus, OH (Remote) | July 2025 - Present').should('be.visible');
       cy.get('mat-expansion-panel ul li').should('have.length.greaterThan', 0);
     });
 

@@ -168,7 +168,7 @@ export class AboutComponent {
       [
         new Position(
           'Quality Measurement Research (Programmer) Intern',
-          'Bloomfield Hills',
+          'Bloomfield Hills, MI',
           'June 2019 - August 2019',
           [
             'Upgraded legacy academic tools to modern .NET frameworks and assisted in dynamic survey development.'
