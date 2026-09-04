@@ -56,7 +56,8 @@
               <div>
                 @if (stateService.isMobilePortrait()) {
                   <p>{{ position.title }}</p>
-                  <p>{{ position.location }} | {{ position.date }}</p>
+                  <p>{{ position.location }}</p>
+                  <p>{{ position.date }}</p>
                 } @else {
                   <p>{{ position.title }} | {{ position.location }} | {{ position.date }}</p>
                 }
@@ -82,6 +83,12 @@
           </mat-expansion-panel-header>
           <div class="accordion-content">
             <p>Bachelor of Science in Computer Science</p>
+            @if (stateService.isMobilePortrait()) {
+              <p>Oakland University</p>
+              <p>Rochester, MI</p>
+            } @else {
+              <p>Oakland University | Rochester, MI</p>
+            }
             <p>Oakland University | Rochester, MI</p>
           </div>
         </mat-expansion-panel>
