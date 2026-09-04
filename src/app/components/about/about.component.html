@@ -54,6 +54,12 @@
             <p><strong>{{ experience.companyName }}</strong></p>
             @for (position of experience.positions; track position) {
               <div>
+                @if (stateService.isMobilePortrait()) {
+                  <p>{{ position.title }}</p>
+                  <p>{{ position.location }} | {{ position.date }}</p>
+                } @else {
+                  <p>{{ position.title }} | {{ position.location }} | {{ position.date }}</p>
+                }
                 <p>{{ position.title }} | {{ position.location }} | {{ position.date }}</p>
                 <ul>
                   @for (task of position.tasks; track task) {
