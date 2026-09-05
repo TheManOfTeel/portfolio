@@ -182,4 +182,9 @@ export class AboutComponent {
     const startDate = new Date(2020, 4, 29); // Starting date of professional experience
     return Math.floor((new Date().getFullYear() - startDate.getFullYear()));
   }
+
+  getPositionHTML(position: Position): string {
+    const separator = this.stateService.isMobilePortrait ? '<br>' : ' | ';
+    return `${position.title}${separator}${position.location}${separator}${position.date}`
+  }
 }
