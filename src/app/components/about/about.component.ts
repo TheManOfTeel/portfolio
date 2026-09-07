@@ -5,6 +5,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { StateService } from '../../services/state/state.service';
+import { Education } from '../../models/education';
 import { Experience, Position } from '../../models/experience';
 import { Skill } from '../../models/skill';
 
@@ -175,6 +176,14 @@ export class AboutComponent {
           ]
         )
       ]
+    )
+  ];
+
+  public educationHistory = [
+    new Education(
+      'Oakland University',
+      'Bachelor of Science in Computer Science',
+      'Rochester Hills, MI'
     )
   ];
 
