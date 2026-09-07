@@ -54,11 +54,13 @@
             <p><strong>{{ experience.companyName }}</strong></p>
             @for (position of experience.positions; track position) {
               <div>
-                @if (stateService.isMobilePortrait()) {
-                  <p>{{ position.title }}<br>{{ position.location }}<br>{{position.date}}</p>
-                } @else {
-                  <p>{{ position.title }} | {{ position.location }} | {{ position.date }}</p>
-                }
+                <p>
+                  {{ position.title }}
+                  @if (stateService.isMobilePortrait()) { <br> } @else { <span> | </span> }
+                  {{ position.location }}
+                  @if (stateService.isMobilePortrait()) { <br> } @else { <span> | </span> }
+                  {{ position.date }}
+                </p>
                 <ul>
                   @for (task of position.tasks; track task) {
                     <li>
@@ -70,7 +72,7 @@
             }
             @if (!isLast) {
               <br>
-              }
+            }
             </div>
           }
         </mat-expansion-panel>
@@ -79,10 +81,12 @@
             Education
           </mat-expansion-panel-header>
           <div class="accordion-content">
-            @if (stateService.isMobilePortrait()) {
-              <p>Bachelor of Science in Computer Science<br>Oakland University<br>Rochester, MI</p>
-            } @else {
-              <p>Bachelor of Science in Computer Science<br>Oakland University | Rochester, MI</p>
+            @for (education of educationHistory; track education) {
+              <p>{{ education.certification }}<br>
+                {{ education.institution }}
+                @if (stateService.isMobilePortrait()) { <br> } @else { <span> | </span> }
+                {{ education.location }}
+              </p>
             }
           </div>
         </mat-expansion-panel>
