@@ -12,6 +12,11 @@ module.exports = {
   },
   collectCoverage: true,
   coverageDirectory: 'coverage/portfolio',
+  // Explicitly root coverage collection to workspace
+  coveragePathIgnorePatterns: [
+    '/node_modules/',
+    '/dist/'
+  ],
   coverageReporters: ['text', 'json', 'json-summary', 'lcov', 'clover'],
   collectCoverageFrom: [
     'src/**/*.ts',
