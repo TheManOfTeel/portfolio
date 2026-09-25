@@ -17,7 +17,7 @@ module.exports = {
     '/node_modules/',
     '/dist/'
   ],
-  coverageReporters: ['text', 'json', 'json-summary', 'lcov', 'clover'],
+  coverageReporters: ['text', 'json', 'json-summary', 'lcovonly', 'clover'],
   collectCoverageFrom: [
     'src/**/*.ts',
     '!src/**/*.spec.ts',
