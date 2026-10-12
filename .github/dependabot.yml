@@ -5,16 +5,16 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  - package-ecosystem: "npm"
+    directory: "/"
     schedule:
       interval: "weekly"
     allow:
       - dependency-type: "production"
+        update-types: 
+          - "version-update:semver-minor"
+          - "version-update:semver-patch"
     open-pull-requests-limit: 5
-    ignore:
-      - dependency-name: "*"
-        update-types: ["version-update:semver-major"]
     commit-message:
       prefix: "[BOT] "
     assignees:
