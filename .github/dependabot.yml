@@ -11,10 +11,10 @@ updates:
       interval: "weekly"
     allow:
       - dependency-type: "production"
-        update-types:
+        update-types: 
           - "version-update:semver-minor"
           - "version-update:semver-patch"
-    dependency-groups:
+    groups:
       angular-core-group:
         patterns:
           - "@angular/*"
