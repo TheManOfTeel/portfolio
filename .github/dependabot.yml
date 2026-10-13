@@ -11,9 +11,26 @@ updates:
       interval: "weekly"
     allow:
       - dependency-type: "production"
-        update-types: 
+        update-types:
           - "version-update:semver-minor"
           - "version-update:semver-patch"
+    dependency-groups:
+      angular-core-group:
+        patterns:
+          - "@angular/*"
+        exclude-patterns:
+          - "@angular/material*"
+          - "@angular/cdk*"
+          - "@angular/cli"
+          - "@angular-devkit/*"
+      angular-material-group:
+        patterns:
+          - "@angular/material*"
+          - "@angular/cdk*"
+      angular-cli-group:
+        patterns:
+          - "@angular/cli"
+          - "@angular-devkit/*"
     open-pull-requests-limit: 5
     commit-message:
       prefix: "[BOT] "
