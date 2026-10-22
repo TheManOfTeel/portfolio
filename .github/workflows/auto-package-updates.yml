@@ -5,8 +5,13 @@ on:
     - cron: '0 2 * * 1,3,5'
   workflow_dispatch:
 
+concurrency:
+  group: automated-package-updates
+  cancel-in-progress: true
+
 jobs:
   deps:
+    timeout-minutes: 45
     uses: TheManOfTeel/SharedWorkflows/.github/workflows/auto-package-updates.yml@v1.0.0
     secrets: inherit
     permissions:
