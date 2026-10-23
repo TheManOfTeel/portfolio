@@ -11,7 +11,6 @@ concurrency:
 
 jobs:
   deps:
-    timeout-minutes: 45
     uses: TheManOfTeel/SharedWorkflows/.github/workflows/auto-package-updates.yml@v1.0.0
     secrets: inherit
     permissions:
