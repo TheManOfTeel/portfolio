@@ -122,7 +122,7 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     const links = compiled.querySelectorAll('.footer-bar a');
     expect(links.length).toBe(2);
-    expect(links[0].getAttribute('href')).toBe('https://www.linkedin.com/in/daniel-teel-dev');
+    expect(links[0].getAttribute('href')).toBe('https://www.linkedin.com/in/daniel-teel-a6465017b');
     expect(links[1].getAttribute('href')).toBe('https://github.com/TheManOfTeel');
   });
 

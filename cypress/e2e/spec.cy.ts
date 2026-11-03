@@ -195,7 +195,7 @@ describe('Portfolio Application E2E Tests', () => {
 
     it('should have working LinkedIn link', () => {
       cy.get('.footer-bar [href*="linkedin"]').should('have.attr', 'target', '_blank');
-      cy.get('.footer-bar [href*="linkedin"]').should('have.attr', 'href', 'https://www.linkedin.com/in/daniel-teel-dev');
+      cy.get('.footer-bar [href*="linkedin"]').should('have.attr', 'href', 'https://www.linkedin.com/in/daniel-teel-a6465017b');
     });
 
     it('should have working GitHub link', () => {

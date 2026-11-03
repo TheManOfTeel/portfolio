@@ -9,7 +9,7 @@ describe('Footer Component Tests', () => {
   });
 
   it('should display LinkedIn link with correct attributes', () => {
-    cy.get('.footer-bar a').first().should('have.attr', 'href', 'https://www.linkedin.com/in/daniel-teel-dev');
+    cy.get('.footer-bar a').first().should('have.attr', 'href', 'https://www.linkedin.com/in/daniel-teel-a6465017b');
     cy.get('.footer-bar a').first().should('have.attr', 'target', '_blank');
     cy.get('.footer-bar a').first().find('img.footer-icon').should('have.attr', 'src', 'assets/images/linkedin.svg');
   });
