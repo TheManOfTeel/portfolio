@@ -36,11 +36,15 @@ export class ProjectsComponent {
     new Project(
       'Rhyme',
       'July 2025 - Present',
-      `Architected and deployed high-throughput .NET Core microservices integrated with AWS SQS and DynamoDB to process over 4M
-      prior authorization requests annually. Designed resilient, asynchronous message consumption pipelines with intelligent error
-      handling, dead-letter queues (DLQ), and optimistic concurrency patterns to resolve high-frequency race conditions across concurrent
-      payer updates. Built automated clinical referral and claim generation workflows to process multi-CPT code submissions with plan-aware
-      fallback protocols, drastically reducing request drop-off.`,
+      `Architected and deployed .NET Core microservices and Temporal workflow orchestration on EKS to process over 4M prior authorization requests
+      annually, integrating DynamoDB, EventBridge, and SQS with [DynamoDBVersion] optimistic concurrency and ConditionalCheckFailedException
+      handling to resolve race conditions across concurrent payer updates. Delivered standards-based payer integrations spanning roughly 15
+      payers and UM vendors — Da Vinci PAS, CRD, and DTR alongside X12 5010 278/270/271/276/277 — including a payer-facing FHIR proxy that LA Care,
+      Humana, BCBSM, and Elevance use to test directly against Rhyme's APIs. Replaced fixed-replica worker deployment with KEDA event-driven
+      autoscaling authenticated to Temporal Cloud through a shared TriggerAuthentication, templating ScaledObjects into every worker's Helm
+      chart so the fleet scales on queue depth with no application change. Built automated clinical referral and multi-CPT submission workflows
+      with plan-aware sequential fallback, and resolved high-severity defects on live authorization traffic — restoring writebacks failing for
+      50 provider organizations and recovering ~1,400 stalled cases through event replay.`,
       `Enterprise application developed while at Rhyme.`,
       'assets/images/rhyme.png',
       this.imgDefaultStyle,

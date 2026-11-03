@@ -123,7 +123,7 @@ describe('Portfolio Application E2E Tests', () => {
       // Test collapse all
       cy.contains('Collapse All').click();
       // Summary should remain expanded, others collapsed
-      cy.contains('Full Stack & Backend Software Engineer').should('be.visible');
+      cy.contains('Senior-level Full-Stack & Backend Software Engineer').should('be.visible');
     });
 
     it('should display skills correctly', () => {
