@@ -33,6 +33,8 @@
           </mat-expansion-panel-header>
           <div class="accordion-content">
             <p>{{ summary }}</p>
+            <p>{{ techFocus }}</p>
+            <p>{{ openTo }}</p>
           </div>
         </mat-expansion-panel>
         <mat-expansion-panel>
@@ -68,6 +70,7 @@
                     </li>
                   }
                 </ul>
+                <p>Tech Stack: {{ position.techStack }}</p>
               </div>
             }
             @if (!isLast) {

@@ -13,11 +13,13 @@ export class Position {
   location: string | undefined;
   date: string | undefined;
   tasks: string[] | undefined;
+  techStack: string | undefined;
 
-  constructor (title: string, location: string, date: string, tasks: string[]) {
+  constructor (title: string, location: string, date: string, tasks: string[], techStack: string) {
     this.title = title;
     this.location = location;
     this.date = date;
     this.tasks = tasks;
+    this.techStack = techStack;
   }
 }

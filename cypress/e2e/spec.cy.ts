@@ -123,7 +123,7 @@ describe('Portfolio Application E2E Tests', () => {
       // Test collapse all
       cy.contains('Collapse All').click();
       // Summary should remain expanded, others collapsed
-      cy.contains('Full Stack & Backend Software Engineer').should('be.visible');
+      cy.contains('Senior-level Full-Stack & Backend Software Engineer').should('be.visible');
     });
 
     it('should display skills correctly', () => {
@@ -195,7 +195,7 @@ describe('Portfolio Application E2E Tests', () => {
 
     it('should have working LinkedIn link', () => {
       cy.get('.footer-bar [href*="linkedin"]').should('have.attr', 'target', '_blank');
-      cy.get('.footer-bar [href*="linkedin"]').should('have.attr', 'href', 'https://www.linkedin.com/in/daniel-teel-a6465017b');
+      cy.get('.footer-bar [href*="linkedin"]').should('have.attr', 'href', 'https://www.linkedin.com/in/daniel-teel-dev');
     });
 
     it('should have working GitHub link', () => {
