@@ -20,9 +20,11 @@ export class AboutComponent {
   constructor(public stateService: StateService) {}
 
   public summary = `Senior-level Full-Stack & Backend Software Engineer with over ${this.getYearsOfExperience()} years of experience designing, architecting, and
-  scaling high-throughput distributed systems, event-driven microservices, and modern web applications using C#, .NET 8+, TypeScript, and
-  Angular/React. Proven track record of optimizing ingestion pipelines, engineering clinical and financial automation engines, and leading cloud
-  infrastructure and architecture practices across AWS and Azure.`;
+  scaling high-throughput distributed systems, event-driven microservices, and modern web applications using C#, .NET 8+,
+  TypeScript, and Angular/React. Proven track record of optimizing ingestion pipelines, engineering clinical
+  and financial automation engines, leading cloud infrastructure practices across AWS and Azure, and leveraging
+  modern AI-assisted engineering workflows (Claude Code) to accelerate technical spec writing, system design, bug
+  diagnosis, and code delivery.`;
   public techFocus = `Core Technical Focus: • Backend & Systems: C#, .NET 8+, REST APIs, Microservices, Async Pipelines, Event-Driven Architecture, Temporal
   • Cloud & Infrastructure: AWS (EKS, Lambda, S3, AppConfig), Docker, KEDA, OpenTofu/Terraform, Helm, CI/CD
   • Frontend & Data: TypeScript, React, Angular, SQL Server, DynamoDB`;
