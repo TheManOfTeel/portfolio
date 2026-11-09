@@ -129,7 +129,7 @@ describe('Portfolio Application E2E Tests', () => {
     it('should display skills correctly', () => {
       cy.contains('Expand All').click();
       cy.contains('Languages: C#, Java, JavaScript, TypeScript, SQL, Python').should('be.visible');
-      cy.contains('Frontend: Angular, React, Vue.js, HTML5/CSS3, TypeScript').should('be.visible');
+      cy.contains('Frontend: React, Angular, Vue.js, HTML5/CSS3, TypeScript').should('be.visible');
     });
 
     it('should display experience with proper formatting', () => {

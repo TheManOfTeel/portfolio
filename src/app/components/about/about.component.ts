@@ -20,9 +20,11 @@ export class AboutComponent {
   constructor(public stateService: StateService) {}
 
   public summary = `Senior-level Full-Stack & Backend Software Engineer with over ${this.getYearsOfExperience()} years of experience designing, architecting, and
-  scaling high-throughput distributed systems, event-driven microservices, and modern web applications using C#, .NET 8+, TypeScript, and
-  Angular/React. Proven track record of optimizing ingestion pipelines, engineering clinical and financial automation engines, and leading cloud
-  infrastructure and architecture practices across AWS and Azure.`;
+  scaling high-throughput distributed systems, event-driven microservices, and modern web applications using C#, .NET 8+,
+  TypeScript, and Angular/React. Proven track record of optimizing ingestion pipelines, engineering clinical
+  and financial automation engines, leading cloud infrastructure practices across AWS and Azure, and leveraging
+  modern AI-assisted engineering workflows (Claude Code) to accelerate technical spec writing, system design, bug
+  diagnosis, and code delivery.`;
   public techFocus = `Core Technical Focus: • Backend & Systems: C#, .NET 8+, REST APIs, Microservices, Async Pipelines, Event-Driven Architecture, Temporal
   • Cloud & Infrastructure: AWS (EKS, Lambda, S3, AppConfig), Docker, KEDA, OpenTofu/Terraform, Helm, CI/CD
   • Frontend & Data: TypeScript, React, Angular, SQL Server, DynamoDB`;
@@ -41,12 +43,14 @@ export class AboutComponent {
       ]
     ),
     new Skill(
-      'Backend',
+      'Backend & Architecture',
       [
-        '.NET Core / .NET 8+',
-        'RESTful APIs',
+        '.NET Core/.NET 8+',
         'Microservices',
+        'Event-Driven Architecture',
+        'RESTful APIs',
         'Entity Framework Core',
+        'Temporal',
         'Node.js',
         'Express',
         'Async Pipelines'
@@ -55,43 +59,39 @@ export class AboutComponent {
     new Skill(
       'Frontend',
       [
-        'Angular',
         'React',
+        'Angular',
         'Vue.js',
         'HTML5/CSS3',
         'TypeScript'
       ]
     ),
     new Skill(
-      'Databases & Cloud',
+      'Cloud & DevOps',
+      [
+        'AWS (EKS, Lambda, Lambda, S3, AppConfig, ECR)',
+        'Azure (App Services, Functions, DevOps)',
+        'Docker',
+        'Kubernetes/KEDA',
+        'OpenTofu/Terraform',
+        'CI/CD (GitHub Actions, Azure DevOps)',
+        'SOLID Principles'
+      ]
+    ),
+    new Skill(
+      'AI-Assisted Engineering',
+      [
+        'Claude Code (Technical Spec Drafting, System Design Collaboration, Bug Diagnosis, Code Generation, Test Suites)'
+      ]
+    ),
+    new Skill(
+      'Databases & Messaging',
       [
         'SQL Server',
         'MySQL',
         'DynamoDB',
-        'Firestore | Azure (App Services, Functions, DevOps)',
-        'AWS (EC2, Lambda, S3)'
-      ]
-    ),
-    new Skill(
-      'DevOps & Architecture',
-      [
-        'Docker',
-        'CI/CD (GitHub Actions, Azure DevOps)',
-        'Event-Driven Architecture',
-        'SOLID Principles',
-        'NUnit',
-        'Jest',
-        'Postman'
-      ]
-    ),
-    new Skill(
-      'Architectural Patterns',
-      [
-        'Microservices',
-        'MVC',
-        'Client-Server Architecture',
-        'Event-Driven Architecture',
-        'SOLID Principles'
+        'Firestore',
+        'Asynchronous Queues (RabbitMQ, AWS SQS)'
       ]
     )
   ];
@@ -106,13 +106,14 @@ export class AboutComponent {
           'July 2025 - Present',
           [
             'Architected and engineered an end-to-end conversational prior-authorization intake flow across 15 microservices and 3 repositories, leveraging React, .NET Core, an AI response-schema transformer, and Temporal workflows backed by a comprehensive mock-payer test suite.',
+            'Utilized Claude Code as a daily AI pair-programmer to collaborate on technical designs, draft OpenAPI specs, diagnose complex microservice production defects, and rapidly generate high-coverage test suites (NUnit/Jest), significantly accelerating sprint delivery.',
             'Optimized cloud infrastructure by replacing fixed-replica Temporal workers with KEDA event-driven autoscaling on Amazon EKS, securing Temporal Cloud authentication via TriggerAuthentication and Helm chart templating to scale dynamically on queue depth without application changes.',
             'Resolved high-severity production defects across critical live paths, restoring failed PROD writebacks for 50 provider organizations (~23 cases/day), building an event-replay recovery script to reprocess ~1,400 stalled Aetna cases, and fixing sequential name-matching logic to resolve ~880 monthly failures on hyphenated surnames.',
             `Spearheaded LA Care’s PAS pilot acceptance by building Rhyme's Da Vinci FHIR payer-integration surface—incorporating pended ClaimResponse handling, Inquiry reference mapping, and cross-payer authorization normalization—subsequently adopted by Humana, BCBSM, and Elevance.`,
             'Architected the Provider Intake v4 inbound messaging pipeline on a new Temporal project and task queue for high-volume X12 5010 transactions (270/271/276/277/278), configuring EKS workloads, Helm charts, and AWS AppConfig for seamless side-by-side traffic cutover.',
             'Drove platform-wide modernization and infrastructure initiatives, integrating AWS AppConfig for PSA UM integrations, consolidating shared client libraries, executing .NET runtime upgrades, and embedding OpenTofu/Terraform and Helm changes natively within core feature workflows.',
           ],
-          'C#, .NET Core / .NET 8+, AWS (EKS, AppConfig, ECR), KEDA, Temporal, Docker, Helm, OpenTofu / Terraform, React, TypeScript, Da Vinci FHIR, X12 5010 (270/271/276/277/278), RESTful APIs, Microservices'
+          'C#, .NET Core/.NET 8+, AWS (EKS, AppConfig, ECR), KEDA, Temporal, Docker, Helm, OpenTofu/Terraform, React, TypeScript, Da Vinci FHIR, X12 5010 (270/271/276/277/278), RESTful APIs, Microservices'
         )
       ]
     ),

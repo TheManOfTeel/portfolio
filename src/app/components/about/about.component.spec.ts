@@ -62,8 +62,10 @@ describe('AboutComponent', () => {
       const skillTypes = component.skills.map(skill => skill.type);
       expect(skillTypes).toContain('Languages');
       expect(skillTypes).toContain('Frontend');
-      expect(skillTypes).toContain('Backend');
-      expect(skillTypes).toContain('Databases & Cloud');
+      expect(skillTypes).toContain('Backend & Architecture');
+      expect(skillTypes).toContain('Databases & Messaging');
+      expect(skillTypes).toContain('Cloud & DevOps');
+      expect(skillTypes).toContain('AI-Assisted Engineering');
     });
 
     it('should have experiences array', () => {
